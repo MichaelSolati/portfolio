@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { environment } from '../../environments/environment';
+import { MetaService } from '../core/services/meta.service';
 import * as data from './data.json';
 
 @Component({
@@ -11,6 +13,13 @@ export class CodeComponent {
   private _meta = {
     title: 'Code',
     description: 'Some of the best code I\'ve written, available for everyone!'
+  }
+
+  constructor(metaService: MetaService) {
+    metaService.setAll({
+      ...this._meta,
+      title: `${this._meta.title} | ${environment.name}`
+    });
   }
 
   get meta() {

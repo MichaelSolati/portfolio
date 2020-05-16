@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { environment } from '../../environments/environment';
+import { MetaService } from '../core/services/meta.service';
 import * as data from './data.json';
 
 @Component({
@@ -11,6 +13,13 @@ export class TalksComponent {
   private _meta = {
     title: 'Talks',
     description: 'From major conferences to smaller meetups, I\'ve spoken at a slew of events.'
+  }
+
+  constructor(metaService: MetaService) {
+    metaService.setAll({
+      ...this._meta,
+      title: `${this._meta.title} | ${environment.name}`
+    });
   }
 
   get meta() {
