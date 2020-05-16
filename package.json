@@ -4,12 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "data": "ts-node --skip-project data.ts",
-    "data:skip": "ts-node --skip-project data.ts -S"
+    "data:cli": "ts-node --skip-project data.ts -S",
+    "postinstall": "npm --prefix functions install",
+    "deploy": "npm run data && firebase deploy",
+    "deploy:cli": "npm run data:cli && firebase deploy --non-interactive --token $FIREBASE_TOKEN"
   },
   "private": false,
   "dependencies": {
@@ -35,6 +38,7 @@
     "@types/puppeteer": "^2.1.0",
     "codelyzer": "^5.1.2",
     "dotenv": "^8.2.0",
+    "firebase-tools": "^8.2.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jsdom": "^16.2.2",
