@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/flexboxgrid/dist/flexboxgrid.min.css",
               "src/styles.scss"
             ],
             "scripts": []

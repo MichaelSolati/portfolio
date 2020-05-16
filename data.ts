@@ -51,12 +51,12 @@ const cleanText = (text: string = '') => {
         posts = posts
         .filter(() => posts.type_of !== 'article')
         .sort((a, b) => (new Date(b.published_at).getTime() - new Date(a.published_at).getTime()))
-        .slice(0, 12)
+        .slice(0, 24)
         .map((post) => ({
           title: post.title,
           description: post.description,
           url: post.url,
-          src: post.social_image,
+          src: post.cover_image || post.social_image,
           date: post.published_at,
         }));
 
@@ -81,7 +81,7 @@ const cleanText = (text: string = '') => {
               b.stargazers_count - a.stargazers_count ||
               (new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
             ))
-            .slice(0, 12)
+            .slice(0, 24)
             .map((repo) => ({
               title: repo.name,
               description: repo.description,
@@ -261,7 +261,7 @@ const cleanText = (text: string = '') => {
 
     if (accounts.youtube.apikey) {
       console.log('Fetching YouTube videos.');
-      await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=12&playlistId=${accounts.youtube.playlist}&key=${accounts.youtube.apikey}`)
+      await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=24&playlistId=${accounts.youtube.playlist}&key=${accounts.youtube.apikey}`)
         .then(res => res.json())
         .then(playlist => {
           if (Array.isArray(playlist.items)) {
