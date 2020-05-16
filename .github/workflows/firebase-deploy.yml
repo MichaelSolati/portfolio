@@ -1,0 +1,23 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '* 0 * * 1'
+
+env:
+  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+  LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm ci
+    - run: npm run deploy:cli
