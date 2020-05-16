@@ -1,7 +1,10 @@
-mat-card {
-  margin: 8px;
+:host {
+  display: block;
+  padding: 8px;
 
-  > mat-card-header {
-    margin: 0 -16px;
+  mat-card {
+    > mat-card-header {
+      margin: 0 -16px;
+    }
   }
 }

@@ -1,0 +1,12 @@
+<section>
+  <div class="banner">
+    <div class="banner-image" [style.background-image]="'url(https://source.unsplash.com/1600x900/?'+topic+')'"></div>
+    <div class="banner-overlay"></div>
+    <div class="banner-content-wrapper">
+      <div class="banner-content">
+        <h1 *ngIf="title" class="banner-title">{{ title }}</h1>
+        <p *ngIf="description" class="banner-description">{{ description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

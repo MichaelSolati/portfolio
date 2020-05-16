@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BannerModule } from '../shared/banner/banner.module';
 import { CardModule } from '../shared/card/card.module';
 import { CodeRoutingModule } from './code-routing.module';
 import { CodeComponent } from './code.component';
@@ -11,6 +12,7 @@ import { CodeComponent } from './code.component';
   ],
   imports: [
     CommonModule,
+    BannerModule,
     CardModule,
     CodeRoutingModule
   ]

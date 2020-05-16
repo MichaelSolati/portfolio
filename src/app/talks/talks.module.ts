@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BannerModule } from '../shared/banner/banner.module';
 import { CardModule } from '../shared/card/card.module';
 import { TalksRoutingModule } from './talks-routing.module';
 import { TalksComponent } from './talks.component';
@@ -11,6 +12,7 @@ import { TalksComponent } from './talks.component';
   ],
   imports: [
     CommonModule,
+    BannerModule,
     CardModule,
     TalksRoutingModule
   ]

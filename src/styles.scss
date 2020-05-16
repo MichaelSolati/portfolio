@@ -22,8 +22,7 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $mat-warn);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-mat-toolbar.mat-toolbar,
-mat-card-title.mat-card-title {
+mat-toolbar.mat-toolbar {
   font-family: "Product Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -33,4 +32,9 @@ a {
   &.inherit {
     color: inherit;
   }
+}
+
+.container {
+  margin-right: .5rem;
+  margin-left: .5rem;
 }
