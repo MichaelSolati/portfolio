@@ -76,6 +76,7 @@ const cleanText = (text: string = '') => {
       .then(repos => {
         if (Array.isArray(repos)) {
           repos = repos
+            .filter(r => !r.archived)
             .sort((a, b) => (
               b.stargazers_count - a.stargazers_count ||
               (new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
@@ -269,7 +270,7 @@ const cleanText = (text: string = '') => {
                 title: video.snippet.title,
                 description: cleanText(video.snippet.description),
                 url: `https://youtu.be/${video.contentDetails.videoId}`,
-                src: (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => b.width - a.width).pop().url,
+                src: (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url,
                 date: video.contentDetails.videoPublishedAt,
               }));
 
