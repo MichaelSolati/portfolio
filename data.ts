@@ -23,7 +23,7 @@ const accounts = {
     apikey: environment.firebase.apiKey || process.env.YOUTUBE_APIKEY,
   }
 };
-const dataFolder = path.join('src', 'assets', 'data');
+const appFolder = path.join('src', 'app');
 
 const sleep = (ms: number): Promise<void> => {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,7 +61,7 @@ const cleanText = (text: string = '') => {
         }));
 
         writeFileSync(
-          path.join(dataFolder, 'devto.json'),
+          path.join(appFolder, 'articles', 'data.json'),
           JSON.stringify(posts)
         );
       });
@@ -89,7 +89,7 @@ const cleanText = (text: string = '') => {
             }));
 
           writeFileSync(
-            path.join(dataFolder, 'github.json'),
+            path.join(appFolder, 'code', 'data.json'),
             JSON.stringify(repos)
           );
         }
@@ -233,7 +233,7 @@ const cleanText = (text: string = '') => {
         }
 
         writeFileSync(
-          path.join(dataFolder, 'linkedin.json'),
+          path.join(appFolder, 'home', 'data.json'),
           JSON.stringify(profile)
         );
 
@@ -274,7 +274,7 @@ const cleanText = (text: string = '') => {
               }));
 
             writeFileSync(
-              path.join(dataFolder, 'youtube.json'),
+              path.join(appFolder, 'talks', 'data.json'),
               JSON.stringify(videos)
             );
           }
