@@ -267,7 +267,7 @@ const cleanText = (text: string = '') => {
             const videos = playlist.items
               .map((video) => ({
                 title: video.snippet.title,
-                description: video.snippet.description,
+                description: cleanText(video.snippet.description),
                 url: `https://youtu.be/${video.contentDetails.videoId}`,
                 src: (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => b.width - a.width).pop().url,
                 date: video.contentDetails.videoPublishedAt,
