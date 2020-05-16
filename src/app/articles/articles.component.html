@@ -1,7 +1,7 @@
 <app-banner topic="writing,blog,article" [title]="meta.title" [description]="meta.description"></app-banner>
 
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row justify-content-center">
     <div *ngFor="let element of data" class="col-xs-12 col-sm-6 col-lg-4">
       <app-card [title]="element.title" [description]="element.description" [src]="element.src" [url]="element.url" buttonText="READ">
       </app-card>
