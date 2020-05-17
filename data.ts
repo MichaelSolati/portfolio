@@ -49,16 +49,16 @@ const cleanText = (text: string = '') => {
       .then(res => res.json())
       .then(posts => {
         posts = posts
-        .filter(() => posts.type_of !== 'article')
-        .sort((a, b) => (new Date(b.published_at).getTime() - new Date(a.published_at).getTime()))
-        .slice(0, 24)
-        .map((post) => ({
-          title: post.title,
-          description: post.description,
-          url: post.url,
-          src: post.cover_image || post.social_image,
-          date: post.published_at,
-        }));
+          .filter(() => posts.type_of !== 'article')
+          .sort((a, b) => (new Date(b.published_at).getTime() - new Date(a.published_at).getTime()))
+          .slice(0, 24)
+          .map((post) => ({
+            title: post.title,
+            description: post.description,
+            url: post.url,
+            src: post.cover_image || post.social_image,
+            date: post.published_at,
+          }));
 
         writeFileSync(
           path.join(appFolder, 'articles', 'data.json'),
@@ -127,11 +127,23 @@ const cleanText = (text: string = '') => {
         await page.$('#username').then((e) => e.type(accounts.linkedin.email));
         await page.$('#password').then((e) => e.type(accounts.linkedin.password));
         await page.$x("//button[contains(text(), 'Sign in')]").then((button) => button[0].click());
-        await sleep(5000);
+        await sleep(2000);
         await page.goto(profileUrl, { waitUntil: 'networkidle2' });
         await page.evaluate(scrollToBottom);
-        await sleep(5000);
+        await sleep(2000);
         await page.$('a.lt-line-clamp__more').then((e) => e.click());
+        const expandButtonsSelectors = [
+          '.lt-line-clamp__more',
+          '#experience-section button.pv-profile-section__see-more-inline',
+          '#education-section button.pv-profile-section__see-more-inline',
+          'section.volunteering-section button.pv-profile-section__see-more-inline',
+        ];
+        for (const buttonSelector of expandButtonsSelectors) {
+          if (await page.$(buttonSelector) !== null) {
+            await page.click(buttonSelector);
+          }
+        }
+        await sleep(2000);
         const html = await page.content();
         await browser.close();
 
@@ -163,6 +175,9 @@ const cleanText = (text: string = '') => {
           const titleElement = node.querySelector('h3');
           const title = titleElement?.textContent || null;
 
+          const logoElement = node.querySelector('img.pv-entity__logo-img');
+          const logo = logoElement?.getAttribute('src') || null;
+
           const companyElement = node.querySelector('.pv-entity__secondary-title');
           const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
           const company = companyElementClean?.textContent || null;
@@ -182,12 +197,14 @@ const cleanText = (text: string = '') => {
 
           profile['experiences'].push({
             title: cleanText(title),
+            logo: logo.includes('http') ? logo : null,
             institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
             current,
             description: cleanText(description),
-            icon: 'work'
+            icon: 'business',
+            type: 'work'
           });
         }
         // END EXPERIENCE
@@ -198,6 +215,9 @@ const cleanText = (text: string = '') => {
 
           const schoolElement = node.querySelector('h3.pv-entity__school-name');
           const school = schoolElement?.textContent || null;
+
+          const logoElement = node.querySelector('img.pv-entity__logo-img');
+          const logo = logoElement?.getAttribute('src') || null;
 
           const degreeElement = node.querySelector('.pv-entity__degree-name .pv-entity__comma-item');
           const degree = degreeElement?.textContent || null;
@@ -216,15 +236,58 @@ const cleanText = (text: string = '') => {
 
           profile['experiences'].push({
             title: cleanText(degree),
+            logo: logo.includes('http') ? logo : null,
             institution: cleanText(school),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
             current,
             description: cleanText(field),
-            icon: 'school'
+            icon: 'school',
+            type: 'education'
           });
         }
         // END EDUCATION
+
+        // START VOLUNTEER
+        const volunteering = document.querySelector('.volunteering-section').querySelector('ul').children;
+        // Using a for loop so we can use await inside of it
+        for (const node of volunteering) {
+          const titleElement = node.querySelector('h3');
+          const title = titleElement?.textContent || null;
+
+          const logoElement = node.querySelector('img.pv-entity__logo-img');
+          const logo = logoElement?.getAttribute('src') || null;
+
+          const companyElement = node.querySelector('.pv-entity__secondary-title');
+          const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
+          const company = companyElementClean?.textContent || null;
+
+          const descriptionElement = node.querySelector('.pv-entity__description');
+          const description = descriptionElement?.textContent || null;
+
+          const dateRangeElement = node.querySelector('.pv-entity__date-range span:nth-child(2)');
+          const dateRangeText = dateRangeElement?.textContent || null;
+
+          const startPart = dateRangeText?.split('–')[0] || null;
+          const start = startPart?.trim() || null;
+
+          const endPart = dateRangeText?.split('–')[1] || null;
+          const current = endPart?.trim().toLowerCase() === 'present' || false;
+          const end = (endPart && !current) ? endPart.trim() : 'Present';
+
+          profile['experiences'].push({
+            title: cleanText(title),
+            logo: logo.includes('http') ? logo : null,
+            institution: cleanText(company),
+            start: new Date(cleanText(start)),
+            end: new Date(cleanText(end)),
+            current,
+            description: cleanText(description),
+            icon: 'group',
+            type: 'volunteer'
+          });
+        }
+        // END VOLUNTEER
 
         profile['experiences'] = profile['experiences'].sort((a, b) => {
           if (b.current && a.current) {

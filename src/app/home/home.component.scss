@@ -1,0 +1,15 @@
+img[mat-list-icon].mat-list-icon.custom-icon {
+  background-color: white;
+  height: 48px;
+  padding: 0;
+  width: 48px;
+}
+
+mat-icon[mat-list-icon].mat-list-icon.custom-icon {
+  background-color: white;
+  color: black;
+  height: 32px;
+  font-size: 32px;
+  padding: 8px;
+  width: 32px;
+}
