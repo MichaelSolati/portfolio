@@ -5,8 +5,8 @@
         <div mat-subheader>Experiences</div>
         <ng-container *ngFor="let element of data.experiences">
           <mat-list-item>
-            <img mat-list-icon class="custom-icon" *ngIf="element.logo" [src]="element.logo" [alt]="element.title" />
-            <mat-icon mat-list-icon class="custom-icon" *ngIf="!element.logo">{{ element.icon }}</mat-icon>
+            <img mat-list-icon class="custom-icon" *ngIf="element.src" [src]="element.src" [alt]="element.title" />
+            <mat-icon mat-list-icon class="custom-icon" *ngIf="!element.src">{{ element.icon }}</mat-icon>
             <div mat-line>{{ element.title }}{{ element.institution ? ' @ ' + element.institution : ''}}</div>
             <div mat-line>{{ element.description }}</div>
             <ng-container>

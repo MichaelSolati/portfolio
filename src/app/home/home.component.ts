@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { environment } from '../../environments/environment';
 import { MetaService } from '../core/services/meta.service';
-import * as data from './data.json';
+import data from './data';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import * as data from './data.json';
 export class HomeComponent {
   private _meta = {
     title: environment.name,
-    description: this.data.description,
+    description: this.data.description
   };
 
   constructor(metaService: MetaService) {
@@ -23,6 +23,6 @@ export class HomeComponent {
   }
 
   get data(): any {
-    return data['default'];
+    return data;
   }
 }

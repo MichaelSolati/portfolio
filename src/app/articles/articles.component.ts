@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
-import { environment } from '../../environments/environment';
 import { MetaService } from '../core/services/meta.service';
-import * as data from './data.json';
+import data from './data';
 
 @Component({
   selector: 'app-articles',
@@ -13,7 +12,7 @@ export class ArticlesComponent {
   private _meta = {
     title: 'Articles',
     description: 'Stories, guides, and tutorials for developers by me.'
-  }
+  };
 
   constructor(metaService: MetaService) {
     metaService.setAll(this._meta);
@@ -24,6 +23,6 @@ export class ArticlesComponent {
   }
 
   get data(): any[] {
-    return data['default'];
+    return data;
   }
 }

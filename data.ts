@@ -23,12 +23,12 @@ const accounts = {
     apikey: environment.firebase.apiKey || process.env.YOUTUBE_APIKEY,
   }
 };
-const appFolder = path.join('src', 'app');
 
 const sleep = (ms: number): Promise<void> => {
   return new Promise(resolve => setTimeout(resolve, ms));
-}
-const cleanText = (text: string = '') => {
+};
+
+const cleanText = (text: string = ''): string => {
   const regexRemoveMultipleSpaces = / +/g
   const regexRemoveLineBreaks = /(\r\n\t|\n|\r\t)/gm
 
@@ -39,7 +39,13 @@ const cleanText = (text: string = '') => {
     .replace('See more', '')
     .replace('See less', '')
     .trim();
-}
+};
+
+const writeFile = (folder: string, json: any): void => {
+  const appFolder = path.join('src', 'app', folder, 'data.ts');
+  const file = `const data = ${JSON.stringify(json, null, '\t')};\nexport default data;`;
+  writeFileSync(appFolder, file);
+};
 
 (async () => {
   // dev.to
@@ -60,10 +66,7 @@ const cleanText = (text: string = '') => {
             date: post.published_at,
           }));
 
-        writeFileSync(
-          path.join(appFolder, 'articles', 'data.json'),
-          JSON.stringify(posts)
-        );
+        writeFile('articles', posts);
       });
     console.log('Saved dev.to posts');
   }
@@ -89,10 +92,7 @@ const cleanText = (text: string = '') => {
               date: repo.updated_at,
             }));
 
-          writeFileSync(
-            path.join(appFolder, 'code', 'data.json'),
-            JSON.stringify(repos)
-          );
+          writeFile('code', repos);
         }
       });
     console.log('Saved GitHub repos.');
@@ -175,8 +175,8 @@ const cleanText = (text: string = '') => {
           const titleElement = node.querySelector('h3');
           const title = titleElement?.textContent || null;
 
-          const logoElement = node.querySelector('img.pv-entity__logo-img');
-          const logo = logoElement?.getAttribute('src') || null;
+          const srcElement = node.querySelector('img.pv-entity__logo-img');
+          const src = srcElement?.getAttribute('src') || null;
 
           const companyElement = node.querySelector('.pv-entity__secondary-title');
           const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
@@ -197,7 +197,7 @@ const cleanText = (text: string = '') => {
 
           profile['experiences'].push({
             title: cleanText(title),
-            logo: logo.includes('http') ? logo : null,
+            src: src.includes('http') ? src : null,
             institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -216,8 +216,8 @@ const cleanText = (text: string = '') => {
           const schoolElement = node.querySelector('h3.pv-entity__school-name');
           const school = schoolElement?.textContent || null;
 
-          const logoElement = node.querySelector('img.pv-entity__logo-img');
-          const logo = logoElement?.getAttribute('src') || null;
+          const srcElement = node.querySelector('img.pv-entity__logo-img');
+          const src = srcElement?.getAttribute('src') || null;
 
           const degreeElement = node.querySelector('.pv-entity__degree-name .pv-entity__comma-item');
           const degree = degreeElement?.textContent || null;
@@ -236,7 +236,7 @@ const cleanText = (text: string = '') => {
 
           profile['experiences'].push({
             title: cleanText(degree),
-            logo: logo.includes('http') ? logo : null,
+            src: src.includes('http') ? src : null,
             institution: cleanText(school),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -255,8 +255,8 @@ const cleanText = (text: string = '') => {
           const titleElement = node.querySelector('h3');
           const title = titleElement?.textContent || null;
 
-          const logoElement = node.querySelector('img.pv-entity__logo-img');
-          const logo = logoElement?.getAttribute('src') || null;
+          const srcElement = node.querySelector('img.pv-entity__logo-img');
+          const src = srcElement?.getAttribute('src') || null;
 
           const companyElement = node.querySelector('.pv-entity__secondary-title');
           const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
@@ -277,7 +277,7 @@ const cleanText = (text: string = '') => {
 
           profile['experiences'].push({
             title: cleanText(title),
-            logo: logo.includes('http') ? logo : null,
+            src: src.includes('http') ? src : null,
             institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -307,10 +307,7 @@ const cleanText = (text: string = '') => {
           }
         }
 
-        writeFileSync(
-          path.join(appFolder, 'home', 'data.json'),
-          JSON.stringify(profile)
-        );
+        writeFile('home', profile);
 
         console.log('Saved LinkedIn profile.');
       } catch (e) {
@@ -348,10 +345,7 @@ const cleanText = (text: string = '') => {
                 date: video.contentDetails.videoPublishedAt,
               }));
 
-            writeFileSync(
-              path.join(appFolder, 'talks', 'data.json'),
-              JSON.stringify(videos)
-            );
+            writeFile('talks', videos);
           }
         });
       console.log('Saved YouTube videos.');
