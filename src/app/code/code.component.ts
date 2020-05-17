@@ -16,10 +16,7 @@ export class CodeComponent {
   }
 
   constructor(metaService: MetaService) {
-    metaService.setAll({
-      ...this._meta,
-      title: `${this._meta.title} | ${environment.name}`
-    });
+    metaService.setAll(this._meta);
   }
 
   get meta() {

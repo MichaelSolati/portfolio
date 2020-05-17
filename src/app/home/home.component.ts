@@ -18,7 +18,7 @@ export class HomeComponent {
   constructor(metaService: MetaService) {
     metaService.setAll({
       ...this._meta,
-      title: `Home | ${environment.name}`
+      title: 'Home'
     });
   }
 
