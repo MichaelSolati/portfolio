@@ -13,7 +13,7 @@ export class HomeComponent {
   private _meta = {
     title: environment.name,
     description: this.data.description,
-  }
+  };
 
   constructor(metaService: MetaService) {
     metaService.setAll({

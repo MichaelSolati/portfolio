@@ -154,9 +154,10 @@ const cleanText = (text: string = '') => {
         profile['description'] = descriptionElement?.textContent || null;
         // END PROFILE
 
+        profile['experiences'] = [];
+
         // START EXPERIENCE
         const experience = document.querySelector('#experience-section').querySelector('ul').children;
-        profile['experience'] = [];
         // Using a for loop so we can use await inside of it
         for (const node of experience) {
           const titleElement = node.querySelector('h3');
@@ -179,25 +180,20 @@ const cleanText = (text: string = '') => {
           const current = endPart?.trim().toLowerCase() === 'present' || false;
           const end = (endPart && !current) ? endPart.trim() : 'Present';
 
-          const locationElement = node.querySelector('.pv-entity__location span:nth-child(2)');
-          const location = locationElement?.textContent || null;
-
-          profile['experience'].push({
+          profile['experiences'].push({
             title: cleanText(title),
-            company: cleanText(company),
-            location: cleanText(location),
+            institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
             current,
             description: cleanText(description),
+            icon: 'work'
           });
         }
         // END EXPERIENCE
 
         // START EDUCATION
         const education = document.querySelector('#education-section').querySelector('ul').children;
-        profile['education'] = [];
-
         for (const node of education) {
 
           const schoolElement = node.querySelector('h3.pv-entity__school-name');
@@ -215,17 +211,32 @@ const cleanText = (text: string = '') => {
           const start = startPart || null
 
           const endPart = dateRangeElement && dateRangeElement[1]?.textContent || null;
+          const current = endPart?.trim().toLowerCase() === 'present' || false;
           const end = endPart || null
 
-          profile['education'].push({
-            school: cleanText(school),
-            degree: cleanText(degree),
-            field: cleanText(field),
+          profile['experiences'].push({
+            title: cleanText(degree),
+            institution: cleanText(school),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
-          })
+            current,
+            description: cleanText(field),
+            icon: 'school'
+          });
         }
         // END EDUCATION
+
+        profile['experiences'] = profile['experiences'].sort((a, b) => {
+          if (b.current && a.current) {
+            return (new Date(b.start).getTime() - new Date(a.start).getTime());
+          } else if (b.current && !a.current) {
+            return 1;
+          } else if (!b.current && a.current) {
+            return -1;
+          } else {
+            return (new Date(b.end).getTime() - new Date(a.end).getTime());
+          }
+        });
 
         for (let key in profile) {
           if (typeof profile[key] === 'string') {

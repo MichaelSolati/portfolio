@@ -1,1 +1,20 @@
 {{ data | json }}
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-6">
+      <mat-list>
+        <div mat-subheader>Experiences</div>
+        <ng-container *ngFor="let element of data.experiences">
+          <mat-list-item>
+            <mat-icon mat-list-icon>{{ element.icon }}</mat-icon>
+            <div mat-line>{{element.title}}{{ element.institution ? ' @ ' + element.institution : ''}}</div>
+            <div mat-line>{{ element.description}}</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-list>
+    </div>
+  </div>
+</div>
