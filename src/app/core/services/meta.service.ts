@@ -16,7 +16,7 @@ export class MetaService {
     this._ngmeta.setAll({
       title: title + ' | ' + environment.name,
       description,
-      image: `${environment.site.config.baseURL}/assets/screenshots${(path === '/') ? 'home' : path}.png`,
+      image: `${environment.site.config.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`,
       twitter,
       canonical: environment.site.config.baseURL + path
     })
