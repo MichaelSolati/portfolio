@@ -5,10 +5,12 @@ import { MatCardModule } from '@angular/material/card';
 
 import { SharedModule } from  '../../shared/shared.module';
 import { CardComponent } from './card.component';
+import { ExperienceCardComponent } from './experience-card/experience-card.component';
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    ExperienceCardComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { CardComponent } from './card.component';
     SharedModule
   ],
   exports: [
-    CardComponent
+    CardComponent,
+    ExperienceCardComponent
   ]
 })
 export class CardModule { }

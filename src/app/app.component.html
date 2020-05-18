@@ -12,7 +12,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <a class="inherit" [routerLink]="['/']">{{ title }}</a>
-      <span *ngIf="!(isHandset$ | async)" class="navbar-spacer"></span>
+      <span *ngIf="!(isHandset$ | async)" class="toolbar-spacer"></span>
       <ng-template ngFor let-path [ngForOf]="paths">
         <a *ngIf="!(isHandset$ | async) && !path.hideInNav" mat-button
           [routerLink]="path.link">{{path.name}}</a>
