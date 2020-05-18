@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BannerModule } from '../shared/banner/banner.module';
-import { CardModule } from '../shared/card/card.module';
+import { BannerModule } from '../components/banner';
+import { CardModule } from '../components/card';
 import { CodeRoutingModule } from './code-routing.module';
 import { CodeComponent } from './code.component';
 

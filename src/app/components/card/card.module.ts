@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
-import { SharedModule } from  '../shared.module';
+import { SharedModule } from  '../../shared/shared.module';
 import { CardComponent } from './card.component';
 
 @NgModule({
