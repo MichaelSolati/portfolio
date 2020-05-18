@@ -16,7 +16,6 @@
     "dev:ssr": "ng run portfolio:serve-ssr",
     "serve:ssr": "node dist/portfolio/server/main.js",
     "build:ssr": "ng build --prod && ng run portfolio:server:production",
-    "postbuild:ssr": "ts-node --skip-project screenshots.ts",
     "prerender": "ng run portfolio:prerender",
     "screenshots": "start-server-and-test 'ng serve --port=5000' 5000 'ts-node --project tsconfig.tsnode.json screenshots.ts'"
   },
