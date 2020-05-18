@@ -352,5 +352,5 @@ const writeFile = (folder: string, json: any): void => {
     }
   }
 
-  process.exit(0)
+  process.exit(0);
 })();

@@ -13,6 +13,11 @@ export const environment = {
     storageBucket: 'michaelsolati-com.appspot.com',
     messagingSenderId: '653176308527'
   },
+  site: {
+    config: {
+      baseURL: 'https://michaelsolati.com'
+    }
+  },
   github: 'MichaelSolati',
   linkedin: 'michaelsolati',
   devto: 'michaelsolati',

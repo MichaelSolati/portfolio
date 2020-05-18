@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { NgMeta, GoogleMeta } from 'ngmeta';
 
 import { environment } from 'src/environments/environment';
@@ -7,15 +8,17 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MetaService {
-  constructor(private _ngmeta: NgMeta) { }
+  constructor(private _ngmeta: NgMeta, @Inject(DOCUMENT) private _dom: Document) { }
 
-  setAll({ title, description, image } : GoogleMeta): void {
+  setAll({ title, description } : GoogleMeta): void {
+    const path = new URL(this._dom.URL).pathname;
     const twitter = environment.twitter;
     this._ngmeta.setAll({
       title: title + ' | ' + environment.name,
       description,
-      image,
-      twitter
+      image: `${environment.site.config.baseURL}/assets/screenshots${(path === '/') ? 'home' : path}.png`,
+      twitter,
+      canonical: environment.site.config.baseURL + path
     })
   }
 }
