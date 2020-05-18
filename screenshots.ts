@@ -13,7 +13,7 @@ const crawlable = routes
   console.log('Launching Puppeteer to take screenshots');
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1000, height: 500 });
+  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 0.5 });
 
   for (let route of crawlable) {
     console.log(`Taking screenshot of "/${route.path}"`);
