@@ -2,17 +2,15 @@ import { Component } from '@angular/core';
 
 import { MetaService } from '../core/services/meta.service';
 import data from './data';
+import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-talks',
-  templateUrl: './talks.component.html',
-  styleUrls: ['./talks.component.scss']
+  selector: 'app-github',
+  templateUrl: './github.component.html',
+  styleUrls: ['./github.component.scss']
 })
-export class TalksComponent {
-  private _meta = {
-    title: 'Talks',
-    description: 'From major conferences to smaller meetups, I\'ve spoken at a slew of events.'
-  };
+export class GithubComponent {
+  private _meta = environment.pages.github;
 
   constructor(metaService: MetaService) {
     metaService.setAll(this._meta);

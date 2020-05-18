@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { environment } from '../../environments/environment';
 import { MetaService } from '../core/services/meta.service';
 import data from './data';
+import { environment } from '../../environments/environment';
 
 const defaultFilter = { title: 'All', type: null, icon: 'list' };
 
@@ -19,16 +19,13 @@ export class HomeComponent {
     { title: 'Education', type: 'education', icon: 'school' },
     { title: 'Volunteer', type: 'volunteer', icon: 'group' }
   ];
-  private _meta = {
-    title: environment.name,
-    description: this.data.description
-  };
+  private _meta = environment.pages.home;
 
   constructor(metaService: MetaService) {
-    metaService.setAll({
-      ...this._meta,
-      title: 'Home'
-    });
+    if (this.data.description) {
+      this._meta.description = this.data.description;
+    }
+    metaService.setAll(this._meta);
   }
 
   get active(): any {
@@ -36,7 +33,7 @@ export class HomeComponent {
   }
 
   get data(): any {
-    return data;
+    return data || {};
   }
 
   get filters(): any[] {

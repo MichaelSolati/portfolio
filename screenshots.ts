@@ -1,12 +1,15 @@
 import * as puppeteer from 'puppeteer';
 
-import { routes } from './src/app/app-routing.module';
+import { environment } from './src/environments/environment.general';
 
-const crawlable = routes
-  .filter((r) => !r.redirectTo)
-  .map((r) => ({
-    path: r.path,
-    imagePath: `./src/assets/screenshots/${(r.path === '') ? 'home' : r.path}.png`
+const paths: string[] = Object.keys(environment.pages)
+  .filter((key) => environment.pages[key].enabled || key === 'home')
+  .map((key) => environment.pages[key].path);
+
+const crawlable = paths
+  .map((path) => ({
+    path,
+    imagePath: `./src/assets/screenshots/${(path === '') ? 'home' : path}.png`
   }));
 
 (async () => {

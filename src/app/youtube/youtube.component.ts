@@ -2,17 +2,15 @@ import { Component } from '@angular/core';
 
 import { MetaService } from '../core/services/meta.service';
 import data from './data';
+import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-code',
-  templateUrl: './code.component.html',
-  styleUrls: ['./code.component.scss']
+  selector: 'app-youtube',
+  templateUrl: './youtube.component.html',
+  styleUrls: ['./youtube.component.scss']
 })
-export class CodeComponent {
-  private _meta = {
-    title: 'Code',
-    description: 'Some of the best code I\'ve written, available for everyone!'
-  };
+export class YoutubeComponent {
+  private _meta = environment.pages.youtube;
 
   constructor(metaService: MetaService) {
     metaService.setAll(this._meta);

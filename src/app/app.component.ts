@@ -32,7 +32,7 @@ export class AppComponent {
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
   get title(): string {
-    return environment.name;
+    return environment.site.name;
   }
   get isHandset$(): Observable<boolean> {
     return this._isHandset$;

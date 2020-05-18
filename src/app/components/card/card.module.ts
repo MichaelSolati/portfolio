@@ -19,6 +19,8 @@ import { ExperienceCardComponent } from './experience-card/experience-card.compo
     SharedModule
   ],
   exports: [
+    MatButtonModule,
+    MatCardModule,
     CardComponent,
     ExperienceCardComponent
   ]

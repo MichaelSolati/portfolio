@@ -11,15 +11,15 @@ import { environment } from './src/environments/environment.prod';
 
 const skipPrompts = (process.argv).find((a) => ['--skipPrompts', '-S'].includes(a));
 const accounts = {
-  devto: environment.devto || process.env.DEVTO,
-  github: environment.github || process.env.GITHUB,
+  devto: environment.pages.devto.username || process.env.DEVTO,
+  github: environment.pages.github.username || process.env.GITHUB,
   linkedin: {
-    profile: environment.linkedin || process.env.LINKEDIN_ACCOUNT,
-    email: (environment.linkedin || process.env.LINKEDIN_ACCOUNT) && (environment.email || process.env.LINKEDIN_EMAIL),
+    profile: environment.pages.home.username || process.env.LINKEDIN_ACCOUNT,
+    email: (environment.pages.home.username || process.env.LINKEDIN_ACCOUNT) && (environment.site.email || process.env.LINKEDIN_EMAIL),
     password: process.env.LINKEDIN_PASSWORD,
   },
   youtube: {
-    playlist: environment.youtube || process.env.YOUTUBE,
+    playlist: environment.pages.youtube.playlist || process.env.YOUTUBE,
     apikey: environment.firebase.apiKey || process.env.YOUTUBE_APIKEY,
   }
 };
@@ -66,9 +66,14 @@ const writeFile = (folder: string, json: any): void => {
             date: post.published_at,
           }));
 
-        writeFile('articles', posts);
+        writeFile('devto', posts);
+        console.log('Saved dev.to posts');
+      })
+      .catch(() => {
+        console.log('Could not save dev.to posts.')
       });
-    console.log('Saved dev.to posts');
+  } else {
+    writeFile('devto', []);
   }
 
   // GitHub
@@ -92,10 +97,13 @@ const writeFile = (folder: string, json: any): void => {
               date: repo.updated_at,
             }));
 
-          writeFile('code', repos);
+          writeFile('github', repos);
+          console.log('Saved GitHub repos.');
         }
-      });
-    console.log('Saved GitHub repos.');
+      })
+      .catch(() => console.log('Could not save GitHub repos.'));
+  } else {
+    writeFile('github', []);
   }
 
   // LinkedIn
@@ -315,6 +323,8 @@ const writeFile = (folder: string, json: any): void => {
         console.log('Could not save LinkedIn profile.');
       }
     }
+  } else {
+    writeFile('home', {});
   }
 
   // YouTube
@@ -345,11 +355,14 @@ const writeFile = (folder: string, json: any): void => {
                 date: video.contentDetails.videoPublishedAt,
               }));
 
-            writeFile('talks', videos);
+            writeFile('youtube', videos);
+            console.log('Saved YouTube videos.');
           }
-        });
-      console.log('Saved YouTube videos.');
+        })
+        .catch(() => console.log('Could not save YouTube videos.'));
     }
+  } else {
+    writeFile('youtube', []);
   }
 
   process.exit(0);

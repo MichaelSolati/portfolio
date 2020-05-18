@@ -1,7 +1,0 @@
-{
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "experimentalDecorators": true
-  }
-}

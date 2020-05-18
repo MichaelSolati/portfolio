@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { BannerModule } from '../components/banner';
 import { CardModule } from '../components/card';
-import { CodeRoutingModule } from './code-routing.module';
-import { CodeComponent } from './code.component';
+import { YoutubeRoutingModule } from './youtube-routing.module';
+import { YoutubeComponent } from './youtube.component';
 
 @NgModule({
   declarations: [
-    CodeComponent
+    YoutubeComponent
   ],
   imports: [
     CommonModule,
     BannerModule,
     CardModule,
-    CodeRoutingModule
+    YoutubeRoutingModule
   ]
 })
-export class CodeModule { }
+export class YoutubeModule { }

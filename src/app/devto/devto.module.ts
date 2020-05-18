@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { BannerModule } from '../components/banner';
 import { CardModule } from '../components/card';
-import { TalksRoutingModule } from './talks-routing.module';
-import { TalksComponent } from './talks.component';
+import { DevtoRoutingModule } from './devto-routing.module';
+import { DevtoComponent } from './devto.component';
 
 @NgModule({
   declarations: [
-    TalksComponent
+    DevtoComponent
   ],
   imports: [
     CommonModule,
     BannerModule,
     CardModule,
-    TalksRoutingModule
+    DevtoRoutingModule
   ]
 })
-export class TalksModule { }
+export class DevtoModule { }

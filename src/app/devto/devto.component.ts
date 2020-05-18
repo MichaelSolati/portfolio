@@ -2,17 +2,15 @@ import { Component } from '@angular/core';
 
 import { MetaService } from '../core/services/meta.service';
 import data from './data';
+import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss']
+  selector: 'app-devto',
+  templateUrl: './devto.component.html',
+  styleUrls: ['./devto.component.scss']
 })
-export class ArticlesComponent {
-  private _meta = {
-    title: 'Articles',
-    description: 'Stories, guides, and tutorials for developers by me.'
-  };
+export class DevtoComponent {
+  private _meta = environment.pages.devto;
 
   constructor(metaService: MetaService) {
     metaService.setAll(this._meta);

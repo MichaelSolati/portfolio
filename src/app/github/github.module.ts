@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { BannerModule } from '../components/banner';
 import { CardModule } from '../components/card';
-import { ArticlesRoutingModule } from './articles-routing.module';
-import { ArticlesComponent } from './articles.component';
+import { GithubRoutingModule } from './github-routing.module';
+import { GithubComponent } from './github.component';
 
 @NgModule({
   declarations: [
-    ArticlesComponent
+    GithubComponent
   ],
   imports: [
     CommonModule,
     BannerModule,
     CardModule,
-    ArticlesRoutingModule
+    GithubRoutingModule
   ]
 })
-export class ArticlesModule { }
+export class GithubModule { }

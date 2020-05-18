@@ -12,13 +12,13 @@ export class MetaService {
 
   setAll({ title, description } : GoogleMeta): void {
     const path = this._router.url.split('?')[0];
-    const twitter = environment.twitter;
+    const twitter = environment.site.twitter;
     this._ngmeta.setAll({
-      title: title + ' | ' + environment.name,
+      title: title + ' | ' + environment.site.name,
       description,
-      image: `${environment.site.config.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`,
+      image: `${environment.site.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`,
       twitter,
-      canonical: environment.site.config.baseURL + path
+      canonical: environment.site.baseURL + path
     })
   }
 }
