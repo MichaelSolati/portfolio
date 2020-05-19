@@ -83,27 +83,39 @@ const defaultData = {};
   // dev.to
   if (accounts.devto) {
     console.log('Fetching dev.to posts');
-    await fetch(`https://dev.to/api/articles?username=${accounts.devto}`)
-      .then(res => res.json())
-      .then(posts => {
-        posts = posts
-          .filter(() => posts.type_of !== 'article')
-          .sort((a, b) => (new Date(b.published_at).getTime() - new Date(a.published_at).getTime()))
-          .slice(0, 24)
-          .map((post) => ({
-            title: post.title,
-            description: post.description,
-            url: post.url,
-            src: post.cover_image || post.social_image,
-            date: post.published_at,
-          }));
+    const res = await fetch(`https://dev.to/api/articles?username=${accounts.devto}`);
+    try {
+      let posts = await res.json();
+      const devtoAssetsPath = path.join('src', 'assets', 'devto');
+      rimraf.sync(devtoAssetsPath);
+      mkdirSync(devtoAssetsPath);
 
-        writeDataTs('devto', posts);
-        console.log('Saved dev.to posts');
-      })
-      .catch(() => {
-        console.log('Could not save dev.to posts.')
-      });
+      const parsed = [];
+
+      posts = posts.filter(() => posts.type_of !== 'article')
+        .sort((a, b) => (new Date(b.published_at).getTime() - new Date(a.published_at).getTime()))
+        .slice(0, 24)
+
+      for (let post of posts) {
+        const filename = `${post.slug}.webp`;
+        const thumbnail = post.cover_image || post.social_image;
+        await saveImagetoWebP(thumbnail, path.join(devtoAssetsPath, filename));
+        const src = `./assets/devto/${filename}`;
+
+        parsed.push({
+          title: post.title,
+          description: post.description,
+          url: post.url,
+          src,
+          date: post.published_at,
+        });
+      }
+
+      writeDataTs('devto', parsed);
+      console.log('Saved dev.to posts');
+    } catch {
+      console.log('Could not save dev.to posts.')
+    }
 
     console.log('Getting profile picture from dev.to');
     await fetch(`https://dev.to/${accounts.devto}`)
@@ -426,24 +438,37 @@ const defaultData = {};
 
     if (accounts.youtube.apikey) {
       console.log('Fetching YouTube videos.');
-      await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=24&playlistId=${accounts.youtube.playlist}&key=${accounts.youtube.apikey}`)
-        .then(res => res.json())
-        .then(playlist => {
-          if (Array.isArray(playlist.items)) {
-            const videos = playlist.items
-              .map((video) => ({
-                title: video.snippet.title,
-                description: cleanText(video.snippet.description),
-                url: `https://youtu.be/${video.contentDetails.videoId}`,
-                src: (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url,
-                date: video.contentDetails.videoPublishedAt,
-              }));
+      const res = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=24&playlistId=${accounts.youtube.playlist}&key=${accounts.youtube.apikey}`);
+      try {
+        const playlist = await res.json();
+        if (Array.isArray(playlist.items)) {
+          const youtubeAssetsPath = path.join('src', 'assets', 'youtube');
+          rimraf.sync(youtubeAssetsPath);
+          mkdirSync(youtubeAssetsPath);
 
-            writeDataTs('youtube', videos);
-            console.log('Saved YouTube videos.');
+          const videos = [];
+
+          for (let video of playlist.items) {
+            const filename = `${video.contentDetails.videoId}.webp`;
+            const thumbnail = (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url;
+            await saveImagetoWebP(thumbnail, path.join(youtubeAssetsPath, filename));
+            const src = `./assets/youtube/${filename}`;
+
+            videos.push({
+              title: video.snippet.title,
+              description: cleanText(video.snippet.description),
+              url: `https://youtu.be/${video.contentDetails.videoId}`,
+              src,
+              date: video.contentDetails.videoPublishedAt,
+            });
           }
-        })
-        .catch(() => console.log('Could not save YouTube videos.'));
+
+          writeDataTs('youtube', videos);
+          console.log('Saved YouTube videos.');
+        }
+      } catch {
+        console.log('Could not save YouTube videos.')
+      }
     }
   } else {
     writeDataTs('youtube', []);
