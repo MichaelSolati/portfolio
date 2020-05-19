@@ -3,25 +3,25 @@ const data = [
 		"title": "geofirestore-js",
 		"description": "Location-based querying and filtering using Firebase's Firestore",
 		"url": "https://github.com/MichaelSolati/geofirestore-js",
-		"date": "2020-05-18T22:32:34Z"
+		"date": "2020-05-19T08:15:42Z"
 	},
 	{
 		"title": "geokit",
 		"description": "An assortment of geolocation related tools, all packaged in one easy to use kit.",
 		"url": "https://github.com/MichaelSolati/geokit",
-		"date": "2020-03-29T14:29:19Z"
+		"date": "2020-05-19T19:27:08Z"
 	},
 	{
 		"title": "deno-cloud-run",
-		"description": null,
+		"description": "A sample Deno application that can be deployed to Google Cloud Run using a Docker container.",
 		"url": "https://github.com/MichaelSolati/deno-cloud-run",
-		"date": "2020-05-16T01:34:50Z"
+		"date": "2020-05-19T19:53:10Z"
 	},
 	{
 		"title": "ngmeta",
 		"description": "A simple tool for updating meta-tags in an Angular app.",
 		"url": "https://github.com/MichaelSolati/ngmeta",
-		"date": "2020-05-17T01:20:11Z"
+		"date": "2020-05-19T19:30:29Z"
 	},
 	{
 		"title": "aog-and-typeform",

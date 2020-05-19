@@ -73,6 +73,7 @@
     "start-server-and-test": "^1.11.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webp-converter": "^2.2.3"
   }
 }

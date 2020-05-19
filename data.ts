@@ -4,6 +4,8 @@ import fetch from 'node-fetch';
 import { createWriteStream, readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 import * as puppeteer from 'puppeteer';
+import { tmpdir } from 'os';
+const webp = require('webp-converter');
 const streamPipeline = require('util').promisify(require('stream').pipeline)
 const scrollToBottom = require('scroll-to-bottomjs');
 const JSDOM = require('jsdom').JSDOM;
@@ -49,6 +51,18 @@ const writeDataTs = (folder: string, json: any): void => {
   const file = `const data = ${JSON.stringify(json, null, '\t')};\nexport default data;`;
   writeFileSync(appFolder, file);
 };
+
+const toWebP = (input: string, output: string): Promise<void> => {
+  return new Promise((res, rej) => {
+    webp.cwebp(input, output, '-q 100', (status) => {
+      if (status === '100') {
+        res();
+      } else {
+        rej();
+      }
+    });
+  });
+}
 
 const defaultData = {};
 
@@ -104,15 +118,18 @@ const defaultData = {};
           throw new Error();
         }
         const fileName = `profile.${response.headers.get('content-type').split('/').pop()}`;
-        const imagePath = path.join('src', 'assets', fileName);
-        await streamPipeline(response.body, createWriteStream(imagePath));
-        defaultData['image'] = fileName;
+
+        const tempProfilePath = path.join(tmpdir(), fileName);
+
+        await streamPipeline(response.body, createWriteStream(tempProfilePath));
+        await toWebP(tempProfilePath, path.join('src', 'assets', 'profile.webp'));
+        defaultData['image'] = './assets/profile.webp';
         console.log('Saved dev.to profile picture.');
 
         const iconsPath = path.join('src', 'assets', 'icons');
         const pwaSizes = [72, 96, 128, 144, 152, 192, 384, 512];
         pwaSizes.forEach(async (px) => {
-          await sharp(imagePath).resize({ height: px, width: px }).toFile(path.join(iconsPath, `icon-${px}x${px}.png`));
+          await sharp(tempProfilePath).resize({ height: px, width: px }).toFile(path.join(iconsPath, `icon-${px}x${px}.png`));
         });
 
         const png = readFileSync(path.join(iconsPath, 'icon-72x72.png'));

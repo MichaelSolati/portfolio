@@ -170,6 +170,6 @@ const data = {
 			"type": "work"
 		}
 	],
-	"image": "profile.jpeg"
+	"image": "./assets/profile.webp"
 };
 export default data;
