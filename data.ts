@@ -59,7 +59,7 @@ const saveImagetoWebP = (src: string, saveTo: string): Promise<void> => {
       if (extension && extension === 'gif') {
         webp.gwebp(input, output, '-q 80', (s) => (s === '100') ? resolve(input) : reject())
       } else {
-        webp.cwebp(input, output, '-q 100', (s) => (s === '100') ? resolve(input) : reject());
+        webp.cwebp(input, output, '-q 80', (s) => (s === '100') ? resolve(input) : reject());
       }
     });
   };
