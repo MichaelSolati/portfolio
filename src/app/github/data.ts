@@ -3,7 +3,7 @@ const data = [
 		"title": "geofirestore-js",
 		"description": "Location-based querying and filtering using Firebase's Firestore",
 		"url": "https://github.com/MichaelSolati/geofirestore-js",
-		"date": "2020-05-18T11:08:33Z"
+		"date": "2020-05-18T22:32:34Z"
 	},
 	{
 		"title": "geokit",

@@ -1,12 +1,14 @@
 require('dotenv').config();
 import * as prompts from 'prompts';
 import fetch from 'node-fetch';
-import { createWriteStream, writeFileSync } from 'fs';
+import { createWriteStream, readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 import * as puppeteer from 'puppeteer';
 const streamPipeline = require('util').promisify(require('stream').pipeline)
 const scrollToBottom = require('scroll-to-bottomjs');
 const JSDOM = require('jsdom').JSDOM;
+const sharp = require('sharp');
+const pngToIco = require('png-to-ico');
 
 import { environment } from './src/environments/environment.prod';
 
@@ -51,6 +53,19 @@ const writeDataTs = (folder: string, json: any): void => {
 const defaultData = {};
 
 (async () => {
+  // webmanifest
+  if (environment.site.name) {
+    console.log('Updating `manifest.webmanifest`s');
+    ['manifest.webmanifest', 'manifest.dark.webmanifest'].forEach((fileName) => {
+      const filePath = path.join('src', fileName);
+      const manifest = JSON.parse(readFileSync(filePath, 'utf8'));
+      manifest.name = environment.site.name;
+      manifest.short_name = environment.site.name;
+      writeFileSync(filePath, JSON.stringify(manifest, null, '\t'));
+    });
+    console.log('Updated `manifest.webmanifest`s');
+  }
+
   // dev.to
   if (accounts.devto) {
     console.log('Fetching dev.to posts');
@@ -83,8 +98,8 @@ const defaultData = {};
         const dom = new JSDOM(html);
         const document = dom.window.document;
         const image = document.querySelector('img.profile-pic');
-        const src = image.getAttribute('src');
-        const response = await fetch(src.replace('h_320', 'h_1000').replace('w_320', 'w_1000'));
+        const src = image.getAttribute('src').replace('h_320', 'h_1000').replace('w_320', 'w_1000');
+        const response = await fetch(src);
         if (!response.ok) {
           throw new Error();
         }
@@ -93,6 +108,17 @@ const defaultData = {};
         await streamPipeline(response.body, createWriteStream(imagePath));
         defaultData['image'] = fileName;
         console.log('Saved dev.to profile picture.');
+
+        const iconsPath = path.join('src', 'assets', 'icons');
+        const pwaSizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        pwaSizes.forEach(async (px) => {
+          await sharp(imagePath).resize({ height: px, width: px }).toFile(path.join(iconsPath, `icon-${px}x${px}.png`));
+        });
+
+        const png = readFileSync(path.join(iconsPath, 'icon-72x72.png'));
+        await pngToIco(png).then(buf => {
+          writeFileSync(path.join('src', 'favicon.ico'), buf);
+        });
       })
       .catch(() => {
         console.log('Could not save dev.to profile picture.')
