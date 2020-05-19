@@ -21,7 +21,9 @@ const crawlable = paths
 
   for (let route of crawlable) {
     console.log(`Taking screenshot of "/${route.path}"`);
-    await page.goto('http://localhost:5000/' + route.path, { waitUntil: 'networkidle0' });
+    try {
+      await page.goto('http://localhost:5000/' + route.path, { waitUntil: 'networkidle2', timeout: 10000 });
+    } catch {}
     await page.screenshot({ path: route.imagePath });
   }
 
