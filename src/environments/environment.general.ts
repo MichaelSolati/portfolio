@@ -20,7 +20,7 @@ export const environment = {
       name: 'Articles',
       path: 'articles',
       username: 'michaelsolati',
-      title: 'Articles',
+      title: 'Articles | Michael Solati',
       header: 'Articles',
       description: 'Stories, guides, and tutorials for developers by me.'
     },
@@ -29,7 +29,7 @@ export const environment = {
       name: 'Code',
       path: 'code',
       username: 'MichaelSolati',
-      title: 'Code',
+      title: 'Code | Michael Solati',
       header: 'Code',
       description: 'Some of the best code I\'ve written, available for everyone!'
     },
@@ -38,7 +38,7 @@ export const environment = {
       name: 'Home',
       path: '',
       username: 'michaelsolati', // For LinkedIn
-      title: 'Home',
+      title: 'Home | Michael Solati',
       header: 'Michael Solati',
       description: null // Leave empty to default to LinkedIn description
     },
@@ -47,7 +47,7 @@ export const environment = {
       name: 'Talks',
       path: 'talks',
       playlist: 'PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl',
-      title: 'Talks',
+      title: 'Talks | Michael Solati',
       header: 'Talks',
       description: 'From major conferences to smaller meetups, I\'ve spoken at a slew of events.'
     }
