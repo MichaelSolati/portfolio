@@ -38,10 +38,7 @@ import { environment } from '../environments/environment';
 })
 export class AppModule {
   constructor(metaService: Meta, @Inject(DOCUMENT) dom: any) {
-    document.addEventListener('colorschemechange', (e) => {
-      console.log(e)
-    });
-    if (window && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         const linkElement: HTMLElement = dom.querySelector("link[rel=\'manifest\']");
         linkElement.setAttribute('href', 'manifest.dark.webmanifest');

@@ -11,6 +11,9 @@ export const ssr = functions.https.onRequest((request, response) => {
   //@ts-ignore
   response.render = function (view: string, options: object): void {
     _render.bind(this)(view, options, (err: Error, html: string) => {
+      if (err) {
+        console.error(err);
+      }
       response.send(html);
     });
   };
