@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
+  "description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
