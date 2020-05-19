@@ -17,6 +17,7 @@ const crawlable = paths
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 0.5 });
+  await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);
 
   for (let route of crawlable) {
     console.log(`Taking screenshot of "/${route.path}"`);
