@@ -4,7 +4,7 @@ import * as functions from 'firebase-functions';
 // https://firebase.google.com/docs/functions/typescript
 
 export const ssr = functions.https.onRequest((request, response) => {
-  response.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+  response.set('Cache-Control', 'public, max-age=3600, s-maxage=43200');
   const app = require(`${process.cwd()}/dist/portfolio/server/main`).app();
 
   const _render = response.render;

@@ -4,19 +4,19 @@
       <mat-card id="profile-card">
         <div class="row">
           <div *ngIf="data.image" class="d-none d-sm-block col-sm-6 col-lg-4">
-            <img class="desktop-image" [src]="'./assets/'+data.image" [alt]="meta.header">
+            <img class="desktop-image" loading="lazy" [src]="'./assets/'+data.image" [alt]="meta.header">
           </div>
           <div class="col-xs-12" [ngClass]="{ 'col-sm-6': data.image, 'col-lg-8': data.image}">
             <mat-card-header>
-              <mat-card-title>{{ meta.header }}</mat-card-title>
+              <mat-card-title><h1>{{ meta.header }}</h1></mat-card-title>
               <mat-card-subtitle *ngIf="data.title">{{ data.title }}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image *ngIf="data.image" class="d-block d-sm-none" [src]="'./assets/'+data.image"
+            <img mat-card-image loading="lazy" *ngIf="data.image" class="d-block d-sm-none" [src]="'./assets/'+data.image"
               [alt]="meta.header">
             <mat-card-content>
               <p>{{ meta.description }}</p>
               <div class="social-row">
-                <a *ngFor="let icon of icons" [href]="icon.href" target="_blank" class="social-icon"
+                <a *ngFor="let icon of icons" [href]="icon.href" target="_blank" rel="noopener" class="social-icon"
                   [ngSwitch]="icon.key" [attr.aria-label]="icon.key">
                   <ng-container>
                     <app-devto *ngSwitchCase="'devto'"></app-devto>

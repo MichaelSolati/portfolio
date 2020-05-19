@@ -27,7 +27,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/manifest.dark.webmanifest"
+              "src/manifest.dark.webmanifest",
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap-grid.scss",

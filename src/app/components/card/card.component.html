@@ -2,11 +2,11 @@
   <mat-card-header>
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
-  <img *ngIf="src" mat-card-image [src]="src" [alt]="title">
+  <img *ngIf="src" mat-card-image loading="lazy" [src]="src" [alt]="title">
   <mat-card-content>
     <p>{{ description | limitText }}</p>
   </mat-card-content>
   <mat-card-actions *ngIf="url">
-    <a mat-button [href]="url" target="_blank">{{ buttonText }}</a>
+    <a mat-button [href]="url" target="_blank" rel="noopener">{{ buttonText }}</a>
   </mat-card-actions>
 </mat-card>
