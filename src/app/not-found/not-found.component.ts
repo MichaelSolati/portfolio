@@ -26,8 +26,8 @@ export class NotFoundComponent {
     }
   }
 
-  get home(): string {
-    return environment.pages.home.path;
+  get homePath(): string[] {
+    return (environment.pages.home.path === '') ? ['/'] : ['/', environment.pages.home.path];
   }
 
   get meta(): any {

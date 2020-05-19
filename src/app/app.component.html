@@ -7,15 +7,17 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <a class="inherit" [routerLink]="['/']">{{ title }}</a>
-      <span *ngIf="!(isHandset$ | async)" class="toolbar-spacer"></span>
-      <ng-template ngFor let-path [ngForOf]="paths">
-        <a *ngIf="!(isHandset$ | async) && !path.hideInNav" mat-button
-          [routerLink]="path.link">{{path.name}}</a>
+      <ng-container *ngIf="isHandset$ | async, else elseTitle">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </ng-container>
+      <ng-template #elseTitle>
+        <a class="inherit" [routerLink]="homePath">{{ title }}</a>
+        <span class="toolbar-spacer"></span>
+        <ng-template ngFor let-path [ngForOf]="paths">
+          <a *ngIf="!path.hideInNav" mat-button [routerLink]="path.link">{{path.name}}</a>
+        </ng-template>
       </ng-template>
     </mat-toolbar>
     <router-outlet></router-outlet>
