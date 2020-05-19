@@ -54,13 +54,22 @@ const writeDataTs = (folder: string, json: any): void => {
 };
 
 const saveImagetoWebP = (src: string, saveTo: string): Promise<void> => {
-  const toWebP = (i, o): Promise<void> => new Promise((r, e) => webp.cwebp(i, o, '-q 100', (s) => (s === '100') ? r(i) : e()));
+  const toWebP = (input, output, extension?: string): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      if (extension && extension === 'gif') {
+        webp.gwebp(input, output, '-q 80', (s) => (s === '100') ? resolve(input) : reject())
+      } else {
+        webp.cwebp(input, output, '-q 100', (s) => (s === '100') ? resolve(input) : reject());
+      }
+    });
+  };
   return fetch(src).then(async (response) => {
     if (!response.ok) throw new Error();
-    const fileName = `image.${response.headers.get('content-type').split('/').pop()}`;
+    const extension = response.headers.get('content-type').split('/').pop();
+    const fileName = `image.${extension}`;
     const tempProfilePath = path.join(tmpdir(), fileName);
     await streamPipeline(response.body, createWriteStream(tempProfilePath));
-    return toWebP(tempProfilePath, saveTo);
+    return toWebP(tempProfilePath, saveTo, extension);
   });
 }
 
@@ -99,7 +108,9 @@ const defaultData = {};
       for (let post of posts) {
         const filename = `${post.slug}.webp`;
         const thumbnail = post.cover_image || post.social_image;
-        await saveImagetoWebP(thumbnail, path.join(devtoAssetsPath, filename));
+        try {
+          await saveImagetoWebP(thumbnail, path.join(devtoAssetsPath, filename));
+        } catch {}
         const src = `./assets/devto/${filename}`;
 
         parsed.push({
@@ -264,7 +275,9 @@ const defaultData = {};
           let src = null;
           if (srcAttr.includes('http')) {
             const filename = `work-${i}.webp`;
-            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            try {
+              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            } catch {}
             src = `./assets/home/${filename}`;
           }
 
@@ -312,7 +325,9 @@ const defaultData = {};
           let src = null;
           if (srcAttr.includes('http')) {
             const filename = `education-${i}.webp`;
-            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            try {
+              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            } catch {}
             src = `./assets/home/${filename}`;
           }
 
@@ -358,7 +373,9 @@ const defaultData = {};
           let src = null;
           if (srcAttr.includes('http')) {
             const filename = `volunteer-${i}.webp`;
-            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            try {
+              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            } catch {}
             src = `./assets/home/${filename}`;
           }
 
@@ -451,7 +468,9 @@ const defaultData = {};
           for (let video of playlist.items) {
             const filename = `${video.contentDetails.videoId}.webp`;
             const thumbnail = (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url;
-            await saveImagetoWebP(thumbnail, path.join(youtubeAssetsPath, filename));
+            try {
+              await saveImagetoWebP(thumbnail, path.join(youtubeAssetsPath, filename));
+            } catch {}
             const src = `./assets/youtube/${filename}`;
 
             videos.push({
