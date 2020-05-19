@@ -1,4 +1,5 @@
 import * as functions from 'firebase-functions';
+import { readFileSync } from 'fs';
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
@@ -13,8 +14,10 @@ export const ssr = functions.https.onRequest((request, response) => {
     _render.bind(this)(view, options, (err: Error, html: string) => {
       if (err) {
         console.error(err);
+        response.send(readFileSync('./portfolio/browser/index.html', 'utf8'));
+      } else {
+        response.send(html);
       }
-      response.send(html);
     });
   };
 
