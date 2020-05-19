@@ -13,11 +13,11 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(js|css)",
+        "source": "**/*.!(html)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=43200"
+            "value": "max-age=86400"
           }
         ]
       }

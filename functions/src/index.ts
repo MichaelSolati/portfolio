@@ -5,7 +5,7 @@ import { readFileSync } from 'fs';
 // https://firebase.google.com/docs/functions/typescript
 
 export const ssr = functions.https.onRequest((request, response) => {
-  response.set('Cache-Control', 'public, max-age=3600, s-maxage=43200');
+  response.set('Cache-Control', 'public, max-age=3600, s-maxage=86400');
   const app = require(`${process.cwd()}/dist/portfolio/server/main`).app();
 
   const _render = response.render;
