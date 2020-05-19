@@ -16,11 +16,19 @@ export class DevtoComponent {
     metaService.setAll(this._meta);
   }
 
-  get meta() {
-    return this._meta;
+  get background(): string {
+    return './assets/backgrounds/devto.webp';
   }
 
   get data(): any[] {
     return data;
+  }
+
+  get meta() {
+    return this._meta;
+  }
+
+  get topics(): string {
+    return environment.pages.devto.topics.join(',');
   }
 }

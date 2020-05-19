@@ -22,7 +22,8 @@ export const environment = {
       username: 'michaelsolati',
       title: 'Articles | Michael Solati',
       header: 'Articles',
-      description: 'Stories, guides, and tutorials for developers by me.'
+      description: 'Stories, guides, and tutorials for developers by me.',
+      topics: ['writing', 'article']
     },
     github: {
       enabled: true,
@@ -31,7 +32,8 @@ export const environment = {
       username: 'MichaelSolati',
       title: 'Code | Michael Solati',
       header: 'Code',
-      description: 'Some of the best code I\'ve written, available for everyone!'
+      description: 'Some of the best code I\'ve written, available for everyone!',
+      topics: ['code', 'software', 'development']
     },
     home: {
       enabled: true, // Never disables
@@ -49,7 +51,8 @@ export const environment = {
       playlist: 'PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl',
       title: 'Talks | Michael Solati',
       header: 'Talks',
-      description: 'From major conferences to smaller meetups, I\'ve spoken at a slew of events.'
+      description: 'From major conferences to smaller meetups, I\'ve spoken at a slew of events.',
+      topics: ['conference', 'speaking']
     }
   }
 };
