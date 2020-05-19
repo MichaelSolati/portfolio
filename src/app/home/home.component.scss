@@ -8,7 +8,30 @@ img[mat-list-icon].mat-list-icon.custom-icon {
 mat-card {
   mat-card-header {
     margin: 0 -16px;
+    @media only screen and (max-width: 576px) and (min-width: 301px) {
+      margin: 0;
+    }
   }
+
+  img[mat-card-avatar] {
+    height: auto;
+    margin-bottom: 16px;
+    max-height: 100px;
+    max-width: 100px;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 300px) {
+    mat-card-header.mat-card-header {
+      flex-direction: column-reverse;
+    }
+    img[mat-card-avatar] {
+      border-radius: 0;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
 }
 
 mat-icon[mat-list-icon].mat-list-icon.custom-icon {

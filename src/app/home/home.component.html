@@ -8,11 +8,13 @@
           </div>
           <div class="col-xs-12" [ngClass]="{ 'col-sm-6': data.image, 'col-lg-8': data.image}">
             <mat-card-header>
-              <mat-card-title><h1>{{ meta.header }}</h1></mat-card-title>
+              <img mat-card-avatar loading="lazy" *ngIf="data.image" class="d-block d-sm-none"
+                [src]="'./assets/'+data.image" [alt]="meta.header">
+              <mat-card-title>
+                <h1>{{ meta.header }}</h1>
+              </mat-card-title>
               <mat-card-subtitle *ngIf="data.title">{{ data.title }}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image loading="lazy" *ngIf="data.image" class="d-block d-sm-none" [src]="'./assets/'+data.image"
-              [alt]="meta.header">
             <mat-card-content>
               <p>{{ meta.description }}</p>
               <div class="social-row">
