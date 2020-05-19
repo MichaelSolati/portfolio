@@ -5,7 +5,9 @@ export const environment = {
     databaseURL: 'https://michaelsolati-com.firebaseio.com',
     projectId: 'michaelsolati-com',
     storageBucket: 'michaelsolati-com.appspot.com',
-    messagingSenderId: '653176308527'
+    messagingSenderId: '653176308527',
+    appId: '1:653176308527:web:fda95f60e1170cfc55d7da',
+    measurementId: 'G-43TV7TLVQ1'
   },
   site: {
     baseURL: 'https://michaelsolati.com',
