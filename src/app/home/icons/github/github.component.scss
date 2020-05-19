@@ -1,0 +1,17 @@
+@import '../../../../styles/variables';
+
+:host {
+  display: block;
+  height: 48px;
+  width: 48px;
+
+  svg {
+    height: 48px;
+    width: 48px;
+    fill: $light-text;
+
+    @media (prefers-color-scheme: dark) {
+      fill: $dark-text;
+    }
+  }
+}

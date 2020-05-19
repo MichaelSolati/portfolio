@@ -169,6 +169,7 @@ const data = {
 			"icon": "business",
 			"type": "work"
 		}
-	]
+	],
+	"image": "profile.jpeg"
 };
 export default data;

@@ -5,16 +5,23 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { BannerModule } from '../components/banner';
 import { CardModule } from '../components/card';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ExperiencesPipe } from './experiences.pipe';
+import { TwitterComponent } from './icons/twitter/twitter.component';
+import { GithubComponent } from './icons/github/github.component';
+import { DevtoComponent } from './icons/devto/devto.component';
+import { LinkedinComponent } from './icons/linkedin/linkedin.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ExperiencesPipe
+    ExperiencesPipe,
+    TwitterComponent,
+    GithubComponent,
+    DevtoComponent,
+    LinkedinComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +29,6 @@ import { ExperiencesPipe } from './experiences.pipe';
     MatListModule,
     MatToolbarModule,
     MatMenuModule,
-    BannerModule,
     CardModule,
     HomeRoutingModule
   ]

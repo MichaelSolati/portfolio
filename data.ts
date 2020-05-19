@@ -1,9 +1,10 @@
 require('dotenv').config();
 import * as prompts from 'prompts';
 import fetch from 'node-fetch';
-import { writeFileSync } from 'fs';
+import { createWriteStream, writeFileSync } from 'fs';
 import * as path from 'path';
 import * as puppeteer from 'puppeteer';
+const streamPipeline = require('util').promisify(require('stream').pipeline)
 const scrollToBottom = require('scroll-to-bottomjs');
 const JSDOM = require('jsdom').JSDOM;
 
@@ -41,11 +42,13 @@ const cleanText = (text: string = ''): string => {
     .trim();
 };
 
-const writeFile = (folder: string, json: any): void => {
+const writeDataTs = (folder: string, json: any): void => {
   const appFolder = path.join('src', 'app', folder, 'data.ts');
   const file = `const data = ${JSON.stringify(json, null, '\t')};\nexport default data;`;
   writeFileSync(appFolder, file);
 };
+
+const defaultData = {};
 
 (async () => {
   // dev.to
@@ -66,14 +69,36 @@ const writeFile = (folder: string, json: any): void => {
             date: post.published_at,
           }));
 
-        writeFile('devto', posts);
+        writeDataTs('devto', posts);
         console.log('Saved dev.to posts');
       })
       .catch(() => {
         console.log('Could not save dev.to posts.')
       });
+
+    console.log('Getting profile picture from dev.to');
+    await fetch(`https://dev.to/${accounts.devto}`)
+      .then(res => res.text())
+      .then(async html => {
+        const dom = new JSDOM(html);
+        const document = dom.window.document;
+        const image = document.querySelector('img.profile-pic');
+        const src = image.getAttribute('src');
+        const response = await fetch(src.replace('h_320', 'h_1000').replace('w_320', 'w_1000'));
+        if (!response.ok) {
+          throw new Error();
+        }
+        const fileName = `profile.${response.headers.get('content-type').split('/').pop()}`;
+        const imagePath = path.join('src', 'assets', fileName);
+        await streamPipeline(response.body, createWriteStream(imagePath));
+        defaultData['image'] = fileName;
+        console.log('Saved dev.to profile picture.');
+      })
+      .catch(() => {
+        console.log('Could not save dev.to profile picture.')
+      });
   } else {
-    writeFile('devto', []);
+    writeDataTs('devto', []);
   }
 
   // GitHub
@@ -97,13 +122,13 @@ const writeFile = (folder: string, json: any): void => {
               date: repo.updated_at,
             }));
 
-          writeFile('github', repos);
+          writeDataTs('github', repos);
           console.log('Saved GitHub repos.');
         }
       })
       .catch(() => console.log('Could not save GitHub repos.'));
   } else {
-    writeFile('github', []);
+    writeDataTs('github', []);
   }
 
   // LinkedIn
@@ -144,7 +169,7 @@ const writeFile = (folder: string, json: any): void => {
           '.lt-line-clamp__more',
           '#experience-section button.pv-profile-section__see-more-inline',
           '#education-section button.pv-profile-section__see-more-inline',
-          'section.volunteering-section button.pv-profile-section__see-more-inline',
+          'section.volunteering-section button.pv-profile-section__see-more-inline'
         ];
         for (const buttonSelector of expandButtonsSelectors) {
           if (await page.$(buttonSelector) !== null) {
@@ -315,7 +340,7 @@ const writeFile = (folder: string, json: any): void => {
           }
         }
 
-        writeFile('home', profile);
+        writeDataTs('home', {...profile, ...defaultData});
 
         console.log('Saved LinkedIn profile.');
       } catch (e) {
@@ -324,7 +349,7 @@ const writeFile = (folder: string, json: any): void => {
       }
     }
   } else {
-    writeFile('home', {});
+    writeDataTs('home', defaultData);
   }
 
   // YouTube
@@ -355,14 +380,14 @@ const writeFile = (folder: string, json: any): void => {
                 date: video.contentDetails.videoPublishedAt,
               }));
 
-            writeFile('youtube', videos);
+            writeDataTs('youtube', videos);
             console.log('Saved YouTube videos.');
           }
         })
         .catch(() => console.log('Could not save YouTube videos.'));
     }
   } else {
-    writeFile('youtube', []);
+    writeDataTs('youtube', []);
   }
 
   process.exit(0);
