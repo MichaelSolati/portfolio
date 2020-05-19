@@ -1,7 +1,7 @@
 require('dotenv').config();
 import * as prompts from 'prompts';
 import fetch from 'node-fetch';
-import { createWriteStream, readFileSync, writeFileSync } from 'fs';
+import { createWriteStream, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import * as path from 'path';
 import * as puppeteer from 'puppeteer';
 import { tmpdir } from 'os';
@@ -11,6 +11,7 @@ const scrollToBottom = require('scroll-to-bottomjs');
 const JSDOM = require('jsdom').JSDOM;
 const sharp = require('sharp');
 const pngToIco = require('png-to-ico');
+const rimraf = require('rimraf');
 
 import { environment } from './src/environments/environment.prod';
 
@@ -52,15 +53,14 @@ const writeDataTs = (folder: string, json: any): void => {
   writeFileSync(appFolder, file);
 };
 
-const toWebP = (input: string, output: string): Promise<void> => {
-  return new Promise((res, rej) => {
-    webp.cwebp(input, output, '-q 100', (status) => {
-      if (status === '100') {
-        res();
-      } else {
-        rej();
-      }
-    });
+const saveImagetoWebP = (src: string, saveTo: string): Promise<void> => {
+  const toWebP = (i, o): Promise<void> => new Promise((r, e) => webp.cwebp(i, o, '-q 100', (s) => (s === '100') ? r(i) : e()));
+  return fetch(src).then(async (response) => {
+    if (!response.ok) throw new Error();
+    const fileName = `image.${response.headers.get('content-type').split('/').pop()}`;
+    const tempProfilePath = path.join(tmpdir(), fileName);
+    await streamPipeline(response.body, createWriteStream(tempProfilePath));
+    return toWebP(tempProfilePath, saveTo);
   });
 }
 
@@ -113,16 +113,7 @@ const defaultData = {};
         const document = dom.window.document;
         const image = document.querySelector('img.profile-pic');
         const src = image.getAttribute('src').replace('h_320', 'h_1000').replace('w_320', 'w_1000');
-        const response = await fetch(src);
-        if (!response.ok) {
-          throw new Error();
-        }
-        const fileName = `profile.${response.headers.get('content-type').split('/').pop()}`;
-
-        const tempProfilePath = path.join(tmpdir(), fileName);
-
-        await streamPipeline(response.body, createWriteStream(tempProfilePath));
-        await toWebP(tempProfilePath, path.join('src', 'assets', 'profile.webp'));
+        const tempProfilePath = await saveImagetoWebP(src, path.join('src', 'assets', 'profile.webp'));
         defaultData['image'] = './assets/profile.webp';
         console.log('Saved dev.to profile picture.');
 
@@ -244,24 +235,35 @@ const defaultData = {};
 
         profile['experiences'] = [];
 
-        // START EXPERIENCE
-        const experience = document.querySelector('#experience-section').querySelector('ul').children;
-        // Using a for loop so we can use await inside of it
-        for (const node of experience) {
-          const titleElement = node.querySelector('h3');
+        const homeAssetsPath = path.join('src', 'assets', 'home');
+        rimraf.sync(homeAssetsPath);
+        mkdirSync(homeAssetsPath);
+
+        // START WORK EXPERIENCE
+        const workExperiences: any[] = Array.from(document.querySelector('#experience-section').querySelector('ul').children).slice(0, 6);
+        for (let i = 0; i < workExperiences.length; i++) {
+          const experience = workExperiences[i];
+
+          const titleElement = experience.querySelector('h3');
           const title = titleElement?.textContent || null;
 
-          const srcElement = node.querySelector('img.pv-entity__logo-img');
-          const src = srcElement?.getAttribute('src') || null;
+          const srcElement = experience.querySelector('img.pv-entity__logo-img');
+          const srcAttr = srcElement?.getAttribute('src') || null;
+          let src = null;
+          if (srcAttr.includes('http')) {
+            const filename = `work-${i}.webp`;
+            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            src = `./assets/home/${filename}`;
+          }
 
-          const companyElement = node.querySelector('.pv-entity__secondary-title');
+          const companyElement = experience.querySelector('.pv-entity__secondary-title');
           const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
           const company = companyElementClean?.textContent || null;
 
-          const descriptionElement = node.querySelector('.pv-entity__description');
+          const descriptionElement = experience.querySelector('.pv-entity__description');
           const description = descriptionElement?.textContent || null;
 
-          const dateRangeElement = node.querySelector('.pv-entity__date-range span:nth-child(2)');
+          const dateRangeElement = experience.querySelector('.pv-entity__date-range span:nth-child(2)');
           const dateRangeText = dateRangeElement?.textContent || null;
 
           const startPart = dateRangeText?.split('–')[0] || null;
@@ -273,7 +275,7 @@ const defaultData = {};
 
           profile['experiences'].push({
             title: cleanText(title),
-            src: src.includes('http') ? src : null,
+            src,
             institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -285,23 +287,30 @@ const defaultData = {};
         }
         // END EXPERIENCE
 
-        // START EDUCATION
-        const education = document.querySelector('#education-section').querySelector('ul').children;
-        for (const node of education) {
+        // START EDUCATION EXPERIENCE
+        const educationExperiences: any[] = Array.from(document.querySelector('#education-section').querySelector('ul').children).slice(0, 6);
+        for (let i = 0; i < educationExperiences.length; i++) {
+          const experience = educationExperiences[i];
 
-          const schoolElement = node.querySelector('h3.pv-entity__school-name');
+          const schoolElement = experience.querySelector('h3.pv-entity__school-name');
           const school = schoolElement?.textContent || null;
 
-          const srcElement = node.querySelector('img.pv-entity__logo-img');
-          const src = srcElement?.getAttribute('src') || null;
+          const srcElement = experience.querySelector('img.pv-entity__logo-img');
+          const srcAttr = srcElement?.getAttribute('src') || null;
+          let src = null;
+          if (srcAttr.includes('http')) {
+            const filename = `education-${i}.webp`;
+            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            src = `./assets/home/${filename}`;
+          }
 
-          const degreeElement = node.querySelector('.pv-entity__degree-name .pv-entity__comma-item');
+          const degreeElement = experience.querySelector('.pv-entity__degree-name .pv-entity__comma-item');
           const degree = degreeElement?.textContent || null;
 
-          const fieldElement = node.querySelector('.pv-entity__fos .pv-entity__comma-item');
+          const fieldElement = experience.querySelector('.pv-entity__fos .pv-entity__comma-item');
           const field = fieldElement?.textContent || null;
 
-          const dateRangeElement = node.querySelectorAll('.pv-entity__dates time');
+          const dateRangeElement = experience.querySelectorAll('.pv-entity__dates time');
 
           const startPart = dateRangeElement && dateRangeElement[0]?.textContent || null;
           const start = startPart || null
@@ -312,7 +321,7 @@ const defaultData = {};
 
           profile['experiences'].push({
             title: cleanText(degree),
-            src: src.includes('http') ? src : null,
+            src,
             institution: cleanText(school),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -324,24 +333,31 @@ const defaultData = {};
         }
         // END EDUCATION
 
-        // START VOLUNTEER
-        const volunteering = document.querySelector('.volunteering-section').querySelector('ul').children;
-        // Using a for loop so we can use await inside of it
-        for (const node of volunteering) {
-          const titleElement = node.querySelector('h3');
+        // START VOLUNTEER EXPERIENCE
+        const volunteerExperiences: any[] = Array.from(document.querySelector('.volunteering-section').querySelector('ul').children).slice(0, 6);
+        for (let i = 0; i < volunteerExperiences.length; i++) {
+          const experience = volunteerExperiences[i];
+
+          const titleElement = experience.querySelector('h3');
           const title = titleElement?.textContent || null;
 
-          const srcElement = node.querySelector('img.pv-entity__logo-img');
-          const src = srcElement?.getAttribute('src') || null;
+          const srcElement = experience.querySelector('img.pv-entity__logo-img');
+          const srcAttr = srcElement?.getAttribute('src') || null;
+          let src = null;
+          if (srcAttr.includes('http')) {
+            const filename = `volunteer-${i}.webp`;
+            await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
+            src = `./assets/home/${filename}`;
+          }
 
-          const companyElement = node.querySelector('.pv-entity__secondary-title');
+          const companyElement = experience.querySelector('.pv-entity__secondary-title');
           const companyElementClean = companyElement && companyElement?.querySelector('span') ? companyElement?.removeChild(companyElement.querySelector('span') as Node) && companyElement : companyElement || null;
           const company = companyElementClean?.textContent || null;
 
-          const descriptionElement = node.querySelector('.pv-entity__description');
+          const descriptionElement = experience.querySelector('.pv-entity__description');
           const description = descriptionElement?.textContent || null;
 
-          const dateRangeElement = node.querySelector('.pv-entity__date-range span:nth-child(2)');
+          const dateRangeElement = experience.querySelector('.pv-entity__date-range span:nth-child(2)');
           const dateRangeText = dateRangeElement?.textContent || null;
 
           const startPart = dateRangeText?.split('–')[0] || null;
@@ -353,7 +369,7 @@ const defaultData = {};
 
           profile['experiences'].push({
             title: cleanText(title),
-            src: src.includes('http') ? src : null,
+            src,
             institution: cleanText(company),
             start: new Date(cleanText(start)),
             end: new Date(cleanText(end)),
@@ -383,7 +399,7 @@ const defaultData = {};
           }
         }
 
-        writeDataTs('home', {...profile, ...defaultData});
+        writeDataTs('home', { ...profile, ...defaultData });
 
         console.log('Saved LinkedIn profile.');
       } catch (e) {

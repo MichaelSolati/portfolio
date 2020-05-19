@@ -6,7 +6,7 @@ const data = {
 	"experiences": [
 		{
 			"title": "Developer Program Engineer",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_100_100/0?e=1597881600&v=beta&t=7TeoYoUxIICClT7Rj6hIj4D8PBZGeQuDHeemVBIc_7w",
+			"src": "./assets/home/work-0.webp",
 			"institution": "Google",
 			"start": "2019-11-01T07:00:00.000Z",
 			"end": null,
@@ -17,7 +17,7 @@ const data = {
 		},
 		{
 			"title": "Google Developer Expert",
-			"src": "https://media-exp1.licdn.com/dms/image/C560BAQGQzbVdQyIevg/company-logo_100_100/0?e=1597881600&v=beta&t=YyS53ZjAMF5dfbTuQ1t_pdWlEEsdjMfpp3f4SLPUTEk",
+			"src": "./assets/home/volunteer-0.webp",
 			"institution": "Google Developers",
 			"start": "2019-05-01T07:00:00.000Z",
 			"end": "2019-11-01T07:00:00.000Z",
@@ -28,7 +28,7 @@ const data = {
 		},
 		{
 			"title": "GDG Organizer",
-			"src": "https://media-exp1.licdn.com/dms/image/C560BAQGQzbVdQyIevg/company-logo_100_100/0?e=1597881600&v=beta&t=YyS53ZjAMF5dfbTuQ1t_pdWlEEsdjMfpp3f4SLPUTEk",
+			"src": "./assets/home/volunteer-1.webp",
 			"institution": "Google Developers",
 			"start": "2016-01-01T08:00:00.000Z",
 			"end": "2019-11-01T07:00:00.000Z",
@@ -39,7 +39,7 @@ const data = {
 		},
 		{
 			"title": "Developer Advocate",
-			"src": "https://media-exp1.licdn.com/dms/image/C560BAQF33xjO3Ow7Xw/company-logo_100_100/0?e=1597881600&v=beta&t=G8SEHmvMbB_BXEJvNzOto_v2dI4Bw9X3uEdbhTLyUZo",
+			"src": "./assets/home/work-1.webp",
 			"institution": "Typeform.com",
 			"start": "2019-01-01T08:00:00.000Z",
 			"end": "2019-10-01T07:00:00.000Z",
@@ -50,7 +50,7 @@ const data = {
 		},
 		{
 			"title": "Front End Engineer",
-			"src": "https://media-exp1.licdn.com/dms/image/C560BAQHCx2BwfpokHA/company-logo_100_100/0?e=1597881600&v=beta&t=Kn5JsPlKxOfK4igXT4qFGhZVMFT1_QXDogBg_vhs82U",
+			"src": "./assets/home/work-2.webp",
 			"institution": "Sellpoints, Inc.",
 			"start": "2018-05-01T07:00:00.000Z",
 			"end": "2019-01-01T08:00:00.000Z",
@@ -60,10 +60,10 @@ const data = {
 			"type": "work"
 		},
 		{
-			"title": "Company Name Checkmate.Digital",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQGtfA9mFT2t0Q/company-logo_100_100/0?e=1597881600&v=beta&t=2w3r8tmI-nCsVzEoRit3nEqy1Tnbioy-NQmbN5xI8UE",
-			"institution": "",
-			"start": "2016-02-01T08:00:00.000Z",
+			"title": "Front End Engineer",
+			"src": "./assets/home/work-3.webp",
+			"institution": "Checkmate.Digital",
+			"start": "2015-10-01T07:00:00.000Z",
 			"end": "2018-05-01T07:00:00.000Z",
 			"current": false,
 			"description": "Lead development tasks within a fullstack scope such as creating REST API components, developing native applications for consumption of APIs, and cultivating user-friendly training programs. Provide continuous improvement of open source projects. Aggressively source and hire the majority of development staff including the current CTO.",
@@ -72,7 +72,7 @@ const data = {
 		},
 		{
 			"title": "Bachelor of Science (B.S.)",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQH1BMoeRv1ACA/company-logo_100_100/0?e=1597881600&v=beta&t=xWh5m3x0ZddRvJ4TjaeH9eE4ywpySi4x2k7X_gFsS8I",
+			"src": "./assets/home/education-0.webp",
 			"institution": "Southern Connecticut State University",
 			"start": "2012-01-01T00:00:00.000Z",
 			"end": "2018-01-01T00:00:00.000Z",
@@ -83,7 +83,7 @@ const data = {
 		},
 		{
 			"title": "Lead Developer",
-			"src": "https://media-exp1.licdn.com/dms/image/C510BAQEX5EismxdTYQ/company-logo_100_100/0?e=1597881600&v=beta&t=8bzNOX7JH3H35575-aZNmkphbvsVPlLoZlwvEe_NidU",
+			"src": "./assets/home/work-4.webp",
 			"institution": "Kricket App",
 			"start": "2017-01-01T08:00:00.000Z",
 			"end": "2017-11-01T07:00:00.000Z",
@@ -94,7 +94,7 @@ const data = {
 		},
 		{
 			"title": "Product Forum Top Contributor",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_100_100/0?e=1597881600&v=beta&t=7TeoYoUxIICClT7Rj6hIj4D8PBZGeQuDHeemVBIc_7w",
+			"src": "./assets/home/volunteer-2.webp",
 			"institution": "Google",
 			"start": "2011-06-01T07:00:00.000Z",
 			"end": "2016-12-01T08:00:00.000Z",
@@ -105,7 +105,7 @@ const data = {
 		},
 		{
 			"title": "Senior Apprentice",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQEqOTmWszVCiA/company-logo_100_100/0?e=1597881600&v=beta&t=_7DWJfCWvRyIRSCY0E2_bXGN95QVq4EhVHcwbXMRUCg",
+			"src": "./assets/home/volunteer-3.webp",
 			"institution": "Independent Software",
 			"start": "2015-09-01T07:00:00.000Z",
 			"end": "2016-12-01T08:00:00.000Z",
@@ -115,57 +115,13 @@ const data = {
 			"type": "volunteer"
 		},
 		{
-			"title": "Retail Sales Associate",
-			"src": "https://media-exp1.licdn.com/dms/image/C560BAQH8_x6knhzOKA/company-logo_100_100/0?e=1597881600&v=beta&t=D9AI9qWCs61t00WLJ_Z6ld4IuQJXabECfikxfHIz2co",
-			"institution": "T-Mobile",
-			"start": "2012-07-01T07:00:00.000Z",
-			"end": "2015-10-01T07:00:00.000Z",
-			"current": false,
-			"description": "Attended to the customer and develop customer trust and loyalty not only through sales, but also by solving their problems, attending to their needs, and treating them with utmost respect. Consistently made goals for measured metrics, as well as receiving recognition in the market for some metrics. Stayed knowledgeable and up-to-date with all products and services in order to assist customers in finding a perfect solution. … see more",
-			"icon": "business",
-			"type": "work"
-		},
-		{
 			"title": "A100 Program Apprentice",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQEqOTmWszVCiA/company-logo_100_100/0?e=1597881600&v=beta&t=_7DWJfCWvRyIRSCY0E2_bXGN95QVq4EhVHcwbXMRUCg",
+			"src": "./assets/home/work-5.webp",
 			"institution": "Independent Software",
 			"start": "2015-06-01T07:00:00.000Z",
-			"end": "2015-08-01T07:00:00.000Z",
+			"end": "2015-09-01T07:00:00.000Z",
 			"current": false,
 			"description": "Functionally led team as a Scrum Master while leveraging knowledge growth/training in categories of modern coding technologies and agile development. Utilized a wide toolset for software development projects and tasks.",
-			"icon": "business",
-			"type": "work"
-		},
-		{
-			"title": "Head Swim Coach (Blue Marlins of Greater New Haven)",
-			"src": "https://media-exp1.licdn.com/dms/image/C4D0BAQF-x1FICS6oRA/company-logo_100_100/0?e=1597881600&v=beta&t=7CYHR-qICZ4qosOgVsmuDjuOnL9Su8zkDCSSMG_6tMY",
-			"institution": "JCC Of Greater New Haven",
-			"start": "2009-09-01T07:00:00.000Z",
-			"end": "2015-03-01T08:00:00.000Z",
-			"current": false,
-			"description": "Organized training cycles with effective workouts, provided coaching and support, and taught swimmers valuable skills to practice both inside, and outside of the water; while also developing my own knowledge of coaching and the sport. Also managed a well balanced coaching staff, with focuses in communication and teaching amongst each other. Opened up new lines of effective communication with parents and administrative heads. Set up activities such as team spirit nights, and events with Olympic Athletes. … see more",
-			"icon": "business",
-			"type": "work"
-		},
-		{
-			"title": "MIS Intern",
-			"src": null,
-			"institution": "City of Meriden",
-			"start": "2012-06-01T07:00:00.000Z",
-			"end": "2012-09-01T07:00:00.000Z",
-			"current": false,
-			"description": "Used basic knowledge and skills obtained through education and on-the-job training to assist MIS (IT) team. Responsibilities include troubleshooting, software roll out, system maintenance, and assisting with transitions to new technologies used within our institution.",
-			"icon": "business",
-			"type": "work"
-		},
-		{
-			"title": "Marketing Intern",
-			"src": "https://media-exp1.licdn.com/dms/image/C4E0BAQGDIHHcdNgjUA/company-logo_100_100/0?e=1597881600&v=beta&t=7z5aqameruNIaEbJv9APnKS54cQP9IE9svuwjBIhArs",
-			"institution": "Jewish Federation of Greater New Haven",
-			"start": "2011-11-01T07:00:00.000Z",
-			"end": "2012-05-01T07:00:00.000Z",
-			"current": false,
-			"description": "Participated in planning and organization of needs for network designing. Helped marketing directors formatting pages for the website as well as emails. Responsible for designing and developing the new website using HTML, CSS, and JavaScript. Collected, edited, and customized content for the website. Developed new components for the new site while effectively obtaining project specifications and goals. … see more",
 			"icon": "business",
 			"type": "work"
 		}

@@ -68,6 +68,7 @@
     "prompts": "^2.3.2",
     "protractor": "~5.4.3",
     "puppeteer": "^3.0.4",
+    "rimraf": "^3.0.2",
     "scroll-to-bottomjs": "^1.1.0",
     "sharp": "^0.25.3",
     "start-server-and-test": "^1.11.0",
