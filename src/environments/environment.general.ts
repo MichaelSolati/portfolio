@@ -13,6 +13,7 @@ export const environment = {
     baseURL: 'https://michaelsolati.com',
     email: 'me@michaelsolati.com', // Should be same as LinkedIn login
     name: 'Michael Solati',
+    short_name: 'Michael',
     phone: '347.559.7399',
     twitter: 'MichaelSolati',
   },

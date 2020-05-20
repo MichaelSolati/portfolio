@@ -83,7 +83,7 @@ const defaultData = {};
       const filePath = path.join('src', fileName);
       const manifest = JSON.parse(readFileSync(filePath, 'utf8'));
       manifest.name = environment.site.name;
-      manifest.short_name = environment.site.name;
+      manifest.short_name = environment.site.short_name;
       writeFileSync(filePath, JSON.stringify(manifest, null, '\t'));
     });
     console.log('Updated `manifest.webmanifest`s');

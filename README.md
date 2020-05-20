@@ -28,6 +28,7 @@ interface Site {
   baseURL: string; // Url of where site will be hosted, remove trailing `/`.
   email: string; // Email address that can be used as a LinkedIn login.
   name: string; // Your name.
+  short_name: string; // Short name for PWA.
   phone?: string; // Don't worry about this.
   twitter: string; // Twitter username, avoid `@`.
 }
