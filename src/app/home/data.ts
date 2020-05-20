@@ -1,6 +1,6 @@
 const data = {
 	"fullName": "Michael (Mehdi) Solati",
-	"title": "Cirrus, alto cumulus, cirrostratus. Yea, I speak cloud. No biggie.",
+	"title": "Developer 🥑 Advocate",
 	"location": "San Francisco Bay Area",
 	"description": "I am obsessed with two things: coffee and the web. Luckily being in Developer Relations, I get my fill of both every single day- whether through building new applications, working on tools for developers, or sharing my experiences across the world!No amount of time is ever enough to do everything I want. So I have to stay moving by writing guides, building cool apps, teaching fledgling developers the voodoo magic of the web and most importantly Drinking coffee...",
 	"experiences": [
@@ -11,7 +11,7 @@ const data = {
 			"start": "2019-11-01T07:00:00.000Z",
 			"end": null,
 			"current": true,
-			"description": "",
+			"description": "Serve as as a liaison between Developer Advocacy, Technical Writing, Product Management, and Engineering. Actively connect with developers and speak externally about technologies on conference panels, at meet ups, and on blogs. Engage in the open source community in order to better advocate for the community’s needs. Promote the adoption of modern web technologies. Develop and maintain web.dev, Google's platform for guidance and analysis for web developers.",
 			"icon": "business",
 			"type": "work"
 		},
@@ -22,7 +22,7 @@ const data = {
 			"start": "2019-05-01T07:00:00.000Z",
 			"end": "2019-11-01T07:00:00.000Z",
 			"current": false,
-			"description": "",
+			"description": "Recognized by Google as having exemplary expertise in one or more of their Google Developers products. Actively supported developers, companies and tech communities by speaking at events, publishing content.",
 			"icon": "group",
 			"type": "volunteer"
 		},

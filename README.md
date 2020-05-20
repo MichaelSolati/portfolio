@@ -6,10 +6,10 @@ A portfolio designed for lazy developers all over the world. With little configu
 
 As a Developer 🥑 (Advocate) I speak at events, write blog posts, and maintain some libraries. I wanted to create a website that would showcase all of this, and I created this project to fetch from [dev.to](https://dev.to), [GitHub](https://github.com) and a [YouTube](https://youtube.com) playlist!
 
-- My work experience is ripped [LinkedIn](https://linkedin.com) via [Puppeteer](https://pptr.dev/) and shown on [`/`](https://michaelsolati.com)
-- Articles I've written on dev.to are shown on [`/articles`](https://michaelsolati.com/articles)
-- My most starred and recent GitHub repos are shown on [`/code`](https://michaelsolati.com/code)
-- Recorded talks are fetched from a YouTube playlist and shown on the [`/talks`](https://michaelsolati.com/talks)
+- My work experience is ripped [LinkedIn](https://linkedin.com) via [Puppeteer](https://pptr.dev/) and shown on [`/`](https://michaelsolati.com).
+- Articles I've written on dev.to are shown on [`/articles`](https://michaelsolati.com/articles).
+- My most starred and recent GitHub repos are shown on [`/code`](https://michaelsolati.com/code).
+- Recorded talks are fetched from a YouTube playlist and shown on the [`/talks`](https://michaelsolati.com/talks).
 
 Almost all of this is configured from [`src/environments/environment.general.ts`](src/environments/environment.general.ts), which you can configure to display your own data, here's how...
 
@@ -25,11 +25,11 @@ Some basic details used for generating links and meta details on the site is fou
 
 ```TypeScript
 interface Site {
-  baseURL: string; // Url of where site will be hosted, remove trailing `/`
-  email: string; // Email address that can be used as a LinkedIn login
-  name: string; // Your name
-  phone?: string; // Don't worry about this
-  twitter: string; // Twitter username, avoid `@`
+  baseURL: string; // Url of where site will be hosted, remove trailing `/`.
+  email: string; // Email address that can be used as a LinkedIn login.
+  name: string; // Your name.
+  phone?: string; // Don't worry about this.
+  twitter: string; // Twitter username, avoid `@`.
 }
 ```
 
@@ -73,11 +73,11 @@ You will be asked for your LinkedIn password, this is used for the Puppeteer scr
 
 This command will:
 
-- Generate `data.ts` files for every page
-- Grab your `dev.to` profile picture and save it to `./src/assets/profile.webp` as well as generate PWA icons
-- Update the `./src/manifest.webmanifest` files to include your name
-- Save all the cover image or social image from your dev.to posts
-- Save all the previews images of the YouTube videos in the playlist
+- Generate `data.ts` files for every page.
+- Grab your `dev.to` profile picture and save it to `./src/assets/profile.webp` as well as generate PWA icons.
+- Update the `./src/manifest.webmanifest` files to include your name.
+- Save all the cover image or social image from your dev.to posts.
+- Save all the previews images of the YouTube videos in the playlist.
 
 If you don't want to input your LinkedIn password everytime you run the script you can create a `.env` file like below.
 
@@ -93,7 +93,7 @@ YOUTUBE_APIKEY=
 
 Whatever field you fill out will be used. DO NOT COMMIT THIS FILE!
 
-Optionally you can set `LINKEDIN_PASSWORD` as an environment variable, this works better for CI. [Like with GitHub Actions](.github/workflows/firebase-deploy.yml)
+Optionally you can set `LINKEDIN_PASSWORD` as an environment variable, this works better for CI. [Like with GitHub Actions.](.github/workflows/firebase-deploy.yml)
 
 #### Screenshots
 
