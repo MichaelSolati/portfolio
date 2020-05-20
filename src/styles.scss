@@ -1,5 +1,5 @@
-@import '~@angular/material/theming';
-@import './styles/variables';
+@import "~@angular/material/theming";
+@import "./styles/variables";
 
 @include mat-core();
 
@@ -19,13 +19,20 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $mat-warn);
   @include angular-material-theme($dark-theme);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 mat-toolbar.mat-toolbar {
   font-family: "Product Sans", "Helvetica Neue", sans-serif;
 
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
 
   .toolbar-spacer {
     flex: 1 1 auto;
@@ -42,4 +49,25 @@ a {
 
 img[mat-card-avatar] {
   background-color: white;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+img.loading {
+  animation-duration: 1.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #bcbcbc 8%, #646464 38%, #bcbcbc 54%);
+  background-size: 1000px 640px;
+  position: relative;
 }

@@ -4,11 +4,11 @@
       <mat-card id="profile-card">
         <div class="row">
           <div *ngIf="data.image" class="d-none d-sm-block col-sm-6 col-lg-4">
-            <img class="desktop-image" loading="lazy" [src]="data.image" [alt]="meta.header">
+            <img class="desktop-image" appImgLoader loading="lazy" [src]="data.image" [alt]="meta.header">
           </div>
           <div class="col-xs-12" [ngClass]="{ 'col-sm-6': data.image, 'col-lg-8': data.image}">
             <mat-card-header>
-              <img mat-card-avatar loading="lazy" *ngIf="data.image" class="d-block d-sm-none" [src]="data.image"
+              <img mat-card-avatar appImgLoader loading="lazy" *ngIf="data.image" class="d-block d-sm-none" [src]="data.image"
                 [alt]="meta.header">
               <mat-card-title>
                 <h1>{{ meta.header }}</h1>

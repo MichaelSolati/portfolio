@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { CardModule } from '../components/card';
+import { ImgLoaderModule } from '../directives/img-loader';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ExperiencesPipe } from './experiences.pipe';
@@ -30,6 +31,7 @@ import { LinkedinComponent } from './icons/linkedin/linkedin.component';
     MatToolbarModule,
     MatMenuModule,
     CardModule,
+    ImgLoaderModule,
     HomeRoutingModule
   ]
 })

@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <img experience.src mat-card-avatar loading="lazy" *ngIf="experience.src" [src]="experience.src"
+    <img mat-card-avatar appImgLoader loading="lazy" *ngIf="experience.src" [src]="experience.src"
       [alt]="experience.institution">
     <mat-card-title>{{ experience.title }}</mat-card-title>
     <mat-card-subtitle>{{ experience.institution }}</mat-card-subtitle>
