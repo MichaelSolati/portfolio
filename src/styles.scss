@@ -17,13 +17,15 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $mat-warn);
 
 @media (prefers-color-scheme: dark) {
   @include angular-material-theme($dark-theme);
+
+  body {
+    background-color: #303030;
+  }
 }
 
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
