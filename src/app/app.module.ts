@@ -38,7 +38,7 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(metaService: Meta, @Inject(DOCUMENT) dom: any) {
+  constructor(metaService: Meta, @Inject(DOCUMENT) dom: Document) {
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         const linkElement: HTMLElement = dom.querySelector("link[rel=\'manifest\']");

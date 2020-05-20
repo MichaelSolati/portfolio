@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgMeta } from 'ngmeta';
 
@@ -8,9 +9,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MetaService {
-  constructor(private _ngmeta: NgMeta, private _router: Router) { }
+  constructor(private _ngmeta: NgMeta, private _router: Router, @Inject(DOCUMENT) private  _dom: Document) { }
 
   setAll({ title, description }): void {
+    this._dom.querySelector('mat-sidenav-content').scrollTo(0, 0);
     const path = this._router.url.split('?')[0];
     const fof = (path === '/404');
     const image = `${environment.site.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`;
