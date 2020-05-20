@@ -3,7 +3,7 @@ const data = [
 		"title": "geofirestore-js",
 		"description": "Location-based querying and filtering using Firebase's Firestore",
 		"url": "https://github.com/MichaelSolati/geofirestore-js",
-		"date": "2020-05-19T08:15:42Z"
+		"date": "2020-05-20T07:53:14Z"
 	},
 	{
 		"title": "geokit",
@@ -15,7 +15,7 @@ const data = [
 		"title": "deno-cloud-run",
 		"description": "A sample Deno application that can be deployed to Google Cloud Run using a Docker container.",
 		"url": "https://github.com/MichaelSolati/deno-cloud-run",
-		"date": "2020-05-19T19:53:10Z"
+		"date": "2020-05-20T19:45:06Z"
 	},
 	{
 		"title": "ngmeta",
