@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LimitTextPipe } from './pipes/limit-text.pipe';
+import { LimitTextPipe } from './limit-text.pipe';
 
 @NgModule({
   declarations: [
@@ -14,4 +14,4 @@ import { LimitTextPipe } from './pipes/limit-text.pipe';
     LimitTextPipe
   ]
 })
-export class SharedModule { }
+export class LimitTextModule { }

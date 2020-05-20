@@ -31,6 +31,6 @@ export class BannerComponent {
   unsplashLoaded = false;
 
   constructor() {
-    interval(6000).pipe(first()).subscribe(() => (this.loadUnsplash = true));
+    interval(15000).pipe(first()).subscribe(() => (this.loadUnsplash = true));
   }
 }

@@ -5,8 +5,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { CardModule } from '../components/card';
-import { ImgLoaderModule } from '../directives/img-loader';
+import { CardModule } from '../shared/components/card';
+import { ImgLoaderModule } from '../shared/directives/img-loader';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ExperiencesPipe } from './experiences.pipe';
