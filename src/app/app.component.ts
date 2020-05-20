@@ -20,7 +20,7 @@ const pathInNav = {
 };
 
 const paths: Path[] = Object.keys(environment.pages)
-  .filter((key) => environment.pages[key].enabled || key === 'home')
+  .filter((key) => environment.pages[key].enabled && key !== 'home')
   .map((key): Path => {
     const page = environment.pages[key];
     return {
@@ -42,8 +42,12 @@ export class AppComponent {
   private _isHandset$: Observable<boolean> = this._breakpointObserver
     .observe(['(max-width: 575px)'])
     .pipe(map(result => result.matches));
+  private _home = {};
 
-  constructor(private _breakpointObserver: BreakpointObserver) { }
+  constructor(private _breakpointObserver: BreakpointObserver) {
+    this._home['path'] = (environment.pages.home.path === '') ? ['/'] : ['/', environment.pages.home.path];
+    this._home['name'] = environment.pages.home.name;
+  }
 
   get title(): string {
     return environment.site.name;
@@ -53,8 +57,8 @@ export class AppComponent {
     return this._isHandset$;
   }
 
-  get homePath(): string[] {
-    return (environment.pages.home.path === '') ? ['/'] : ['/', environment.pages.home.path];
+  get home(): any {
+    return this._home;
   }
 
   get paths(): Path[] {
