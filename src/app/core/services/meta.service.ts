@@ -12,7 +12,9 @@ export class MetaService {
   constructor(private _ngmeta: NgMeta, private _router: Router, @Inject(DOCUMENT) private  _dom: Document) { }
 
   setAll({ title, description }): void {
-    this._dom.querySelector('mat-sidenav-content').scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      this._dom.querySelector('mat-sidenav-content').scrollTo(0, 0);
+    }
     const path = this._router.url.split('?')[0];
     const fof = (path === '/404');
     const image = `${environment.site.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`;
