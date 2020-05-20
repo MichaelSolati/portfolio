@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   .catch(err => console.error(err));
 
   if (environment.production) {
-    // @ts-ignore
     firebase.initializeApp(environment.firebase);
+    firebase.analytics();
   }
 });
