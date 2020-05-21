@@ -12,6 +12,24 @@ const data = [
 		"date": "2020-05-19T19:27:08Z"
 	},
 	{
+		"title": "spittin-hot-geofirestore",
+		"description": "Showcase of over 50,000 locations queried in realtime with Firebase's Firestore and GeoFirestore",
+		"url": "https://github.com/MichaelSolati/spittin-hot-geofirestore",
+		"date": "2020-05-02T22:53:25Z"
+	},
+	{
+		"title": "typeform-lob",
+		"description": "A simple application that uses Typeform to print postcards with Lob",
+		"url": "https://github.com/MichaelSolati/typeform-lob",
+		"date": "2020-01-08T15:31:17Z"
+	},
+	{
+		"title": "typeform-python-examples",
+		"description": "New to Typeform but love writing code? That's great! This repo will be PERFECT for you.",
+		"url": "https://github.com/MichaelSolati/typeform-python-examples",
+		"date": "2019-08-29T15:00:13Z"
+	},
+	{
 		"title": "deno-cloud-run",
 		"description": "A sample Deno application that can be deployed to Google Cloud Run using a Docker container.",
 		"url": "https://github.com/MichaelSolati/deno-cloud-run",
@@ -28,6 +46,12 @@ const data = [
 		"description": "An interactive game, \"A Dreadful Start\" by Terence Eden, using Typeform and AoG.",
 		"url": "https://github.com/MichaelSolati/aog-and-typeform",
 		"date": "2020-04-18T21:00:20Z"
+	},
+	{
+		"title": "portfolio",
+		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
+		"url": "https://github.com/MichaelSolati/portfolio",
+		"date": "2020-05-21T00:45:02Z"
 	},
 	{
 		"title": "blink-two",
@@ -54,6 +78,24 @@ const data = [
 		"date": "2018-11-10T01:27:24Z"
 	},
 	{
+		"title": "eleventy-plugin-toc",
+		"description": "11ty plugin to generate a TOC from page content",
+		"url": "https://github.com/MichaelSolati/eleventy-plugin-toc",
+		"date": "2020-05-20T22:54:34Z"
+	},
+	{
+		"title": "vwc-sticker-giveaway",
+		"description": "Github pull request for a free sticker",
+		"url": "https://github.com/MichaelSolati/vwc-sticker-giveaway",
+		"date": "2020-05-18T02:50:23Z"
+	},
+	{
+		"title": "test-geofirestore-error",
+		"description": null,
+		"url": "https://github.com/MichaelSolati/test-geofirestore-error",
+		"date": "2020-05-16T08:04:50Z"
+	},
+	{
 		"title": "dev.to",
 		"description": "Where programmers share ideas and help each other grow",
 		"url": "https://github.com/MichaelSolati/dev.to",
@@ -64,6 +106,12 @@ const data = [
 		"description": "firebase/firebase-js-sdk#3006",
 		"url": "https://github.com/MichaelSolati/firebase-js-sdk-3006",
 		"date": "2020-05-04T21:53:19Z"
+	},
+	{
+		"title": "protobuf.js",
+		"description": "Protocol Buffers for JavaScript (& TypeScript).",
+		"url": "https://github.com/MichaelSolati/protobuf.js",
+		"date": "2020-05-02T22:54:26Z"
 	},
 	{
 		"title": "nge-presentation",
@@ -84,16 +132,16 @@ const data = [
 		"date": "2019-11-05T19:52:18Z"
 	},
 	{
+		"title": "typeform-python-sdk",
+		"description": "TypeForm Python API client",
+		"url": "https://github.com/MichaelSolati/typeform-python-sdk",
+		"date": "2019-10-31T22:41:29Z"
+	},
+	{
 		"title": "nge-slides",
 		"description": "Sample library of Angular Elements components geared for a slideshow",
 		"url": "https://github.com/MichaelSolati/nge-slides",
 		"date": "2019-05-21T21:07:45Z"
-	},
-	{
-		"title": "AIND-Sudoku",
-		"description": null,
-		"url": "https://github.com/MichaelSolati/AIND-Sudoku",
-		"date": "2017-09-07T01:50:11Z"
 	}
 ];
 export default data;

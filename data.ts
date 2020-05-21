@@ -176,7 +176,7 @@ const defaultData = {};
   // GitHub
   if (accounts.github) {
     console.log('Fetching GitHub repos.');
-    await fetch(`https://api.github.com/users/${accounts.github}/repos`)
+    await fetch(`https://api.github.com/users/${accounts.github}/repos?sort=count&per_page=200`)
       .then(res => res.json())
       .then(repos => {
         if (Array.isArray(repos)) {
