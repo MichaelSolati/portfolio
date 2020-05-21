@@ -5,23 +5,26 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { NgMeta } from 'ngmeta';
 
 import { MetaService } from './services/meta.service';
-import { environment } from '../../environments/environment.general';
+import { environment } from '../../environments/environment';
 
 const PROVIDERS = [
   NgMeta,
   MetaService
 ];
 
+const IMPORTS: any[] = [
+  CommonModule,
+  AngularFireModule.initializeApp(environment.firebase)
+];
+
+if (environment.production) {
+  IMPORTS.push(AngularFireAnalyticsModule);
+}
+
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule
-  ],
-  providers: [
-    ...PROVIDERS
-  ]
+  imports: IMPORTS,
+  providers: PROVIDERS
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders {
