@@ -28,7 +28,8 @@
               "src/assets",
               "src/manifest.webmanifest",
               "src/manifest.dark.webmanifest",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap-grid.scss",

@@ -12,6 +12,7 @@ const JSDOM = require('jsdom').JSDOM;
 const sharp = require('sharp');
 const pngToIco = require('png-to-ico');
 const rimraf = require('rimraf');
+const { SitemapStream, streamToPromise } = require('sitemap');
 
 import { environment } from './src/environments/environment.prod';
 
@@ -76,6 +77,20 @@ const saveImagetoWebP = (src: string, saveTo: string): Promise<void> => {
 const defaultData = {};
 
 (async () => {
+  // sitemap
+  const sitemapLinks = Object.keys(environment.pages)
+    .filter((key) => environment.pages[key].enabled || key === 'home')
+    .map((key) => ({
+      url: (environment.pages[key].path === '') ? '/' : '/' + environment.pages[key].path,
+      changefreq: 'weekly',
+      priority: key === 'home' ? 1 : 0.8
+    }));
+  const sitemapStream = new SitemapStream({ hostname: environment.site.baseURL });
+  sitemapLinks.forEach(link => sitemapStream.write(link));
+  sitemapStream.end();
+  const sitemap = await streamToPromise(sitemapStream).then(data => data.toString());
+  writeFileSync(path.join('src', 'sitemap.xml'), sitemap);
+
   // webmanifest
   if (environment.site.name) {
     console.log('Updating `manifest.webmanifest`s');
@@ -110,7 +125,7 @@ const defaultData = {};
         const thumbnail = post.cover_image || post.social_image;
         try {
           await saveImagetoWebP(thumbnail, path.join(devtoAssetsPath, filename));
-        } catch {}
+        } catch { }
         const src = `./assets/devto/${filename}`;
 
         parsed.push({
@@ -277,7 +292,7 @@ const defaultData = {};
             const filename = `work-${i}.webp`;
             try {
               await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch {}
+            } catch { }
             src = `./assets/home/${filename}`;
           }
 
@@ -327,7 +342,7 @@ const defaultData = {};
             const filename = `education-${i}.webp`;
             try {
               await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch {}
+            } catch { }
             src = `./assets/home/${filename}`;
           }
 
@@ -375,7 +390,7 @@ const defaultData = {};
             const filename = `volunteer-${i}.webp`;
             try {
               await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch {}
+            } catch { }
             src = `./assets/home/${filename}`;
           }
 
@@ -470,7 +485,7 @@ const defaultData = {};
             const thumbnail = (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url;
             try {
               await saveImagetoWebP(thumbnail, path.join(youtubeAssetsPath, filename));
-            } catch {}
+            } catch { }
             const src = `./assets/youtube/${filename}`;
 
             videos.push({
