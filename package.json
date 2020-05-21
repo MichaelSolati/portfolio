@@ -20,6 +20,7 @@
     "prerender": "ng run portfolio:prerender",
     "screenshots": "start-server-and-test 'ng serve --port=5000' 5000 'ts-node --skip-project screenshots.ts'"
   },
+  "license": "MIT",
   "private": false,
   "dependencies": {
     "@angular/animations": "~9.1.7",
