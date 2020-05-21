@@ -16,14 +16,15 @@ export class MetaService {
       this._dom.querySelector('mat-sidenav-content').scrollTo(0, 0);
     }
     const path = this._router.url.split('?')[0];
-    const fof = (path === '/404');
-    const image = `${environment.site.baseURL}/assets/screenshots${(path === '/') ? '/home' : path}.png`;
+    const key = Object.keys(environment.pages)
+      .find(k => (environment.pages[k].enabled || k === 'home') && (`/${environment.pages[k].path}` === path));
+    const image = `${environment.site.baseURL}/assets/screenshots/${key ? key : '404'}.png`;
     const twitter = environment.site.twitter;
 
     this._ngmeta.setAll({
       title,
       description,
-      image: !fof ? image : null,
+      image,
       twitter,
       canonical: environment.site.baseURL + path
     });

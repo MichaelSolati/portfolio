@@ -2,21 +2,18 @@ import * as puppeteer from 'puppeteer';
 
 import { environment } from './src/environments/environment.general';
 
-const paths: string[] = Object.keys(environment.pages)
+const crawlable: any[] = Object.keys(environment.pages)
   .filter((key) => environment.pages[key].enabled || key === 'home')
-  .map((key) => environment.pages[key].path);
-
-const crawlable = paths
-  .map((path) => ({
-    path,
-    imagePath: `./src/assets/screenshots/${(path === '') ? 'home' : path}.png`
+  .map((key) => ({
+    path: environment.pages[key].path,
+    imagePath: `./src/assets/screenshots/${key}.png`
   }));
 
 (async () => {
   console.log('Launching Puppeteer to take screenshots');
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 0.5 });
+  await page.setViewport({ width: 1200, height: 630 });
   await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);
 
   for (let route of crawlable) {

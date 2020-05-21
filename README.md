@@ -106,7 +106,7 @@ npm run screenshots
 
 And screenshots for every page will be generated, like below.
 
-![The talks page](./src/assets/screenshots/talks.png)
+![The talks page](./src/assets/screenshots/youtube.png)
 
 ---
 
