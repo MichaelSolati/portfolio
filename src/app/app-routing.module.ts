@@ -20,8 +20,7 @@ const routes: Routes = Object.keys(environment.pages)
   };
 });
 
-routes.push({ path: '404', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) });
-routes.push({ path: '**', redirectTo: `/404` });
+routes.push({ path: '**', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) });
 
 @NgModule({
   imports: [

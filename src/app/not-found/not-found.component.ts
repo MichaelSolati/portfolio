@@ -21,8 +21,8 @@ export class NotFoundComponent {
   constructor(@Inject(PLATFORM_ID) platformId: any, @Optional() @Inject(RESPONSE) response: Response, metaService: MetaService) {
     metaService.setAll(this._meta);
 
-    if (!isPlatformBrowser(platformId)) {
-      response.status(404);
+    if (!isPlatformBrowser(platformId) && response) {
+      response.statusCode = 404;
     }
   }
 
