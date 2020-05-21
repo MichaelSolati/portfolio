@@ -21,6 +21,9 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $mat-warn);
   body {
     background-color: #303030;
   }
+  noscript {
+    color: $dark-text;
+  }
 }
 
 html,
