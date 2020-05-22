@@ -6,10 +6,22 @@ const data = [
 		"date": "2020-05-20T07:53:14Z"
 	},
 	{
+		"title": "portfolio",
+		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
+		"url": "https://github.com/MichaelSolati/portfolio",
+		"date": "2020-05-22T18:12:27Z"
+	},
+	{
 		"title": "geokit",
 		"description": "An assortment of geolocation related tools, all packaged in one easy to use kit.",
 		"url": "https://github.com/MichaelSolati/geokit",
 		"date": "2020-05-19T19:27:08Z"
+	},
+	{
+		"title": "pwa.otta.dev",
+		"description": "A PWA showing popular movies!",
+		"url": "https://github.com/MichaelSolati/pwa.otta.dev",
+		"date": "2020-05-22T01:54:11Z"
 	},
 	{
 		"title": "spittin-hot-geofirestore",
@@ -46,12 +58,6 @@ const data = [
 		"description": "An interactive game, \"A Dreadful Start\" by Terence Eden, using Typeform and AoG.",
 		"url": "https://github.com/MichaelSolati/aog-and-typeform",
 		"date": "2020-04-18T21:00:20Z"
-	},
-	{
-		"title": "portfolio",
-		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
-		"url": "https://github.com/MichaelSolati/portfolio",
-		"date": "2020-05-21T00:45:02Z"
 	},
 	{
 		"title": "blink-two",
@@ -136,12 +142,6 @@ const data = [
 		"description": "TypeForm Python API client",
 		"url": "https://github.com/MichaelSolati/typeform-python-sdk",
 		"date": "2019-10-31T22:41:29Z"
-	},
-	{
-		"title": "nge-slides",
-		"description": "Sample library of Angular Elements components geared for a slideshow",
-		"url": "https://github.com/MichaelSolati/nge-slides",
-		"date": "2019-05-21T21:07:45Z"
 	}
 ];
 export default data;

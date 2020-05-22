@@ -1,5 +1,12 @@
 const data = [
 	{
+		"title": "My Portfolio Site... For You!",
+		"description": "Over the past weekend I decided to redo my portfolio website, michaelsolati.com, a task which I was d...",
+		"url": "https://dev.to/michaelsolati/my-portfolio-site-for-you-1ghj",
+		"src": "./assets/devto/my-portfolio-site-for-you-1ghj.webp",
+		"date": "2020-05-21T00:34:06Z"
+	},
+	{
 		"title": "Deno on Cloud Run",
 		"description": "Deno 1.0 launched just 24 hours ago! So we’re going to install Deno and set up a web server. Then we’...",
 		"url": "https://dev.to/michaelsolati/deno-on-cloud-run-44ao",

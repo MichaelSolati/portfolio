@@ -18,7 +18,7 @@ export class MetaService {
     const path = this._router.url.split('?')[0];
     const key = Object.keys(environment.pages)
       .find(k => (environment.pages[k].enabled || k === 'home') && (`/${environment.pages[k].path}` === path));
-    const image = `${environment.site.baseURL}/assets/screenshots/${key ? key : '404'}.png`;
+    const image = `${environment.site.baseURL}/screenshots/${key ? key : '404'}.png`;
     const twitter = environment.site.twitter;
 
     this._ngmeta.setAll({

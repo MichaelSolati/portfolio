@@ -2,7 +2,7 @@
 
 A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!
 
-![The home page](./src/assets/screenshots/home.png)
+![The home page](./src/screenshots/home.png)
 
 As a Developer 🥑 (Advocate) I speak at events, write blog posts, and maintain some libraries. I wanted to create a website that would showcase all of this, and I created this project to fetch from [dev.to](https://dev.to), [GitHub](https://github.com) and a [YouTube](https://youtube.com) playlist!
 
@@ -79,6 +79,9 @@ This command will:
 - Update the `./src/manifest.webmanifest` files to include your name.
 - Save all the cover image or social image from your dev.to posts.
 - Save all the previews images of the YouTube videos in the playlist.
+- Generate screenshots for every page that can be used for sites like Twitter or Facebook, like below.
+
+![The YouTube page](./src/screenshots/youtube.png)
 
 If you don't want to input your LinkedIn password everytime you run the script you can create a `.env` file like below.
 
@@ -95,18 +98,6 @@ YOUTUBE_APIKEY=
 Whatever field you fill out will be used. DO NOT COMMIT THIS FILE!
 
 Optionally you can set `LINKEDIN_PASSWORD` as an environment variable, this works better for CI. [Like with GitHub Actions.](.github/workflows/firebase-deploy.yml)
-
-#### Screenshots
-
-Finally we want to generate screenshots that can be used for sites like Twitter of Facebook. Run the following command:
-
-```bash
-npm run screenshots
-```
-
-And screenshots for every page will be generated, like below.
-
-![The talks page](./src/assets/screenshots/youtube.png)
 
 ---
 
