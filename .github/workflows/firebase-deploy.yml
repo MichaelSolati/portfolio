@@ -21,5 +21,4 @@ jobs:
         node-version: 12.x
     - run: npm ci
     - run: npm run data:cli
-    - run: npm run screenshots
     - run: npm run deploy:cli
