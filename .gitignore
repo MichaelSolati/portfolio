@@ -48,3 +48,4 @@ Thumbs.db
 
 .env
 .firebase/
+serviceAccountKey.json

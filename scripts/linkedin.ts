@@ -1,12 +1,11 @@
-import * as fs from 'fs';
 import * as path from 'path';
 import * as prompts from 'prompts';
 import * as puppeteer from 'puppeteer';
 const JSDOM = require('jsdom').JSDOM;
-const rimraf = require('rimraf');
 const scrollToBottom = require('scroll-to-bottomjs');
 
-import { cleanText, saveImagetoWebP, sleep, writeDataTs } from './utils'
+import { cleanText, sleep, writeDataTs } from './utils'
+import assetsStorage from './assets-storage';
 
 export const generateLinkedIn = async (accounts, skipPrompts, defaultData) => {
   if (accounts.linkedin.email) {
@@ -79,8 +78,8 @@ export const generateLinkedIn = async (accounts, skipPrompts, defaultData) => {
         profile['experiences'] = [];
 
         const homeAssetsPath = path.join('src', 'assets', 'home');
-        rimraf.sync(homeAssetsPath);
-        fs.mkdirSync(homeAssetsPath);
+        assetsStorage.deleteFolder('home');
+        assetsStorage.createFolder('home');
 
         // START WORK EXPERIENCE
         const workExperiences: any[] = Array.from(document.querySelector('#experience-section').querySelector('ul').children).slice(0, 6);
@@ -91,14 +90,13 @@ export const generateLinkedIn = async (accounts, skipPrompts, defaultData) => {
           const title = titleElement?.textContent || null;
 
           const srcElement = experience.querySelector('img.pv-entity__logo-img');
-          const srcAttr = srcElement?.getAttribute('src') || null;
-          let src = null;
-          if (srcAttr.includes('http')) {
-            const filename = `work-${i}.webp`;
+          const imgSrc = srcElement?.getAttribute('src') || null;
+          let src: string;
+          if (imgSrc.includes('http')) {
+            const filename = `work-${i}`;
             try {
-              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch { }
-            src = `./assets/home/${filename}`;
+              src = (await assetsStorage.createImage(imgSrc, 'home', filename)).output;
+            } catch {}
           }
 
           const companyElement = experience.querySelector('.pv-entity__secondary-title');
@@ -141,14 +139,13 @@ export const generateLinkedIn = async (accounts, skipPrompts, defaultData) => {
           const school = schoolElement?.textContent || null;
 
           const srcElement = experience.querySelector('img.pv-entity__logo-img');
-          const srcAttr = srcElement?.getAttribute('src') || null;
-          let src = null;
-          if (srcAttr.includes('http')) {
-            const filename = `education-${i}.webp`;
+          const imgSrc = srcElement?.getAttribute('src') || null;
+          let src: string;
+          if (imgSrc.includes('http')) {
+            const filename = `education-${i}`;
             try {
-              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch { }
-            src = `./assets/home/${filename}`;
+              src = (await assetsStorage.createImage(imgSrc, 'home', filename)).output;
+            } catch {}
           }
 
           const degreeElement = experience.querySelector('.pv-entity__degree-name .pv-entity__comma-item');
@@ -189,14 +186,13 @@ export const generateLinkedIn = async (accounts, skipPrompts, defaultData) => {
           const title = titleElement?.textContent || null;
 
           const srcElement = experience.querySelector('img.pv-entity__logo-img');
-          const srcAttr = srcElement?.getAttribute('src') || null;
-          let src = null;
-          if (srcAttr.includes('http')) {
-            const filename = `volunteer-${i}.webp`;
+          const imgSrc = srcElement?.getAttribute('src') || null;
+          let src: string;
+          if (imgSrc.includes('http')) {
+            const filename = `volunteer-${i}`;
             try {
-              await saveImagetoWebP(srcAttr, path.join(homeAssetsPath, filename));
-            } catch { }
-            src = `./assets/home/${filename}`;
+              src = (await assetsStorage.createImage(imgSrc, 'home', filename)).output;
+            } catch {}
           }
 
           const companyElement = experience.querySelector('.pv-entity__secondary-title');

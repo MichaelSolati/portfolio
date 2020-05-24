@@ -3,13 +3,13 @@ const data = [
 		"title": "geofirestore-js",
 		"description": "Location-based querying and filtering using Firebase's Firestore",
 		"url": "https://github.com/MichaelSolati/geofirestore-js",
-		"date": "2020-05-20T07:53:14Z"
+		"date": "2020-05-23T09:55:21Z"
 	},
 	{
 		"title": "portfolio",
 		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
 		"url": "https://github.com/MichaelSolati/portfolio",
-		"date": "2020-05-22T18:12:27Z"
+		"date": "2020-05-24T18:32:27Z"
 	},
 	{
 		"title": "geokit",
@@ -30,6 +30,12 @@ const data = [
 		"date": "2020-05-02T22:53:25Z"
 	},
 	{
+		"title": "deno-cloud-run",
+		"description": "A sample Deno application that can be deployed to Google Cloud Run using a Docker container.",
+		"url": "https://github.com/MichaelSolati/deno-cloud-run",
+		"date": "2020-05-22T23:02:34Z"
+	},
+	{
 		"title": "typeform-lob",
 		"description": "A simple application that uses Typeform to print postcards with Lob",
 		"url": "https://github.com/MichaelSolati/typeform-lob",
@@ -40,12 +46,6 @@ const data = [
 		"description": "New to Typeform but love writing code? That's great! This repo will be PERFECT for you.",
 		"url": "https://github.com/MichaelSolati/typeform-python-examples",
 		"date": "2019-08-29T15:00:13Z"
-	},
-	{
-		"title": "deno-cloud-run",
-		"description": "A sample Deno application that can be deployed to Google Cloud Run using a Docker container.",
-		"url": "https://github.com/MichaelSolati/deno-cloud-run",
-		"date": "2020-05-20T19:45:06Z"
 	},
 	{
 		"title": "ngmeta",

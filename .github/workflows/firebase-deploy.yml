@@ -9,6 +9,7 @@ on:
 env:
   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
   LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+  SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
 jobs:
   build:

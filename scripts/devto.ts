@@ -3,10 +3,10 @@ import fetch from 'node-fetch';
 import * as path from 'path';
 const JSDOM = require('jsdom').JSDOM;
 const pngToIco = require('png-to-ico');
-const rimraf = require('rimraf');
 const sharp = require('sharp');
 
-import { saveImagetoWebP, writeDataTs } from './utils'
+import { saveImagetoWebP, writeDataTs } from './utils';
+import assetsStorage from './assets-storage';
 
 export const generateDevTo = async (accounts, defaultData) => {
   if (accounts.devto) {
@@ -14,9 +14,8 @@ export const generateDevTo = async (accounts, defaultData) => {
     const res = await fetch(`https://dev.to/api/articles?username=${accounts.devto}`);
     try {
       let posts = await res.json();
-      const devtoAssetsPath = path.join('src', 'assets', 'devto');
-      rimraf.sync(devtoAssetsPath);
-      fs.mkdirSync(devtoAssetsPath);
+      assetsStorage.deleteFolder('devto');
+      assetsStorage.createFolder('devto');
 
       const parsed = [];
 
@@ -25,12 +24,11 @@ export const generateDevTo = async (accounts, defaultData) => {
         .slice(0, 24)
 
       for (let post of posts) {
-        const filename = `${post.slug}.webp`;
-        const thumbnail = post.cover_image || post.social_image;
+        const imgSrc = post.cover_image || post.social_image;
+        let src: string;
         try {
-          await saveImagetoWebP(thumbnail, path.join(devtoAssetsPath, filename));
-        } catch { }
-        const src = `./assets/devto/${filename}`;
+          src = (await assetsStorage.createImage(imgSrc, 'devto', post.slug)).output;
+        } catch {}
 
         parsed.push({
           title: post.title,

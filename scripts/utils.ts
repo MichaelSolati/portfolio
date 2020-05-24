@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
-const streamPipeline = require('util').promisify(require('stream').pipeline)
+const streamPipeline = require('util').promisify(require('stream').pipeline);
 const webp = require('webp-converter');
 
 export const sleep = (ms: number): Promise<void> => {

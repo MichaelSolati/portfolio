@@ -57,6 +57,7 @@
     "@types/puppeteer": "^2.1.0",
     "codelyzer": "^5.1.2",
     "dotenv": "^8.2.0",
+    "firebase-admin": "^8.12.1",
     "firebase-tools": "^8.2.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

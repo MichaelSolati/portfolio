@@ -1,10 +1,8 @@
-import * as fs from 'fs';
 import fetch from 'node-fetch';
-import * as path from 'path';
 import * as prompts from 'prompts';
-const rimraf = require('rimraf');
 
-import { cleanText, saveImagetoWebP, writeDataTs } from './utils'
+import { cleanText, writeDataTs } from './utils'
+import assetsStorage from './assets-storage';
 
 export const generateYouTube = async (accounts, skipPrompts) => {
   if (accounts.youtube.playlist) {
@@ -25,19 +23,18 @@ export const generateYouTube = async (accounts, skipPrompts) => {
       try {
         const playlist = await res.json();
         if (Array.isArray(playlist.items)) {
-          const youtubeAssetsPath = path.join('src', 'assets', 'youtube');
-          rimraf.sync(youtubeAssetsPath);
-          fs.mkdirSync(youtubeAssetsPath);
+          assetsStorage.deleteFolder('youtube');
+          assetsStorage.createFolder('youtube');
 
           const videos = [];
 
           for (let video of playlist.items) {
-            const filename = `${video.contentDetails.videoId}.webp`;
-            const thumbnail = (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url;
+            const filename = `${video.contentDetails.videoId}`;
+            const imgSrc = (Object.values(video.snippet.thumbnails) as any[]).sort((a, b) => a.width - b.width).pop().url;
+            let src: string;
             try {
-              await saveImagetoWebP(thumbnail, path.join(youtubeAssetsPath, filename));
+              src = (await assetsStorage.createImage(imgSrc, 'youtube', filename)).output;
             } catch { }
-            const src = `./assets/youtube/${filename}`;
 
             videos.push({
               title: video.snippet.title,

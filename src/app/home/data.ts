@@ -6,7 +6,7 @@ const data = {
 	"experiences": [
 		{
 			"title": "Developer Program Engineer",
-			"src": "./assets/home/work-0.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-0.webp",
 			"institution": "Google",
 			"start": "2019-11-01T07:00:00.000Z",
 			"end": null,
@@ -17,7 +17,7 @@ const data = {
 		},
 		{
 			"title": "Google Developer Expert",
-			"src": "./assets/home/volunteer-0.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/volunteer-0.webp",
 			"institution": "Google Developers",
 			"start": "2019-05-01T07:00:00.000Z",
 			"end": "2019-11-01T07:00:00.000Z",
@@ -28,7 +28,7 @@ const data = {
 		},
 		{
 			"title": "GDG Organizer",
-			"src": "./assets/home/volunteer-1.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/volunteer-1.webp",
 			"institution": "Google Developers",
 			"start": "2016-01-01T08:00:00.000Z",
 			"end": "2019-11-01T07:00:00.000Z",
@@ -39,7 +39,7 @@ const data = {
 		},
 		{
 			"title": "Developer Advocate",
-			"src": "./assets/home/work-1.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-1.webp",
 			"institution": "Typeform.com",
 			"start": "2019-01-01T08:00:00.000Z",
 			"end": "2019-10-01T07:00:00.000Z",
@@ -50,7 +50,7 @@ const data = {
 		},
 		{
 			"title": "Front End Engineer",
-			"src": "./assets/home/work-2.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-2.webp",
 			"institution": "Sellpoints, Inc.",
 			"start": "2018-05-01T07:00:00.000Z",
 			"end": "2019-01-01T08:00:00.000Z",
@@ -61,7 +61,7 @@ const data = {
 		},
 		{
 			"title": "Front End Engineer",
-			"src": "./assets/home/work-3.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-3.webp",
 			"institution": "Checkmate.Digital",
 			"start": "2015-10-01T07:00:00.000Z",
 			"end": "2018-05-01T07:00:00.000Z",
@@ -72,7 +72,7 @@ const data = {
 		},
 		{
 			"title": "Bachelor of Science (B.S.)",
-			"src": "./assets/home/education-0.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/education-0.webp",
 			"institution": "Southern Connecticut State University",
 			"start": "2012-01-01T00:00:00.000Z",
 			"end": "2018-01-01T00:00:00.000Z",
@@ -83,7 +83,7 @@ const data = {
 		},
 		{
 			"title": "Lead Developer",
-			"src": "./assets/home/work-4.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-4.webp",
 			"institution": "Kricket App",
 			"start": "2017-01-01T08:00:00.000Z",
 			"end": "2017-11-01T07:00:00.000Z",
@@ -94,7 +94,7 @@ const data = {
 		},
 		{
 			"title": "Product Forum Top Contributor",
-			"src": "./assets/home/volunteer-2.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/volunteer-2.webp",
 			"institution": "Google",
 			"start": "2011-06-01T07:00:00.000Z",
 			"end": "2016-12-01T08:00:00.000Z",
@@ -105,7 +105,7 @@ const data = {
 		},
 		{
 			"title": "Senior Apprentice",
-			"src": "./assets/home/volunteer-3.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/volunteer-3.webp",
 			"institution": "Independent Software",
 			"start": "2015-09-01T07:00:00.000Z",
 			"end": "2016-12-01T08:00:00.000Z",
@@ -116,7 +116,7 @@ const data = {
 		},
 		{
 			"title": "A100 Program Apprentice",
-			"src": "./assets/home/work-5.webp",
+			"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/home/work-5.webp",
 			"institution": "Independent Software",
 			"start": "2015-06-01T07:00:00.000Z",
 			"end": "2015-09-01T07:00:00.000Z",
