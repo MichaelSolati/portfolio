@@ -55,7 +55,7 @@ export const generateDevTo = async (accounts, defaultData) => {
         const document = dom.window.document;
         const image = document.querySelector('img.profile-pic');
         const src = image.getAttribute('src').replace('h_320', 'h_1000').replace('w_320', 'w_1000');
-        const tempProfilePath = await saveImagetoWebP(src, path.join('src', 'assets', 'profile.webp'));
+        const tempProfilePath = (await saveImagetoWebP(src, path.join('src', 'assets', 'profile.webp'))).output;
         defaultData['image'] = './assets/profile.webp';
         console.log('Saved dev.to profile picture.');
 

@@ -28,17 +28,17 @@ export const writeDataTs = (folder: string, json: any): void => {
   fs.writeFileSync(appFolder, file);
 };
 
-export const saveImagetoWebP = (src: string, saveTo: string): Promise<void> => {
-  const toWebP = (input, output, extension?: string): Promise<void> => {
+export const saveImagetoWebP = async (src: string, saveTo: string): Promise<{input: string, output: string}> => {
+  const toWebP = (input: string, output: string, extension?: string): Promise<{input: string, output: string}> => {
     return new Promise((resolve, reject) => {
       if (extension && extension === 'gif') {
-        webp.gwebp(input, output, '-q 50', (s) => (s === '100') ? resolve(input) : reject())
+        webp.gwebp(input, output, '-q 50', (s) => (s === '100') ? resolve({ input, output }) : reject())
       } else {
-        webp.cwebp(input, output, '-q 50', (s) => (s === '100') ? resolve(input) : reject());
+        webp.cwebp(input, output, '-q 50', (s) => (s === '100') ? resolve({ input, output }) : reject());
       }
     });
   };
-  return fetch(src).then(async (response) => {
+  return fetch(src).then(async (response: any) => {
     if (!response.ok) throw new Error();
     const extension = response.headers.get('content-type').split('/').pop();
     const fileName = `image.${extension}`;
