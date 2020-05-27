@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { interval } from 'rxjs';
-import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-banner',
@@ -27,10 +25,5 @@ export class BannerComponent {
   @Input() description: string;
   @Input() title: string;
   @Input() topics: string = 'code';
-  loadUnsplash = false;
   unsplashLoaded = false;
-
-  constructor() {
-    interval(15000).pipe(first()).subscribe(() => (this.loadUnsplash = true));
-  }
 }
