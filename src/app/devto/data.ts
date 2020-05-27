@@ -1,5 +1,12 @@
 const data = [
 	{
+		"title": "Announcing web.dev LIVE: A three day digital event",
+		"description": "Two weeks ago we, at Google, would have hosted our annual developer conference, Google I/O. Out of co...",
+		"url": "https://dev.to/chromiumdev/announcing-web-dev-live-a-three-day-digital-event-2640",
+		"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/devto/announcing-web-dev-live-a-three-day-digital-event-2640.webp",
+		"date": "2020-05-27T03:18:35Z"
+	},
+	{
 		"title": "My Portfolio Site... For You!",
 		"description": "Over the past weekend I decided to redo my portfolio website, michaelsolati.com, a task which I was d...",
 		"url": "https://dev.to/michaelsolati/my-portfolio-site-for-you-1ghj",
@@ -159,12 +166,6 @@ const data = [
 		"url": "https://dev.to/michaelsolati/the-angular-view-prologue",
 		"src": "https://storage.googleapis.com/michaelsolati-com.appspot.com/devto/the-angular-view-prologue.webp",
 		"date": "2017-04-17T20:16:56Z"
-	},
-	{
-		"title": "Hi, I'm Michael Solati 💻☕🍺",
-		"description": "\n\n...",
-		"url": "https://dev.to/michaelsolati/hi-im-michael-solati-",
-		"date": "2017-04-14T17:19:57Z"
 	}
 ];
 export default data;

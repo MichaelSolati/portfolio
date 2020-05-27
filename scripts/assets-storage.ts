@@ -13,7 +13,7 @@ import { environment } from '../src/environments/environment.prod';
 let serviceAccount;
 let bucket: Bucket;
 
-if (fs.existsSync('./serviceAccountKey.json')) {
+if (fs.existsSync(path.join(process.cwd(), 'scripts', 'serviceAccountKey.json'))) {
   serviceAccount = require('./serviceAccountKey.json');
 } else if (process.env.SERVICE_ACCOUNT_KEY) {
   serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT_KEY);
@@ -50,8 +50,8 @@ const createImage = async (url: string, folder: string, filename: string): Promi
     const tempWebpFilePath = path.join(os.tmpdir(), webpFileName);
 
     return new Promise<{ src: string, output: string }>((resolve, reject) => {
-      const webpConverter = (extension && extension === 'gif') ? webp.gwebp : webp.cwebp;
-      webpConverter(tempFilePath, tempWebpFilePath, '-q 50', async (s: any) => {
+      const webpConverter = (extension === 'gif') ? webp.gwebp : webp.cwebp;
+      webpConverter(tempFilePath, tempWebpFilePath, `-q ${(extension === 'gif') ? '10' : '50'}`, async (s: any) => {
         if (s === '100' && bucket) {
           console.log('Saving to GCP Bucket.');
           const upload = await bucket.upload(tempWebpFilePath, { destination: `${folder}/${webpFileName}`, gzip: true, public: true });
