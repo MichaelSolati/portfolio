@@ -24,6 +24,4 @@ export class BannerComponent {
   @Input() background: string = './assets/backgrounds/github.webp';
   @Input() description: string;
   @Input() title: string;
-  @Input() topics: string = 'code';
-  unsplashLoaded = false;
 }

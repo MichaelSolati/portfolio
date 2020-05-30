@@ -27,8 +27,4 @@ export class GithubComponent {
   get meta() {
     return this._meta;
   }
-
-  get topics(): string {
-    return environment.pages.github.topics.join(',');
-  }
 }

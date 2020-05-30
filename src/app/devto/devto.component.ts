@@ -27,8 +27,4 @@ export class DevtoComponent {
   get meta() {
     return this._meta;
   }
-
-  get topics(): string {
-    return environment.pages.devto.topics.join(',');
-  }
 }

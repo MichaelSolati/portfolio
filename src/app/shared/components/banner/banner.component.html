@@ -1,7 +1,6 @@
 <section>
   <div class="banner">
-    <img class="banner-image" [src]="'https://source.unsplash.com/1600x900/?'+topics" [alt]="title" (load)="unsplashLoaded = true">
-    <img *ngIf="!unsplashLoaded" appImgLoader [@unsplashLoaded] class="banner-image" loading="lazy" [src]="background" [alt]="title">
+    <img appImgLoader [@unsplashLoaded] class="banner-image" loading="lazy" [src]="background" [alt]="title">
     <div class="banner-overlay"></div>
     <div class="banner-content-wrapper">
       <div class="banner-content">

@@ -27,8 +27,4 @@ export class YoutubeComponent {
   get meta() {
     return this._meta;
   }
-
-  get topics(): string {
-    return environment.pages.youtube.topics.join(',');
-  }
 }
