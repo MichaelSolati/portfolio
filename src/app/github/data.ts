@@ -9,7 +9,7 @@ const data = [
 		"title": "portfolio",
 		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
 		"url": "https://github.com/MichaelSolati/portfolio",
-		"date": "2020-05-27T17:36:58Z"
+		"date": "2020-05-30T18:37:30Z"
 	},
 	{
 		"title": "geokit",
