@@ -3,13 +3,13 @@ const data = [
 		"title": "geofirestore-js",
 		"description": "Location-based querying and filtering using Firebase's Firestore",
 		"url": "https://github.com/MichaelSolati/geofirestore-js",
-		"date": "2020-05-26T15:29:59Z"
+		"date": "2020-05-28T07:10:43Z"
 	},
 	{
 		"title": "portfolio",
 		"description": "A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!",
 		"url": "https://github.com/MichaelSolati/portfolio",
-		"date": "2020-05-27T15:57:20Z"
+		"date": "2020-05-27T17:36:58Z"
 	},
 	{
 		"title": "geokit",
@@ -84,6 +84,12 @@ const data = [
 		"date": "2018-11-10T01:27:24Z"
 	},
 	{
+		"title": "dev.to",
+		"description": "Where programmers share ideas and help each other grow",
+		"url": "https://github.com/MichaelSolati/dev.to",
+		"date": "2020-05-29T12:57:31Z"
+	},
+	{
 		"title": "eleventy-plugin-toc",
 		"description": "11ty plugin to generate a TOC from page content",
 		"url": "https://github.com/MichaelSolati/eleventy-plugin-toc",
@@ -100,12 +106,6 @@ const data = [
 		"description": null,
 		"url": "https://github.com/MichaelSolati/test-geofirestore-error",
 		"date": "2020-05-16T08:04:50Z"
-	},
-	{
-		"title": "dev.to",
-		"description": "Where programmers share ideas and help each other grow",
-		"url": "https://github.com/MichaelSolati/dev.to",
-		"date": "2020-05-15T20:12:41Z"
 	},
 	{
 		"title": "firebase-js-sdk-3006",

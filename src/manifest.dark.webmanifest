@@ -55,5 +55,51 @@
 			"type": "image/png",
 			"purpose": "maskable any"
 		}
+	],
+	"shortcuts": [
+		{
+			"url": "/articles",
+			"name": "View my Articles",
+			"short_name": "Articles",
+			"icons": [
+				{
+					"src": "/assets/shortcuts/dark/devto.png",
+					"sizes": "192x192"
+				}
+			]
+		},
+		{
+			"url": "/code",
+			"name": "View my Code",
+			"short_name": "Code",
+			"icons": [
+				{
+					"src": "/assets/shortcuts/dark/github.png",
+					"sizes": "192x192"
+				}
+			]
+		},
+		{
+			"url": "/",
+			"name": "View my Experiencs",
+			"short_name": "Experience",
+			"icons": [
+				{
+					"src": "/assets/shortcuts/dark/home.png",
+					"sizes": "192x192"
+				}
+			]
+		},
+		{
+			"url": "/talks",
+			"name": "View my Talks",
+			"short_name": "Talks",
+			"icons": [
+				{
+					"src": "/assets/shortcuts/dark/youtube.png",
+					"sizes": "192x192"
+				}
+			]
+		}
 	]
 }
