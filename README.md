@@ -81,7 +81,7 @@ This command will:
 - Save all the previews images of the YouTube videos in the playlist.
 - Generate screenshots for every page that can be used for sites like Twitter or Facebook, like below.
 
-![The YouTube page](./src/screenshots/youtube.png)
+![The YouTube Channel](./src/screenshots/youtube.png)
 
 If you don't want to input your LinkedIn password everytime you run the script you can create a `.env` file like below.
 
@@ -101,7 +101,7 @@ Optionally you can set `LINKEDIN_PASSWORD` as an environment variable, this work
 
 ---
 
-## Wrapping Up
+## Let's Wind Up
 
 With everything configured and data generated you can test the site by running:
 
