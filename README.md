@@ -101,7 +101,7 @@ Optionally you can set `LINKEDIN_PASSWORD` as an environment variable, this work
 
 ---
 
-## let's Wind Up
+## Let's Wind Up
 
 With everything configured and data generated you can test the site by running:
 
