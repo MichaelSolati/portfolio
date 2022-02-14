@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{theme.light.primary}}">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="{{theme.dark.primary}}">
+    {% include "partials/meta.njk" %}
+  </head>
+
+  <body>
+    {% include "partials/nav.njk" %}
+    <main class="mdc-top-app-bar--fixed-adjust">
+      {{ content | safe }}
+    </main>
+
+    <link href="/theme.css" rel="stylesheet" defer>
+    <link href="/style.css" rel="stylesheet" defer>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" defer>
+
+    <script charset="utf-8" src="/scripts/all.js" defer></script>
+
+    {% for script in scripts %}
+      <script charset="utf-8" src="/scripts/{{script}}.js" defer></script>
+    {% endfor %}
+
+    {% if isProd %}
+      {% include "partials/firebase.njk" %}
+    {% endif %}
+  </body>
+</html>

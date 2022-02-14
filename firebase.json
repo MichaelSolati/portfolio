@@ -1,15 +1,10 @@
 {
   "hosting": {
-    "predeploy": "npm run build:ssr && npm --prefix functions run build",
-    "public": "dist/portfolio/browser",
+    "public": "dist",
     "ignore": [
-      "index.html"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "ssr"
-      }
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ],
     "headers": [
       {
@@ -22,5 +17,13 @@
         ]
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
   }
 }

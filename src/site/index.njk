@@ -1,0 +1,94 @@
+---
+layout: base
+title: Home
+scripts:
+  - home
+eleventyComputed:
+  description: "{{linkedin.basics.summary or title}}"
+---
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+      <div class="mdc-card">
+        <div class="row">
+          {% if images.src %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+              <img class="mdc-card__media" src="{{images.src}}" alt="{{about.name}}" height="400" width="400" {% if images.srcset %}srcset="{{images.srcset}}"{% endif %}>
+            </div>
+          {% endif %}
+          <div class="col-xs-12 {% if images.src %}col-sm-6 col-lg-8{% endif %}">
+            <div class="mdc-card-wrapper__text-section">
+              <h2>{{about.name}}</h2>
+              {% if linkedin.basics.label %}
+                <h3>{{linkedin.basics.label}}</h3>
+            {% endif %}
+            </div>
+            
+            <div class="mdc-card__content">
+              {% if linkedin.basics.summary %}
+                <p>{{linkedin.basics.summary}}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="mdc-app-bar mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <span class="mdc-top-app-bar__title" id="experiences-title">All Experiences</span>
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <div class="mdc-menu mdc-menu-surface mdc-menu-surface--anchor">
+        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+          <li class="mdc-list-item" role="menuitem" data-filter="all">
+            <span class="mdc-list-item__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">list</i>
+            <span class="mdc-list-item__text">All</span>
+          </li>
+          <li class="mdc-list-item" role="menuitem" data-filter="work">
+            <span class="mdc-list-item__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">business</i>
+            <span class="mdc-list-item__text">Work</span>
+          </li>
+          <li class="mdc-list-item" role="menuitem" data-filter="eductaion">
+            <span class="mdc-list-item__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">school</i>
+            <span class="mdc-list-item__text">Education</span>
+          </li>
+          <li class="mdc-list-item" role="menuitem" data-filter="volunteer">
+            <span class="mdc-list-item__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
+            <span class="mdc-list-item__text">Volunteer</span>
+          </li>
+        </ul>
+      </div>
+      <button class="mdc-button" id="open-menu" aria-label="Open experience filter">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">filter_list</i>
+      </button>
+    </section>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <div class="row justify-content-center" id="experiences-cards">
+    {% for element in home %}
+      <div class="col-xs-12 col-sm-6 col-lg-4" data-filter="{{element.filter}}">
+        <div class="mdc-card">
+          <div class="mdc-card-wrapper__text-section">
+            <h2>{{element.title}}</h2>
+            <h3>{{element.subtitle}}</h3>
+          </div>
+          
+          <div class="mdc-card__content">
+            <p>{{element.description}}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

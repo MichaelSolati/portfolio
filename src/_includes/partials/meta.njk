@@ -1,0 +1,13 @@
+{% set headTitle = title + ' | ' + about.name %}
+<title>{{ headTitle }}</title>
+<meta name="description" content="{{ description | safe }}">
+{# Facebook #}
+<meta property="og:title" content="{{ headTitle }}">
+<meta property="og:description" content="{{ description | safe }}">
+{# Google #}
+<meta itemprop="title" content="{{ headTitle }}">
+<meta itemprop="description" content="{{ description | safe }}">
+{# Twitter #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ headTitle }}">
+<meta name="twitter:description" content="{{ description | safe }}">

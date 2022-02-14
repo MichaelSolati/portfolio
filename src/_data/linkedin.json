@@ -1,0 +1,380 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Michael Solati",
+    "label": "Developer 🥑 Advocate",
+    "image": "",
+    "email": "mkslt04@gmail.com",
+    "phone": "347.559.7399",
+    "url": "https://michaelsolati.com",
+    "summary": "Technically sophisticated Developer Advocate with a dynamic collection of skills and experience. Talent for efficiently and creatively designing web-based applications utilizing modern development technologies, tools, and methodologies. Passion for championing the development of developers and customer skills/knowledge through expert training abilities and tools. Proven track record of successfully delivering optimized results for strategic technical projects and initiatives.",
+    "location": {
+      "countryCode": "US",
+      "address": "United States"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "michaelsolati",
+        "url": "https://www.linkedin.com/in/michaelsolati/"
+      },
+      {
+        "network": "Twitter",
+        "username": "mkslt04",
+        "url": "https://twitter.com/mkslt04"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Google",
+      "position": "Developer Program Engineer",
+      "startDate": "2019-11-30",
+      "endDate": "",
+      "highlights": [],
+      "summary": "Serve as a liaison between Developer Advocacy, Technical Writing, Product Management, and Engineering. Actively connect with developers and speak externally about technologies on conference panels, at meet ups, and on blogs. Engage in the open source community in order to better advocate for the community’s needs. Promote the adoption of modern web technologies. Develop and maintain web.dev and developer.chrome.com, Google's platforms for guidance and analysis for web developers.",
+      "url": "https://www.linkedin.com/company/google/",
+      "location": "San Francisco Bay Area"
+    },
+    {
+      "name": "Typeform.com",
+      "position": "Developer Advocate",
+      "startDate": "2019-01-31",
+      "endDate": "2019-10-31",
+      "highlights": [],
+      "summary": "Promote the adoption of Typeform while collecting constructive feedback to make the platform better. Built tools for developers to easily use Typeform services and APIs while also building examples and writing guides of how to use Typeform. Explored and developed integrations with other platforms.",
+      "url": "https://www.linkedin.com/company/typeform-/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "name": "Sellpoints, Inc.",
+      "position": "Front End Engineer",
+      "startDate": "2018-05-31",
+      "endDate": "2019-01-31",
+      "highlights": [],
+      "summary": "Revamped UI, UX and interface for client-facing retargeting platform as well as maintained other e-Commerce marketing platforms. Implemented modern web development techniques, such as custom elements, into older frameworks and software in order to migrate them into new best practices.",
+      "url": "https://www.linkedin.com/company/sellpoints/",
+      "location": "Emeryville, CA"
+    },
+    {
+      "name": "Checkmate.Digital",
+      "position": "Front End Engineer",
+      "startDate": "2015-10-31",
+      "endDate": "2018-05-31",
+      "highlights": [],
+      "summary": "Lead development tasks within a fullstack scope such as creating REST API components, developing native applications for consumption of APIs, and cultivating user-friendly training programs. Provide continuous improvement of open source projects. Aggressively source and hire the majority of development staff including the current CTO.",
+      "url": "https://www.linkedin.com/company/wecheckmate/",
+      "location": "New Haven, CT"
+    },
+    {
+      "name": "Kricket App",
+      "position": "Lead Developer",
+      "startDate": "2017-01-31",
+      "endDate": "2017-11-30",
+      "highlights": [],
+      "summary": "Collaboratively developed complete rework of the Kricket application which included creation of a database relational model, REST API endpoints, and native mobile applications. Networked with clients to design custom solutions for integration of geodata. Presented at multiple conferences on processes and methodologies of utilizing client side geodata.",
+      "url": "",
+      "location": "New Haven, CT"
+    },
+    {
+      "name": "Independent Software",
+      "position": "A100 Program Apprentice",
+      "startDate": "2015-06-30",
+      "endDate": "2015-09-30",
+      "highlights": [],
+      "summary": "Functionally led team as a Scrum Master while leveraging knowledge growth/training in categories of modern coding technologies and agile development. Utilized a wide toolset for software development projects and tasks.",
+      "url": "https://www.linkedin.com/company/independent-software/",
+      "location": "Stamford, Connecticut"
+    },
+    {
+      "name": "T-Mobile",
+      "position": "Retail Sales Associate",
+      "startDate": "2012-07-31",
+      "endDate": "2015-09-30",
+      "highlights": [],
+      "summary": "Attended to the customer and develop customer trust and loyalty not only through sales, but also by solving their problems, attending to their needs, and treating them with utmost respect. Consistently made goals for measured metrics, as well as receiving recognition in the market for some metrics. Stayed knowledgeable and up-to-date with all products and services in order to assist customers in finding a perfect solution.",
+      "url": "https://www.linkedin.com/company/t-mobile/",
+      "location": "Meriden, Connecticut"
+    },
+    {
+      "name": "JCC Of Greater New Haven",
+      "position": "Head Swim Coach (Blue Marlins of Greater New Haven)",
+      "startDate": "2009-09-30",
+      "endDate": "2015-03-31",
+      "highlights": [],
+      "summary": "Organized training cycles with effective workouts, provided coaching and support, and taught swimmers valuable skills to practice both inside, and outside of the water; while also developing my own knowledge of coaching and the sport. Also managed a well balanced coaching staff, with focuses in communication and teaching amongst each other. Opened up new lines of effective communication with parents and administrative heads. Set up activities such as team spirit nights, and events with Olympic Athletes.",
+      "url": "https://www.linkedin.com/company/jcc-of-greater-new-haven/",
+      "location": "Woodbridge, Connecticut"
+    },
+    {
+      "name": "City of Meriden",
+      "position": "MIS Intern",
+      "startDate": "2012-06-30",
+      "endDate": "2012-09-30",
+      "highlights": [],
+      "summary": "Used basic knowledge and skills obtained through education and on-the-job training to assist MIS (IT) team. Responsibilities include troubleshooting, software roll out, system maintenance, and assisting with transitions to new technologies used within our institution.",
+      "url": "",
+      "location": "Meriden, Connecticut"
+    },
+    {
+      "name": "Jewish Federation of Greater New Haven",
+      "position": "Marketing Intern",
+      "startDate": "2011-11-30",
+      "endDate": "2012-05-31",
+      "highlights": [],
+      "summary": "Participated in planning and organization of needs for network designing. Helped marketing directors formatting pages for the website as well as emails. Responsible for designing and developing the new website using HTML, CSS, and JavaScript. Collected, edited, and customized content for the website. Developed new components for the new site while effectively obtaining project specifications and goals.",
+      "url": "https://www.linkedin.com/company/jewish-federation-of-greater-new-haven/",
+      "location": "Woodbridge, Connecticut"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Google Developers",
+      "position": "Google Developer Expert",
+      "startDate": "2019-05-31",
+      "endDate": "2019-11-30",
+      "summary": "Recognized by Google as having exemplary expertise in one or more of their Google Developers products. Actively supported developers, companies and tech communities by speaking at events, publishing content. ",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Google Developers",
+      "position": "GDG Organizer",
+      "startDate": "2016-01-31",
+      "endDate": "2019-11-30",
+      "summary": "Organize events and host developers for New Haven, Berkeley, and San Francisco branches of GDG events with a variety of topics ranging from Android development to use cases of modern front-end tools and technologies. Coordinated and ran large tech conference for developers to grow and exapnd skills, all with a minimum attendance of 150 multi-disciplinary professionals.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Google",
+      "position": "Product Forum Top Contributor",
+      "startDate": "2011-06-30",
+      "endDate": "2016-12-31",
+      "summary": "Actively participate in Google’s Product Help Forums. Work with the Mobile team of Google Consumer Operations branch while addressing consumer questions, providing support for Google’s various mobile products and services, and reporting/escalating bugs with the Android platform, Nexus devices, and some Google services available on Android.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Independent Software",
+      "position": "Senior Apprentice",
+      "startDate": "2015-09-30",
+      "endDate": "2016-12-31",
+      "summary": "Organize weekly meetings and hack nights, support software tutoring sessions for all levels of expertise, and serve as an apprentice within the Apprentice 100 program.",
+      "highlights": [],
+      "url": ""
+    }
+  ],
+  "education": [
+    {
+      "institution": "Southern Connecticut State University",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science (B.S.)",
+      "startDate": "2012-12-31",
+      "endDate": "2021-05-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Amity Regional High School",
+      "area": "",
+      "studyType": "High School Diploma",
+      "startDate": "2004-12-31",
+      "endDate": "2008-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Voice Of Customer Recognition",
+      "date": "2014-11-30",
+      "awarder": "T-Mobile",
+      "summary": "Recognition of being ranked in the top 5 in the region for providing excellent customer service, as recognized by customers."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "A100 - Apprentice",
+      "issuer": "Independent Software",
+      "startDate": "2015-09-30",
+      "url": "https://credly.com/credit/12732627"
+    },
+    {
+      "name": "A100 - Certified Developer",
+      "issuer": "Independent Software",
+      "startDate": "2015-09-30",
+      "url": "https://credly.com/credit/12732655"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Project Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Checkmate Digital",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Telecommunications",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "AngularJS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Team Leadership",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular 2",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Google Analytics",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Google Apps",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MongoDB",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Analysis",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Customer Service",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Public Speaking",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Drinking Coffee",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Meteor",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Leadership",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft Office",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Start-ups",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Sales",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Java",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Cascading Style Sheets (CSS)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Software Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "PowerPoint",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Training",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Agile Methodologies",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native Speaker",
+      "language": "English"
+    },
+    {
+      "fluency": "Limited Working",
+      "language": "Persian"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}

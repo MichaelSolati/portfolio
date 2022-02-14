@@ -1,0 +1,95 @@
+@import './components/all.scss';
+@import './normalize';
+@import './material';
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+body {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-surface);
+  font-family: Segoe UI, system-ui, -apple-system, sans-serif;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+#fof {
+  margin-top: 200px;
+  text-align: center;
+
+  .mdc-button {
+    --mdc-theme-primary: red;
+  }
+}
+
+.container,
+.container-fluid {
+  width: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.mdc-app-bar {
+  margin: 16px 0;
+  position: inherit;
+}
+
+.mdc-button {
+  --mdc-theme-primary: var(--mdc-theme-secondary);
+}
+
+.mdc-card {
+  margin: 8px;
+  > .mdc-card-wrapper__text-section,
+  > .mdc-card__content {
+    margin: 0 16px;
+  }
+}
+
+.mdc-top-app-bar {
+  * {
+    color: var(--mdc-theme-on-primary);
+  }
+  .mdc-button {
+    text-transform: capitalize;
+  }
+}
+
+.mdc-list-item {
+  height: 48px;
+  line-height: 48px;
+
+  .material-icons {
+    margin: 12px 16px 0 0;
+  }
+}

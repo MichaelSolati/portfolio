@@ -1,0 +1,22 @@
+---
+permalink: manifest.json
+---
+{
+  "name": "{{about.name}}",
+  "short_name": "{{about.shortName}}",
+  "theme_color": "{{theme.light.primary}}",
+  "background_color": "{{theme.light.primary}}",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {% for icon in images.icons %}
+      {
+        "src": "/assets/icons/{{icon.src}}",
+        "sizes": "{{icon.width}}x{{icon.width}}",
+        "type": "image/webp"
+      }{{'' if loop.last else ','}}
+    {% endfor %}
+  ]
+}
