@@ -8,8 +8,7 @@ const path = require('path');
 const sharp = require('sharp');
 const webpConverter = require('webp-converter');
 
-const quality = 30;
-const srcsetWidths = [240, 360, 480, 720, 1080];
+const srcsetWidths = [240, 360, 480, 720];
 const tempDirectory = tmpdir();
 
 // Create width folders if they don't exist
@@ -60,7 +59,7 @@ const createSrcSet = async webp => {
   for (const size of srcsetData) {
     const sizePath = path.join(__dirname, '../', 'src', size.src);
     await sharp(createOutputPath(webp))
-      .webp({quality})
+      .webp({quality: 30})
       .resize(size.width)
       .toFile(sizePath);
   }
@@ -78,7 +77,7 @@ const createWebp = async (downloadedImage, webp) => {
   const outputPath = createOutputPath(webp);
   const isGif = path.extname(downloadedImage).toLowerCase() === '.gif';
   const webpFunction = isGif ? webpConverter.gwebp : webpConverter.cwebp;
-  await webpFunction(downloadedImage, outputPath, `-q ${quality}`);
+  await webpFunction(downloadedImage, outputPath, `-q 80`);
 };
 
 /**
