@@ -77,7 +77,7 @@ const createWebp = async (downloadedImage, webp) => {
   const outputPath = createOutputPath(webp);
   const isGif = path.extname(downloadedImage).toLowerCase() === '.gif';
   const webpFunction = isGif ? webpConverter.gwebp : webpConverter.cwebp;
-  await webpFunction(downloadedImage, outputPath, `-q 80`);
+  await webpFunction(downloadedImage, outputPath, '-q 80');
 };
 
 /**
@@ -110,8 +110,8 @@ const downloadImage = (url, filename) => {
  */
 module.exports = async (url, prefix) => {
   const srcs = {};
-  const img = `${prefix}-${md5(url)}${path.extname(url)}`;
-  const webp = `${path.basename(img, path.extname(img))}.webp`;
+  const img = `_${prefix}-${md5(url)}${path.extname(url)}`;
+  const webp = `_${path.basename(img, path.extname(img))}.webp`;
   const assetName = md5(webp);
 
   // Check if asset exists

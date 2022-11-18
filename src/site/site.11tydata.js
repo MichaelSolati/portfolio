@@ -12,7 +12,7 @@ module.exports = {
       } else if (pagesKeys.includes(fileSlug)) {
         return '';
       } else {
-        return data.backgroun;
+        return data.background;
       }
     },
     description: data => {

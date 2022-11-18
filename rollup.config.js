@@ -1,8 +1,8 @@
 import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import * as fs from 'fs';
 import cleanup from 'rollup-plugin-cleanup';
-import {terser} from 'rollup-plugin-terser';
 import * as path from 'path';
 
 const isProd = process.env.NODE_ENV === 'prod';
