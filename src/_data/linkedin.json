@@ -27,12 +27,22 @@
   },
   "work": [
     {
+      "name": "Amplication",
+      "position": "Developer Advocate",
+      "startDate": "2022-03-01",
+      "endDate": "",
+      "highlights": [],
+      "summary": "Created tutorials, guides, and blog posts to drive user adoption and satisfaction for Amplication's API generation tool. Positioned Amplication as a prominent authority in the industry through compelling presentations at meetups, resulting in heightened brand recognition and significant user acquisition. Collaborated with the development team to enhance the core product based on user feedback, adding features and resolving bugs.",
+      "url": "https://www.linkedin.com/company/amplication/",
+      "location": "San Francisco Bay Area"
+    },
+    {
       "name": "Google",
       "position": "Developer Program Engineer",
       "startDate": "2019-11-30",
-      "endDate": "",
+      "endDate": "2022-02-28",
       "highlights": [],
-      "summary": "Serve as a liaison between Developer Advocacy, Technical Writing, Product Management, and Engineering. Actively connect with developers and speak externally about technologies on conference panels, at meet ups, and on blogs. Engage in the open source community in order to better advocate for the community’s needs. Promote the adoption of modern web technologies. Develop and maintain web.dev and developer.chrome.com, Google's platforms for guidance and analysis for web developers.",
+      "summary": "Improved user experience for web.dev and developer.chrome.com by implementing new features, optimizing performance, and enhancing user satisfaction. Implemented image hosting, compression, and resizing capabilities, improving performance and faster load times. Led the implementation of the current hosting solution for web.dev, supporting close to 700k monthly visitors and enabling multi-language support.",
       "url": "https://www.linkedin.com/company/google/",
       "location": "San Francisco Bay Area"
     },
@@ -42,7 +52,7 @@
       "startDate": "2019-01-31",
       "endDate": "2019-10-31",
       "highlights": [],
-      "summary": "Promote the adoption of Typeform while collecting constructive feedback to make the platform better. Built tools for developers to easily use Typeform services and APIs while also building examples and writing guides of how to use Typeform. Explored and developed integrations with other platforms.",
+      "summary": "Empowered developers by creating code samples and tutorials, driving effective adoption and user satisfaction. Maintained Node.js SDK and developed Python SDK for seamless integration with Typeform. Developed custom elements to provide users with enhanced flexibility and customization options.",
       "url": "https://www.linkedin.com/company/typeform-/",
       "location": "San Francisco, CA"
     },
@@ -52,7 +62,7 @@
       "startDate": "2018-05-31",
       "endDate": "2019-01-31",
       "highlights": [],
-      "summary": "Revamped UI, UX and interface for client-facing retargeting platform as well as maintained other e-Commerce marketing platforms. Implemented modern web development techniques, such as custom elements, into older frameworks and software in order to migrate them into new best practices.",
+      "summary": "Implemented modern web development techniques, including custom elements, to upgrade frameworks and software and align with industry best practices. Maintained and optimized e-commerce marketing platforms, ensuring seamless operation and maximizing business impact.",
       "url": "https://www.linkedin.com/company/sellpoints/",
       "location": "Emeryville, CA"
     },
@@ -62,7 +72,7 @@
       "startDate": "2015-10-31",
       "endDate": "2018-05-31",
       "highlights": [],
-      "summary": "Lead development tasks within a fullstack scope such as creating REST API components, developing native applications for consumption of APIs, and cultivating user-friendly training programs. Provide continuous improvement of open source projects. Aggressively source and hire the majority of development staff including the current CTO.",
+      "summary": "Led full-stack development tasks, including creating REST API components and overseeing developer training. Successfully delivered 3 unique applications by effectively managing small development teams and utilizing diverse tools, resulting in business growth and high client satisfaction.",
       "url": "https://www.linkedin.com/company/wecheckmate/",
       "location": "New Haven, CT"
     },
@@ -132,7 +142,7 @@
       "organization": "Google Developers",
       "position": "Google Developer Expert",
       "startDate": "2019-05-31",
-      "endDate": "2019-11-30",
+      "endDate": "",
       "summary": "Recognized by Google as having exemplary expertise in one or more of their Google Developers products. Actively supported developers, companies and tech communities by speaking at events, publishing content. ",
       "highlights": [],
       "url": ""
