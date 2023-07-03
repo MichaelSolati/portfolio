@@ -1,68 +1,68 @@
-# Portfolio
+# Astro Starter Kit: Blog
 
-A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!
-
-![The home page](./screenshots/home.png)
-
-As a Developer 🥑 (Advocate) I speak at events, write blog posts, and maintain some libraries. I wanted to create a website that would showcase all of this, and I created this project to fetch from [dev.to](https://dev.to), [GitHub](https://github.com) and a [YouTube](https://youtube.com) playlist!
-
-- My experience is pulled from [LinkedIn](https://linkedin.com) and is shown on [`/`](https://michaelsolati.com/).
-- Articles I've written on dev.to are shown on [`/articles`](https://michaelsolati.com/articles).
-- My most starred and recent GitHub repos are shown on [`/code`](https://michaelsolati.com/code).
-- Recorded talks are fetched from a YouTube playlist and shown on the [`/talks`](https://michaelsolati.com/talks).
-
-Almost all of this is configured from a few JSON files in [`src/_data`](src/_data).
-
----
-
-## Getting Setup
-
-We'll keep our first step simple and just run a `npm ci` command. You will also want `firebase-tools` installed as a global dependency on your machine. Just run the command `npm i -g firebase-tools` and be sure to sign into your Google account for the `firebase-tools` with the command `firebase login`.
-
-### Configuration
-
-Some basic details used for generating pages and fetching content on the site is found in the [`src/_data/about.json`](src/_data/about.json). Below is an interface explaining the site's data structure. If you don't want one of the optional fields, delete it.
-
-```TypeScript
-interface About {
-  name: string; // Your name.
-  shortName: string; // Short name for PWA.
-  devto?: string; // dev.to username.
-  github?: string; // Twitter username.
-  linkedin?: string; // LinkedIn custom URL, `www.linkedin.com/in/<THIS>`.
-  youtubePlaylist?: string; // YouTube Playlist ID.
-}
+```
+npm create astro@latest -- --template blog
 ```
 
-#### LinkedIn
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
 
-I would like to automate this but LinkedIn makes it near impossible. Using this [Chrome extension](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec). Generate a JSON and save the content in [`src/_data/linkedin.json`](src/_data/linkedin.json).
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-#### Firebase
+![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
 
-This application takes advantage of Firebase for the use of its [Hosting](https://firebase.google.com/products/hosting) and [Google Analytics](https://firebase.google.com/docs/analytics). In the [Firebase console](https://console.firebase.google.com/) create a new application, and ensure that these features are enabled. Typically they would be enabled from the get-go, but you may want to check just in case.
+Features:
 
-Update the `.firebaserc` file in the root directory so that `projects.default` is assigned to your Project ID. The easiest way to do this is just to delete the file and run the command `firbase init` to assign it to your project.
+- ✅ Minimal styling (make it your own!)
+- ✅ 100/100 Lighthouse performance
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ RSS Feed support
+- ✅ Markdown & MDX support
 
-Next update [`src/_data/firebase.json`](src/_data/firebase.json) with your Firebase config details.
+## 🚀 Project Structure
 
-#### YouTube
+Inside of your Astro project, you'll see the following folders and files:
 
-You will also need to enable the YouTube Data API v3 for your Firebase application, which [you can do here](https://console.developers.google.com/apis/library/youtube.googleapis.com/). Generate an API token for this and use set it as an environment variable called `YOUTUBE`. If you don't want to keep setting it you can set it once in a git ignored `.env` file.
-
-## Let's Wind Up
-
-With everything configured and data generated you can test the site by running:
-
-```bash
-npm run start
+```
+├── public/
+├── src/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── README.md
+├── package.json
+└── tsconfig.json
 ```
 
-If everything looks good then we're ready to deploy to Firebase, run:
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-```bash
-npm run build
-firebase deploy
-```
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Enjoy!
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Credit
+
+This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).

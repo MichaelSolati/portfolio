@@ -1,0 +1,18 @@
+---
+title: "The Angular View: Prologue"
+description: A simple explanation to SPA and SSR with Javascript frameworks.
+pubDate: Apr 17 2017
+hero: https://thepracticaldev.s3.amazonaws.com/i/ibcwd46gr9dxzn9dvks3.png
+---
+
+With the advent of AJAX, and even more recently with AngularJS, it has became more and more common for the client’s device to do much of the heavy lifting when creating a web page. JavaScript is a great language, and since virtually every device in the world today runs JavaScript we can build out our websites and web applications using just JavaScript ([we can run JavaScript on the server!](https://nodejs.org/en/)). There are, however, some significant SEO drawbacks to using JavaScript exclusively to build a website or web application.
+
+The issue arises from the structure of JavaScript sites. If you have learned how to develop websites in the past few years with frameworks such as AngularJS, Ember.js or Meteor (Blaze), you’ve probably been exclusively building Single Page Applications; SPA for short. In an SPA website or web app, all necessary code (HTML, JavaScript and CSS) is pushed to the browser with a single page load. Additional information or resources may be dynamically loaded and added to the page as necessary, but everything needed for the site to function is there.
+So how is this different than before? Well in prior years, languages and frameworks like PHP (WAMP, Drupal, WordPress), ASP.NET or Ruby on Rails dominated the landscape. Unlike an SPA, applications that were built in these environments would serve only one page at a time, loading only the content of the page being viewed. A user would visit a website, the server would have the PHP code associated to that route processed by a rendering engine, and when the page was rendered it would send that HTML to the browser. When you clicked on a link on the page, a new request would be sent to the server and a new page would be rendered and sent back.
+
+This wasn’t plain HTML that was coded and sent. Every page was written with some programming language, processed into HTML that the browser could then render. This is called Server Side Rendering (SSR), because every page (and the code used to make it) was rendered server side and sent to the client.
+Things like SEO (Search Engine Optimization) and crawlability (the bane of every web developer’s existence) were easier then. All you needed to do was include the right keywords and structure your tags appropriately; the content was all rendered before it arrived on the client’s device. This meant search engines viewed your content with no issues, crawling through and processing every page and all of its content.
+
+For our JavaScript-heavy SPA, however, this can become problematic. Not all search engines that crawl your website will run JavaScript. Many, excluding Google at the time of writing this, run AJAX crawls. The search engine requests the page from your server, and your server sends back a single HTML page where your JS or CSS bundle is listed in the head, but none of that code runs while the page is crawled. Instead, the search engine just sees a blank page. While Google will actually run some of your JavaScript and render the content you want to be crawled, there can still be some issues there. Google will only run JavaScript code for up to 5 seconds; if your payload is too big and can’t load in that time, Google will still only see a blank page.
+
+However, many newer JavaScript frameworks such as Angular and React are starting to support SSR. In my next post I will break down how Angular handles the view and how we can take advantage of that for crawlability. And maybe something even more exciting I’m saving for later…

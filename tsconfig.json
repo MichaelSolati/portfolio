@@ -1,16 +1,6 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": "./",
-    "checkJs": true,
-    "esModuleInterop": true,
-    "lib": ["es6", "dom"],
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "outDir": "dist",
-    "resolveJsonModule": true
-  },
-  "include": ["src/**/*", "types/**/*", "*.js"],
-  "exclude": [".github", "dist", "node_modules"]
+    "strictNullChecks": true
+  }
 }
