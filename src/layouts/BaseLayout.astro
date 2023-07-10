@@ -1,0 +1,25 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <slot name="head" />
+  </head>
+
+  <body>
+    <Header />
+    <main class="container is-fluid">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
