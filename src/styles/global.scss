@@ -1,1 +1,61 @@
-@import './normalize';
+@import "normalize.css/normalize.css";
+@import "bootstrap/scss/bootstrap-grid.scss";
+@import "./material";
+
+body {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-surface);
+  font-family: Segoe UI, system-ui, -apple-system, sans-serif;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.container,
+.container-fluid {
+  width: auto;
+}
+
+.mdc-button {
+  --mdc-theme-primary: var(--mdc-theme-secondary);
+}
+
+.mdc-card {
+  margin: 8px;
+  > .mdc-card-wrapper__text-section,
+  > .mdc-card__content {
+    margin: 0 16px;
+  }
+}

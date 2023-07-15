@@ -1,5 +1,6 @@
 ---
 import '../styles/global.scss';
+import Theme from './Theme.jsx';
 
 export interface Props {
 	title: string;
@@ -11,6 +12,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
+<!-- Theme -->
+<Theme />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />

@@ -1,42 +1,51 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <BaseLayout>
-	<style slot="head">
-		ul {
-			list-style-type: none;
-			padding: unset;
-		}
-		ul li {
-			display: flex;
-		}
-		ul li :global(time) {
-			flex: 0 0 130px;
-			font-style: italic;
-			color: #595959;
-		}
-		ul li a:visited {
-			color: #8e32dc;
-		}
-	</style>
-			
-	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<FormattedDate date={post.data.pubDate} />
-						<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      {
+        posts.map(({ data: post, slug }) => (
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="mdc-card">
+              {post.hero && (
+                <img
+                  class="mdc-card__media mdc-card__media--16-9"
+                  src={post.hero}
+                  alt={post.title}
+                  height="230"
+                  width="410"
+                  loading="lazy"
+                />
+              )}
+
+              <div class="mdc-card-wrapper__text-section">
+                <h2>{post.title}</h2>
+              </div>
+
+              <div class="mdc-card__content">
+                <p>{post.description}</p>
+              </div>
+
+              <div class="mdc-card__actions">
+                <a
+                  class="mdc-button mdc-card__action mdc-card__action--button"
+                  href={`/blog/${slug}/`}
+                >
+                  <span class="mdc-button__ripple" />
+                  <span class="mdc-button__label">Read</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>
