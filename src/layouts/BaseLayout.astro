@@ -1,8 +1,8 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.tsx";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
@@ -15,10 +15,12 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <slot name="head" />
   </head>
 
-  <body>
-    <Header />
-    <main class="container is-fluid">
-      <slot />
+  <body style="height: 100%;">
+    <Navbar />
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class="container is-fluid">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

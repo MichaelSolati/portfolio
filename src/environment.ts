@@ -1,4 +1,21 @@
 export const environment = {
+  name: "Michael Solati",
+  shortName: "Michael",
+  blog: {
+    description: "Stories, guides, and tutorials for developers by me.",
+    title: "Blog",
+  },
+  github: {
+    id: "MichaelSolati",
+    description: "Some of the best code I've written, available for everyone!",
+    title: "Code",
+  },
+  youtubePlaylist: {
+    id: "PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl",
+    description:
+      "From major conferences to smaller meetups, I've spoken at a slew of events.",
+    title: "Videos",
+  },
   theme: {
     light: {
       background: "#fafafa",
@@ -18,5 +35,5 @@ export const environment = {
       surface: "#424242",
       onSurface: "#ffffff",
     },
-  }
+  },
 };

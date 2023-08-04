@@ -5,6 +5,6 @@
 // @use '@material/list/mdc-list';
 // @use '@material/menu/mdc-menu';
 // @use '@material/menu-surface/mdc-menu-surface';
-// @use '@material/top-app-bar/mdc-top-app-bar';
+@use '@material/top-app-bar/mdc-top-app-bar';
 
 @include card.core-styles;
