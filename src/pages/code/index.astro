@@ -2,12 +2,14 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cards from "../../components/Cards";
+import type { Props as CardProps } from "../../components/Card";
 import { environment } from "../../environment";
 
-const code: any[] = [];
+const elements: CardProps[] = [];
 
 if (environment.github) {
-  let repos = await EleventyFetch(
+  let repos: any[] = await EleventyFetch(
     `https://api.github.com/users/${environment.github.id}/repos?sort=count&per_page=200`,
     {
       duration: "6h",
@@ -28,45 +30,15 @@ if (environment.github) {
     )
     .slice(0, 24);
 
-  for (const repo of repos) {
-    code.push({
-      title: repo.name,
+  for (let repo of repos)
+    elements.push({
       description: repo.description,
+      title: repo.name,
       url: repo.html_url,
     });
-  }
 }
 ---
 
 <BaseLayout>
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      {
-        code.map(({ title, description, url }) => (
-          <div class="col-xs-12 col-sm-6 col-lg-4">
-            <div class="mdc-card">
-              <div class="mdc-card-wrapper__text-section">
-                <h2>{title}</h2>
-              </div>
-
-              <div class="mdc-card__content">
-                <p>{description}</p>
-              </div>
-
-              <div class="mdc-card__actions">
-                <a
-                  class="mdc-button mdc-card__action mdc-card__action--button"
-                  target="_blank"
-                  href={url}
-                >
-                  <span class="mdc-button__ripple" />
-                  <span class="mdc-button__label">View</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </div>
+  <Cards elements={elements} />
 </BaseLayout>

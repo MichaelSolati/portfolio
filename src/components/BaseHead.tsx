@@ -1,6 +1,6 @@
 
 
-export interface Props {
+export type Props = {
   description: string;
   image?: string;
   site: URL | undefined;
