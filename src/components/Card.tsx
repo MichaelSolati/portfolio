@@ -4,7 +4,7 @@ export type Props = {
   hero?: string;
   title: string;
   url: string;
-}
+};
 
 export default function Cards({
   button = "View",

@@ -1,21 +1,23 @@
-
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export type Props = {
+  canonical?: string;
   description: string;
   image?: string;
   site: URL | undefined;
   title: string;
   url: URL;
-}
+};
 
 export default function BaseHead({
-  description,
+  canonical,
+  description = SITE_DESCRIPTION,
   image = "/placeholder-social.jpg",
   site,
-  title,
+  title = SITE_TITLE,
   url,
 }: Props) {
-  const canonicalURL = new URL(url.pathname, site).toString();
+  const canonicalURL = canonical || new URL(url.pathname, site).toString();
   const socialImage = new URL(image, url).toString();
   const socialURL = url.toString();
 

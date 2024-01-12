@@ -1,21 +1,25 @@
 ---
 import "../styles/global.scss";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import BaseHead from "../components/BaseHead.tsx";
 import Footer from "../components/Footer.tsx";
 import Navbar from "../components/Navbar.tsx";
 import Theme from "../components/Theme.tsx";
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
-console.log(Astro.generator);
+const { canonical, description, title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <Theme />
-    <BaseHead description={description} site={Astro.site} title={title} url={Astro.url} />
+    <BaseHead
+      canonical={canonical}
+      description={description}
+      site={Astro.site}
+      title={title}
+      url={Astro.url}
+    />
     <slot name="head" />
   </head>
 

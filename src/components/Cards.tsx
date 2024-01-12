@@ -10,7 +10,7 @@ export default function Cards({ elements }: Props) {
     <div className="container-fluid">
       <div className="row justify-content-center">
         {elements.map((element) => (
-          <Card {...element} key={element.url}/>
+          <Card {...element} key={element.url} />
         ))}
       </div>
     </div>
