@@ -1,17 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards";
-import { getCollection } from "astro:content";
+import Blog from "../../data/blog";
 
-const elements = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).map((p) => ({
-  button: 'Read',
-  description: p.data.description,
-  hero: p.data.hero,
-  title: p.data.title,
-  url: `/blog/${p.slug}`,
-}));;
+const elements = await Blog();
 ---
 
 <BaseLayout>
