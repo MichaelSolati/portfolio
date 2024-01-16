@@ -43,9 +43,23 @@ img {
   max-width: 100%;
 }
 
+#fof {
+  margin: 200px 0;
+  text-align: center;
+
+  .mdc-button {
+    --mdc-theme-primary: red;
+  }
+}
+
 .container,
 .container-fluid {
   width: auto;
+}
+
+.mdc-app-bar {
+  margin: 16px 0;
+  position: inherit;
 }
 
 .mdc-button {
