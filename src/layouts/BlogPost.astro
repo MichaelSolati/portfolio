@@ -1,40 +1,36 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { canonical, description, title, pubDate, updatedDate, hero } = Astro.props;
+const { canonical, description, title, pubDate, hero } = Astro.props;
 ---
 
 <BaseLayout canonical={canonical} description={description} title={title}>
-  <style slot="head">
-    .title {
-      font-size: 2em;
-      margin: 0.25em 0 0;
-    }
-    hr {
-      border-top: 1px solid #ddd;
-      margin: 1rem 0;
-    }
-    .last-updated-on {
-      font-style: italic;
-    }
-  </style>
+  <article title={title}>
+    <div id="blog-post-hero">
+      {
+        hero && (
+          <Image
+            id="blog-post-hero-image"
+            src={hero}
+            width="1200"
+            height="400"
+            alt={`Hero image for article titled: ${title}`}}
+          />
+        )
+      }
 
-  <article>
-    {hero && <img width={720} height={360} src={hero} alt="" />}
-    <h1 class="title">{title}</h1>
-    <FormattedDate date={pubDate} />
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          Last updated on <FormattedDate date={updatedDate} />
-        </div>
-      )
-    }
-    <hr />
-    <slot />
+      <div id="blog-post-header">
+        <h1 class="mdc-typography--headline3">{title}</h1>
+        <div class="mdc-typography--caption">Published: <FormattedDate date={pubDate} /></div>
+      </div>
+    </div>
+    <div id="blog-post-content">
+      <slot />
+    </div>
   </article>
 </BaseLayout>
