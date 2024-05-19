@@ -9,7 +9,7 @@ export type Props = {
   url: URL;
 };
 
-export default function BaseHead({
+export default function SEOTags({
   canonical,
   description = SITE_DESCRIPTION,
   image = "/placeholder-social.jpg",
@@ -23,10 +23,6 @@ export default function BaseHead({
 
   return (
     <>
-      {/* Global Metadata */}
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalURL} />
       {/* Primary Meta Tags */}
