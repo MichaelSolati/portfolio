@@ -10,24 +10,29 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@11ty/eleventy-fetch": "^4.0.0",
-    "@astrojs/mdx": "^2.0.4",
-    "@astrojs/react": "^3.0.9",
-    "@astrojs/rss": "^4.0.2",
-    "@astrojs/sitemap": "^3.0.4",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/react": "^3.3.4",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.4",
     "@material/button": "^14.0.0",
     "@material/card": "^14.0.0",
+    "@material/icon-button": "^14.0.0",
+    "@material/list": "^14.0.0",
+    "@material/menu": "^14.0.0",
+    "@material/menu-surface": "^14.0.0",
     "@material/top-app-bar": "^14.0.0",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.1.2",
-    "bootstrap": "^5.3.2",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.8.6",
+    "bootstrap": "^5.3.3",
     "normalize.css": "^8.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.69.7"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "sass": "^1.77.2"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.4.5"
   }
 }
