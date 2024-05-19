@@ -2,10 +2,14 @@
 @import "bootstrap/scss/bootstrap-grid.scss";
 @import "./material";
 
+a {
+  color: red;
+  text-decoration: none;
+}
+
 body {
   background-color: var(--mdc-theme-background);
   color: var(--mdc-theme-on-surface);
-  font-family: Segoe UI, system-ui, -apple-system, sans-serif;
   overflow-wrap: break-word;
 }
 
@@ -15,32 +19,45 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
   margin-bottom: 12px;
 }
 
-h1 {
-  font-size: 60px;
-  line-height: 60px;
-}
-
-h2 {
-  font-size: 20px;
-  line-height: 20px;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 450;
-  font-size: 16px;
-  line-height: 16px;
-}
-
 img {
+  display: block;
   height: auto;
   max-width: 100%;
+  margin: 0 auto;
+}
+
+#blog-post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#blog-post-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+}
+
+#blog-post-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+#blog-post-hero-image {
+  width: 100%;
 }
 
 #fof {
