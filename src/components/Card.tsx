@@ -6,7 +6,13 @@ export type Props = {
   url: string;
 };
 
-export default function Cards({
+const limitDescription = (description: string | null) => {
+  return (description && description.length > 240)
+    ? `${description.substring(0, 237)}...`
+    : description;
+};
+
+export default function Card({
   button = "View",
   description,
   hero,
@@ -28,17 +34,19 @@ export default function Cards({
         )}
 
         <div className="mdc-card-wrapper__text-section">
-          <h2>{title}</h2>
+          <h2 className="mdc-typography--headline6">{title}</h2>
         </div>
 
         <div className="mdc-card__content">
-          <p>{description}</p>
+          <p className="mdc-typography--subtitle1">{limitDescription(description)}</p>
         </div>
 
         <div className="mdc-card__actions">
           <a
             className="mdc-button mdc-card__action mdc-card__action--button"
             href={url}
+            target={url.startsWith("http") ? "_blank" : undefined}
+            rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
           >
             <span className="mdc-button__ripple" />
             <span className="mdc-button__label">{button}</span>
