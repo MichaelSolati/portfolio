@@ -25,6 +25,7 @@ export const environment = {
       onSecondary: "#ffffff",
       surface: "#ffffff",
       onSurface: "#212121",
+      link: "#6200ee",
     },
     dark: {
       background: "#303030",
@@ -34,6 +35,7 @@ export const environment = {
       onSecondary: "#212121",
       surface: "#424242",
       onSurface: "#ffffff",
+      link: "#bb86fc",
     },
   },
 };

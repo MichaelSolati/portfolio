@@ -27,6 +27,7 @@ export default function Theme() {
       --mdc-theme-on-secondary: ${theme.light.onSecondary};
       --mdc-theme-surface: ${theme.light.surface};
       --mdc-theme-on-surface: ${theme.light.onSurface};
+      --link: ${theme.light.link};
     }
   
     @media (prefers-color-scheme: dark) {
@@ -38,6 +39,7 @@ export default function Theme() {
         --mdc-theme-on-secondary: ${theme.dark.onSecondary};
         --mdc-theme-surface: ${theme.dark.surface};
         --mdc-theme-on-surface: ${theme.dark.onSurface};
+        --link: ${theme.dark.link};
       }
     }
     `}
