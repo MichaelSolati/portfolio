@@ -21,7 +21,7 @@ export default function Home(): ExpereienceCardProps[] {
       description: e.area,
       start: new Date(e.startDate),
       end: e.endDate ? new Date(e.endDate) : null,
-      filter: 'eductaion',
+      filter: 'education',
     }))
     .sort(sortByDate)
     .slice(0, 6);

@@ -43,10 +43,18 @@ img {
   margin: 0 auto;
 }
 
-.post {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 16px;
+#fof {
+  margin: 200px 0;
+  text-align: center;
+
+  .mdc-button {
+    --mdc-theme-primary: red;
+  }
+}
+
+.container,
+.container-fluid {
+  width: auto;
 }
 
 .hero-banner {
@@ -79,20 +87,6 @@ img {
   width: 100%;
 }
 
-#fof {
-  margin: 200px 0;
-  text-align: center;
-
-  .mdc-button {
-    --mdc-theme-primary: red;
-  }
-}
-
-.container,
-.container-fluid {
-  width: auto;
-}
-
 .mdc-app-bar {
   margin: 16px 0;
   position: inherit;
@@ -108,4 +102,19 @@ img {
   > .mdc-card__content {
     margin: 0 16px;
   }
+}
+
+.mdc-list-item {
+  height: 48px;
+  line-height: 48px;
+
+  .material-icons {
+    margin: 12px 16px 0 0;
+  }
+}
+
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
