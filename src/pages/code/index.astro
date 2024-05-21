@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards";
+import Hero from "../../components/Hero";
 import Code from "../../data/code";
 import { environment } from "../../environment";
 
@@ -8,5 +9,6 @@ const elements = await Code();
 ---
 
 <BaseLayout description={environment.code.description} title={environment.code.title} image={'/code.webp'}>
+  <Hero hero={'/code.webp'} title={environment.code.title} />
   <Cards elements={elements} />
 </BaseLayout>

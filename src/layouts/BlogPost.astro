@@ -1,34 +1,16 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-import FormattedDate from "../components/FormattedDate";
+import Hero from "../components/Hero";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { canonical, description, title, pubDate, hero } = Astro.props;
+const { canonical, description, hero, pubDate, title } = Astro.props;
 ---
 
 <BaseLayout canonical={canonical} description={description} title={title} image={hero}>
   <article title={title}>
-    <div class="hero-banner">
-      {
-        hero && (
-          <Image
-            class="hero-image"
-            src={hero}
-            width="1200"
-            height="400"
-            alt={`Hero image for article titled: ${title}`}
-          />
-        )
-      }
-
-      <div class="hero-content">
-        <h1 class="mdc-typography--headline3">{title}</h1>
-        <div class="mdc-typography--caption">Published: <FormattedDate date={pubDate} /></div>
-      </div>
-    </div>
+    <Hero hero={hero} pubDate={pubDate} title={title} />
     <div class="post">
       <slot />
     </div>

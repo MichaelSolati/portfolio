@@ -4,7 +4,7 @@ type Props = {
 
 export default function FormattedDate({date}: Props) {
   return (
-    <time datetime={date.toISOString()}>
+    <time dateTime={date.toISOString()}>
       {date.toLocaleDateString('en-us', {
         year: 'numeric',
         month: 'short',
