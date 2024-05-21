@@ -1,0 +1,120 @@
+@import "normalize.css/normalize.css";
+@import "bootstrap/scss/bootstrap-grid.scss";
+@import "./material";
+
+a:not([class^="mdc-"]) {
+  color: var(--link);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    text-decoration: underline; 
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: color-mix(in srgb, var(--link), black 20%); 
+  }
+}
+
+body {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-surface);
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 12px;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#fof {
+  margin: 200px 0;
+  text-align: center;
+
+  .mdc-button {
+    --mdc-theme-primary: red;
+  }
+}
+
+.container,
+.container-fluid {
+  width: auto;
+}
+
+.hero-banner {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content {
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+
+  h1 {
+    max-width: calc(100% - 32px);
+  }
+}
+
+.hero-image {
+  height: 34vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.mdc-app-bar {
+  margin: 16px 0;
+  position: inherit;
+}
+
+.mdc-button {
+  --mdc-theme-primary: var(--mdc-theme-secondary);
+}
+
+.mdc-card {
+  margin: 8px;
+  > .mdc-card-wrapper__text-section,
+  > .mdc-card__content {
+    margin: 0 16px;
+  }
+}
+
+.mdc-list-item {
+  height: 48px;
+  line-height: 48px;
+
+  .material-icons {
+    margin: 12px 16px 0 0;
+  }
+}
+
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

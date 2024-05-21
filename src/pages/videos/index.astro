@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cards from "../../components/Cards";
+import Hero from "../../components/Hero";
+import Video from "../../data/video";
+import { environment } from "../../environment";
+
+const elements = await Video();
+---
+
+<BaseLayout description={environment.videos.description} title={environment.videos.title} image={'/videos.webp'}>
+  <Hero hero={'/videos.webp'} title={environment.videos.title} />
+  <Cards elements={elements} />
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cards from "../../components/Cards";
+import Hero from "../../components/Hero";
+import Blog from "../../data/blog";
+import { environment } from "../../environment";
+
+const elements = await Blog();
+---
+
+<BaseLayout description={environment.blog.description} title={environment.blog.title} image={'/blog.webp'}>
+  <Hero hero={'/blog.webp'} title={environment.blog.title} />
+  <Cards elements={elements} />
+</BaseLayout>

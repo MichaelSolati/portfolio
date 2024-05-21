@@ -1,0 +1,414 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Michael Solati",
+    "label": "Senior Software Engineer",
+    "image": "",
+    "email": "mkslt04@gmail.com",
+    "phone": "347.559.7399",
+    "url": "https://michaelsolati.com",
+    "summary": "I'm an experienced web developer with 7+ years in front-end development and expertise in leveraging web capabilities to deliver scalable software solutions.",
+    "location": {
+      "countryCode": "US",
+      "address": "United States"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "michaelsolati",
+        "url": "https://www.linkedin.com/in/michaelsolati/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Meta",
+      "position": "Software Engineer",
+      "startDate": "2023-10-31",
+      "endDate": "",
+      "highlights": [],
+      "url": "https://www.linkedin.com/company/meta/",
+      "location": "Menlo Park, California, United States"
+    },
+    {
+      "name": "Amplication",
+      "position": "Developer Advocate",
+      "startDate": "2022-03-31",
+      "endDate": "2023-06-30",
+      "highlights": [],
+      "summary": "* Created tutorials, guides, and blog posts to drive user adoption and satisfaction for Amplication's API generation tool.\n* Positioned Amplication as a prominent authority in the industry through compelling presentations at meetups, resulting in heightened brand recognition and significant user acquisition.\n* Collaborated with the development team to enhance the core product based on user feedback, adding features and resolving bugs.",
+      "url": "https://www.linkedin.com/company/amplication/",
+      "location": "San Francisco Bay Area"
+    },
+    {
+      "name": "Google",
+      "position": "Developer Program Engineer",
+      "startDate": "2019-11-30",
+      "endDate": "2022-02-28",
+      "highlights": [],
+      "summary": "* Improved user experience for web.dev and developer.chrome.com by implementing new features, optimizing performance, and enhancing user satisfaction.\n* Implemented image hosting, compression, and resizing capabilities, improving performance and faster load times.\n* Led the implementation of the current hosting solution for web.dev, supporting close to 700k monthly visitors and enabling multi-language support.",
+      "url": "https://www.linkedin.com/company/google/",
+      "location": "San Francisco Bay Area"
+    },
+    {
+      "name": "Typeform.com",
+      "position": "Developer Advocate",
+      "startDate": "2019-01-31",
+      "endDate": "2019-10-31",
+      "highlights": [],
+      "summary": "* Empowered developers by creating code samples and tutorials, driving effective adoption and user satisfaction.\n* Maintained Node.js SDK and developed Python SDK for seamless integration with Typeform.\n* Developed custom elements to provide users with enhanced flexibility and customization options.",
+      "url": "https://www.linkedin.com/company/typeform-/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "name": "Sellpoints, Inc.",
+      "position": "Front End Engineer",
+      "startDate": "2018-05-31",
+      "endDate": "2019-01-31",
+      "highlights": [],
+      "summary": "* Implemented modern web development techniques, including custom elements, to upgrade frameworks and software and align with industry best practices.\n* Maintained and optimized e-commerce marketing platforms, ensuring seamless operation and maximizing business impact.",
+      "url": "https://www.linkedin.com/company/sellpoints/",
+      "location": "Emeryville, CA"
+    },
+    {
+      "name": "Checkmate.Digital",
+      "position": "Front End Engineer",
+      "startDate": "2015-10-31",
+      "endDate": "2018-05-31",
+      "highlights": [],
+      "summary": "* Led full-stack development tasks, including creating REST API components and overseeing developer training.\n* Successfully delivered 3 unique applications by effectively managing small development teams and utilizing diverse tools, resulting in business growth and high client satisfaction.",
+      "url": "https://www.linkedin.com/company/wecheckmate/",
+      "location": "New Haven, CT"
+    },
+    {
+      "name": "Independent Software",
+      "position": "A100 Program Apprentice",
+      "startDate": "2015-06-30",
+      "endDate": "2015-09-30",
+      "highlights": [],
+      "summary": "Functionally led team as a Scrum Master while leveraging knowledge growth/training in categories of modern coding technologies and agile development. Utilized a wide toolset for software development projects and tasks.",
+      "url": "https://www.linkedin.com/company/independent-software/",
+      "location": "Stamford, Connecticut"
+    },
+    {
+      "name": "JCC Of Greater New Haven",
+      "position": "Head Swim Coach (Blue Marlins of Greater New Haven)",
+      "startDate": "2009-09-30",
+      "endDate": "2015-03-31",
+      "highlights": [],
+      "summary": "Organized training cycles with effective workouts, provided coaching and support, and taught swimmers valuable skills to practice both inside, and outside of the water; while also developing my own knowledge of coaching and the sport. Also managed a well balanced coaching staff, with focuses in communication and teaching amongst each other. Opened up new lines of effective communication with parents and administrative heads. Set up activities such as team spirit nights, and events with Olympic Athletes.",
+      "url": "https://www.linkedin.com/company/jcc-of-greater-new-haven/",
+      "location": "Woodbridge, Connecticut"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Google Developers",
+      "position": "Google Developer Expert",
+      "startDate": "2019-05-31",
+      "endDate": "",
+      "summary": "Recognized by Google as having exemplary expertise in one or more of their Google Developers products. Actively supported developers, companies and tech communities by speaking at events, publishing content. ",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Google Developers",
+      "position": "GDG Organizer",
+      "startDate": "2016-01-31",
+      "endDate": "",
+      "summary": "Organize events and host developers for New Haven, Berkeley, and San Francisco branches of GDG events with a variety of topics ranging from Android development to use cases of modern front-end tools and technologies. Coordinated and ran large tech conference for developers to grow and exapnd skills, all with a minimum attendance of 150 multi-disciplinary professionals.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Google",
+      "position": "Product Forum Top Contributor",
+      "startDate": "2011-06-30",
+      "endDate": "2016-12-31",
+      "summary": "Actively participate in Google’s Product Help Forums. Work with the Mobile team of Google Consumer Operations branch while addressing consumer questions, providing support for Google’s various mobile products and services, and reporting/escalating bugs with the Android platform, Nexus devices, and some Google services available on Android.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Independent Software",
+      "position": "Senior Apprentice",
+      "startDate": "2015-09-30",
+      "endDate": "2016-12-31",
+      "summary": "Organize weekly meetings and hack nights, support software tutoring sessions for all levels of expertise, and serve as an apprentice within the Apprentice 100 program.",
+      "highlights": [],
+      "url": ""
+    }
+  ],
+  "education": [
+    {
+      "institution": "Southern Connecticut State University",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science (B.S.)",
+      "startDate": "2012-12-31",
+      "endDate": "2021-05-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Amity Regional High School",
+      "area": "",
+      "studyType": "High School Diploma",
+      "startDate": "2004-12-31",
+      "endDate": "2008-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Voice Of Customer Recognition",
+      "date": "2014-11-30",
+      "awarder": "T-Mobile",
+      "summary": "Recognition of being ranked in the top 5 in the region for providing excellent customer service, as recognized by customers."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "A100 - Apprentice",
+      "issuer": "Independent Software",
+      "startDate": "2015-09-30",
+      "url": "https://credly.com/credit/12732627"
+    },
+    {
+      "name": "A100 - Certified Developer",
+      "issuer": "Independent Software",
+      "startDate": "2015-09-30",
+      "url": "https://credly.com/credit/12732655"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Web Technologies",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Full-Stack Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Telecommunications",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Team Leadership",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Project Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Application Programming Interfaces (API)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MongoDB",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Drinking Coffee",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SDKs",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Meteor",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Python (Programming Language)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Java",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "React.js",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Software Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Agile Methodologies",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Components",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "TypeScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Community Outreach",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "AngularJS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular 2",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Google Analytics",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "GraphQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Google Apps",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Analysis",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "NestJS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Customer Service",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Public Speaking",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Leadership",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft Office",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Start-ups",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Sales",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Cascading Style Sheets (CSS)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "PowerPoint",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Training",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native Speaker",
+      "language": "English"
+    },
+    {
+      "fluency": "Limited Working",
+      "language": "Persian"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}

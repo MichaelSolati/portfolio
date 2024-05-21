@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Home from "../data/experience";
+import Experiences from "../components/ExperienceCards";
+import {environment} from "../environment";
+import linkedin from "../data/linkedin.json";
+
+const elements = Home();
+---
+
+<BaseLayout>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+        <div class="mdc-card">
+          <div class="mdc-card-wrapper__text-section">
+            <h1 class="mdc-typography--headline5">{environment.name}</h1>
+            { linkedin.basics.label ? <h3 class="mdc-typography--subtitle1">{linkedin.basics.label}</h3> : ''}
+          </div>
+          <div class="mdc-card__content">
+            { linkedin.basics.summary? <p>{linkedin.basics.summary}</p> : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Experiences client:load elements={elements} />
+</BaseLayout>

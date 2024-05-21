@@ -1,0 +1,46 @@
+---
+import "../styles/global.scss";
+
+import SEOTags from "../components/SEOTags.tsx";
+import Footer from "../components/Footer.tsx";
+import Navbar from "../components/Navbar.tsx";
+import Theme from "../components/Theme.tsx";
+
+const { canonical, description, image, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- SEO -->
+    <SEOTags
+      canonical={canonical}
+      description={description}
+      image={image}
+      site={Astro.site}
+      title={title}
+      url={Astro.url}
+    />
+    <!-- CSS Theme -->
+    <Theme />
+    <!-- CDN Imports -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Additional -->
+    <slot name="head" />
+  </head>
+
+  <body class="mdc-typography" style="height: 100%;">
+    <Navbar />
+    <main class="mdc-top-app-bar--fixed-adjust mdc-typography--body1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

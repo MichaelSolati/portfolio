@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import Hero from "../components/Hero";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { canonical, description, hero, pubDate, title } = Astro.props;
+---
+
+<BaseLayout canonical={canonical} description={description} title={title} image={hero}>
+  <article title={title}>
+    <Hero hero={hero} pubDate={pubDate} title={title} />
+    <div class="post">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
