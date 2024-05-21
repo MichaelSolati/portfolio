@@ -29,7 +29,10 @@
     "lint": "npm-run-all lint:*",
     "lint:js": "gts lint",
     "lint:types": "tsc --noEmit --skipLibCheck",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "release:major": "changelog -M && git add . && git commit -m 'chore(release): major version release' && npm version major",
+    "release:minor": "changelog -m && git add . && git commit -m 'chore(release): minor version release' && npm version minor",
+    "release:patch": "changelog -p && git add . && git commit -m 'chore(release): patch version release' && npm version patch"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.1",
