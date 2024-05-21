@@ -1,4 +1,4 @@
-import Markdown from "react-markdown";
+import Markdown from 'react-markdown';
 
 export type Props = {
   description: string | undefined;
@@ -9,11 +9,7 @@ export type Props = {
   title: string;
 };
 
-export default function ExpereienceCard({
-  description,
-  subtitle,
-  title,
-}: Props) {
+export default function ExpereienceCard({description, subtitle, title}: Props) {
   return (
     <div className="col-xs-12 col-sm-6 col-lg-4">
       <div className="mdc-card">
@@ -23,7 +19,9 @@ export default function ExpereienceCard({
         </div>
 
         <div className="mdc-card__content">
-          <Markdown className="mdc-typography--subtitle1">{description}</Markdown>
+          <Markdown className="mdc-typography--subtitle1">
+            {description}
+          </Markdown>
         </div>
       </div>
     </div>

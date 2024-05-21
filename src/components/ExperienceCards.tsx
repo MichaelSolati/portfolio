@@ -1,21 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
-import { MDCMenu } from '@material/menu';
+import {useEffect, useRef, useState} from 'react';
+import {MDCMenu} from '@material/menu';
 
-import ExpereienceCard from "./ExpereienceCard";
-import type { Props as ExpereienceCardProps } from "./ExpereienceCard";
+import ExpereienceCard from './ExpereienceCard';
+import type {Props as ExpereienceCardProps} from './ExpereienceCard';
 
 type Props = {
   elements: ExpereienceCardProps[];
 };
 
 const options = [
-  { title: "All", icon: "list" },
-  { title: "Work", icon: "business" },
-  { title: "Education", icon: "school" },
-  { title: "Volunteer", icon: "group" },
+  {title: 'All', icon: 'list'},
+  {title: 'Work', icon: 'business'},
+  {title: 'Education', icon: 'school'},
+  {title: 'Volunteer', icon: 'group'},
 ];
 
-export default function ExperienceCards({ elements }: Props) {
+export default function ExperienceCards({elements}: Props) {
   const menuButtonRef = useRef(null);
   const menuRef = useRef(null);
   const [filteredElements, setFilteredElements] = useState(elements);
@@ -24,9 +24,11 @@ export default function ExperienceCards({ elements }: Props) {
   const filterPosts = (key: string) => {
     setFilteredTitle(key);
     setFilteredElements(
-      elements.filter((element) => (key === "All") || element.filter === key.toLowerCase())
+      elements.filter(
+        element => key === 'All' || element.filter === key.toLowerCase()
+      )
     );
-  }
+  };
 
   useEffect(() => {
     const menuButton = menuButtonRef.current;
@@ -44,7 +46,6 @@ export default function ExperienceCards({ elements }: Props) {
     };
   }, []);
 
-
   return (
     <>
       <section className="mdc-app-bar mdc-top-app-bar">
@@ -58,7 +59,10 @@ export default function ExperienceCards({ elements }: Props) {
             className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
             role="toolbar"
           >
-            <div ref={menuRef} className="mdc-menu mdc-menu-surface mdc-menu-surface--anchor">
+            <div
+              ref={menuRef}
+              className="mdc-menu mdc-menu-surface mdc-menu-surface--anchor"
+            >
               <ul
                 className="mdc-list"
                 role="menu"
@@ -66,8 +70,13 @@ export default function ExperienceCards({ elements }: Props) {
                 aria-orientation="vertical"
                 tabIndex={-1}
               >
-                {options.map((opt) => (
-                  <li className="mdc-list-item" role="menuitem" onClick={() => filterPosts(opt.title)} key={opt.title}>
+                {options.map(opt => (
+                  <li
+                    className="mdc-list-item"
+                    role="menuitem"
+                    onClick={() => filterPosts(opt.title)}
+                    key={opt.title}
+                  >
                     <span className="mdc-list-item__ripple"></span>
                     <i
                       className="material-icons mdc-button__icon"

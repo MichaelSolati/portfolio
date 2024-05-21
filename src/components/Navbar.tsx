@@ -1,5 +1,5 @@
-import "../styles/components/Navbar.scss";
-import { environment } from "../environment";
+import '../styles/components/Navbar.scss';
+import {environment} from '../environment';
 
 export default function Navbar() {
   return (

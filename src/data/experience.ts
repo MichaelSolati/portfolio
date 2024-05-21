@@ -1,5 +1,5 @@
 import linkedin from './linkedin.json';
-import type { Props as ExpereienceCardProps } from "../components/ExpereienceCard";
+import type {Props as ExpereienceCardProps} from '../components/ExpereienceCard';
 
 const sortByDate = (a: ExpereienceCardProps, b: ExpereienceCardProps) => {
   if (b.end === null && a.end === null) {

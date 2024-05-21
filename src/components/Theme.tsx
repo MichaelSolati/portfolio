@@ -1,7 +1,7 @@
-import { environment } from "../environment";
+import {environment} from '../environment';
 
 export default function Theme() {
-  const { theme } = environment;
+  const {theme} = environment;
 
   return (
     <>

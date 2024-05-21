@@ -1,4 +1,4 @@
-import { environment } from "../environment";
+import {environment} from '../environment';
 
 export type Props = {
   canonical?: string;
@@ -12,7 +12,7 @@ export type Props = {
 export default function SEOTags({
   canonical,
   description = environment.description,
-  image = "/placeholder-social.png",
+  image = '/placeholder-social.png',
   site,
   title,
   url,

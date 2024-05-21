@@ -1,17 +1,18 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
+import EleventyFetch from '@11ty/eleventy-fetch';
 
-import { environment } from "../environment";
-import type { Props as CardProps } from '../components/Card';
+import {environment} from '../environment';
+import type {Props as CardProps} from '../components/Card';
 
 export default async function Code(): Promise<CardProps[]> {
   const elements: CardProps[] = [];
 
   if (environment.code) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let repos: any[] = await EleventyFetch(
       `https://api.github.com/users/${environment.code.githubID}/repos?sort=count&per_page=200`,
       {
-        duration: "6h",
-        type: "json",
+        duration: '6h',
+        type: 'json',
       }
     ).catch(() => {
       throw new Error(
@@ -20,7 +21,7 @@ export default async function Code(): Promise<CardProps[]> {
     });
 
     repos = repos
-      .filter((r) => !r.archived)
+      .filter(r => !r.archived)
       .sort(
         (a, b) =>
           b.stargazers_count - a.stargazers_count ||
@@ -28,7 +29,7 @@ export default async function Code(): Promise<CardProps[]> {
       )
       .slice(0, 24);
 
-    for (let repo of repos) {
+    for (const repo of repos) {
       elements.push({
         description: repo.description,
         title: repo.name,
