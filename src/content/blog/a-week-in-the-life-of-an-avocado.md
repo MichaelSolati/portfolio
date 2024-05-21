@@ -3,7 +3,6 @@ title: A week in the life of an 🥑
 description: ""
 pubDate: Jan 30 2019
 hero: https://cdn-images-1.medium.com/max/1024/1*nkfvr5c5uQhECM2TIzFjUQ.jpeg
-canonical: https://medium.com/typeforms-engineering-blog/a-week-in-the-life-of-an-b8671f845f59
 ---
 
 I did my first coding bootcamp in the Summer of 2015, and it wasn’t long after that I landed my first job as a Meteor developer and got to speak at the NYC Meteor Meetup. It was to an audience of well over 80 people, and after that experience, I knew I was hooked.

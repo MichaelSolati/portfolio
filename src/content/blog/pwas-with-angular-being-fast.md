@@ -3,7 +3,6 @@ title: "PWAs with Angular: Being Fast"
 description: Taking a look at how to make our Angular PWAs load even faster.
 pubDate: June 14 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/gqv0mbg95o2srvs9qy88.png
-canonical: https://medium.com/@MichaelSolati/pwas-with-angular-being-fast-cb3f9d590a93
 ---
 
 Earlier in the week we looked at starting to turn a basic Angular application into a Progressive Web App ([you can catch up here](/blog/pwas-with-angular-being-reliable)). Now that we have an application that is *reliable* and will load content from cache even when there's no network, let's make our application fast!

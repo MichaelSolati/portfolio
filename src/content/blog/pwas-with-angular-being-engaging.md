@@ -3,7 +3,6 @@ title: "PWAs with Angular: Being Engaging"
 description: We've made our Angular app reliable and fast, let's make it engaging and turn it into an awesome PWA!
 pubDate: June 16 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/l1vm0ze9607nh0myzbhf.png
-canonical: https://medium.com/@MichaelSolati/pwas-with-angular-being-engaging-83465ffd0313
 ---
 
 This past week we've done a lot of work taking a regular old Angular application and turning it into a Progressive Web App. We've made our application *reliable* with the use of Service Workers ([click here](/blog/pwas-with-angular-being-reliable)); we also made out application *fast* by prerendering our home route and lazy loading our routes with modules ([click here](/blog/pwas-with-angular-being-fast)). We're missing one key component to building a PWA though: making our application *engaging*!

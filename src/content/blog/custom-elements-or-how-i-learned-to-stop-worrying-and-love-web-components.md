@@ -3,7 +3,6 @@ title: "Custom Elements or: How I Learned to Stop Worrying and Love Web Componen
 description: ""
 pubDate: Feb 21 2019
 hero: https://cdn-images-1.medium.com/max/1024/1*Zb_efv4DwIt7mGH6hMQK0g.png
-canonical: https://medium.com/typeforms-engineering-blog/custom-elements-or-how-i-learned-to-stop-worrying-and-love-web-components-d8977e659927
 ---
 
 If you’re reading this and you’re a developer on the web, you’ve probably had to write front end code at some point. You’ve likely had to make some custom pages as well as a date picker, image carousel, or stylized button. As a front end developer, you’ve probably had to make these kinds of components over and over again. And if you need to create that stylized button, for example, you can find more than 1,300 custom button libraries to use on NPM!

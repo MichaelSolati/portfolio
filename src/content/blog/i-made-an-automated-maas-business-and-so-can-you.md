@@ -3,7 +3,6 @@ title: I Made an Automated MaaS Business, and So Can You!
 description: ""
 pubDate: Mar 26 2019
 hero: https://thepracticaldev.s3.amazonaws.com/i/ujz5avsrauk1unlrcxjt.gif
-canonical: https://medium.com/typeforms-engineering-blog/i-made-an-automated-maas-business-and-so-can-you-f21beb83fac
 ---
 
 For the past 2 years, I've been joking with my friends and former coworkers about building a business around a simple idea: MaaS! For the past 6 months, I've been telling conference attendees that I was really, seriously really working on a MaaS product, hoping it would force me to follow through. It's been a long time coming, but I finally finished it, and it works!

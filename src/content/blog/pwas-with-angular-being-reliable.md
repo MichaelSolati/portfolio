@@ -3,7 +3,6 @@ title: "PWAs with Angular: Being Reliable"
 description: Let's take a look at how we can build a PWA with Angular!
 pubDate: June 12 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/85rsuaq2bm70t0sflf5w.png
-canonical: https://medium.com/@MichaelSolati/pwas-with-angular-being-reliable-7b95662db0c
 ---
 
 If you've been in the world of web development during the past two years you've probably heard the term Progressive Web Apps (PWAs for short). PWAs are essentially web applications that provide a near-native experience on mobile devices. According to [Google](https://developers.google.com/web/progressive-web-apps/) they must be:

@@ -3,7 +3,6 @@ title: "Bitcoin: Precaution vs. Permissionless Innovation"
 description: ""
 pubDate: Apr 19 2017
 hero: https://cdn-images-1.medium.com/max/807/1*T7YLg1D5-i62O91vcHwC3A.jpeg
-canonical: https://medium.com/@MichaelSolati/bitcoin-precaution-vs-permissionless-innovation-6ed803e9ba7f
 ---
 
 As a fan of the Harry Potter series, there is a quote from _Harry Potter and the Order of the Phoenix_ that always stuck out to me. "_Progress for progress’ sake must be discouraged, for our tried and tested traditions often require no tinkering._" The line is only a snippet from a long monologue by an advisor to the Minister of Magic, Dolores Umbridge. It’s interpreted by the main characters to mean that the governing body of the magical world is afraid of changes, and prefers a stagnant society because they feel as if a perfect world or balance has been achieved. This desire to stifle innovation and progress ends up being a detriment to the wizarding world, because while they may not want to acknowledge the rise of outside forces that may be a detriment to their way of life, they are also not taking steps to prepare their society for the inevitable changes to come.
