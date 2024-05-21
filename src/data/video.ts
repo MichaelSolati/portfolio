@@ -7,16 +7,16 @@ import type { Props as CardProps } from '../components/Card';
 export default async function Video(): Promise<CardProps[]> {
   const elements: CardProps[] = [];
 
-  if (environment.youtubePlaylist) {
+  if (environment.videos) {
     const videos: any = await EleventyFetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=24&playlistId=${environment.youtubePlaylist.id}&key=${process.env.YOUTUBE}`,
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=24&playlistId=${environment.videos.youtubePlaylistID}&key=${process.env.YOUTUBE}`,
       {
         duration: "6h",
         type: "json",
       }
     ).catch(() => {
       throw new Error(
-        `Error fetching JSON for YouTube Playlist: ${environment.youtubePlaylist.id}`
+        `Error fetching JSON for YouTube Playlist: ${environment.videos.youtubePlaylistID}`
       );
     });
 

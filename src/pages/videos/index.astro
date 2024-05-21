@@ -2,10 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards";
 import Video from "../../data/video";
+import { environment } from "../../environment";
 
 const elements = await Video();
 ---
 
-<BaseLayout>
+<BaseLayout description={environment.videos.description} title={environment.videos.title}>
   <Cards elements={elements} />
 </BaseLayout>

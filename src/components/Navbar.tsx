@@ -18,22 +18,22 @@ export default function Navbar() {
             <span className="mdc-button__ripple"></span>
             <span className="mdc-button__label">{environment.blog.title}</span>
           </a>
-          {environment.github && (
+          {environment.code && (
             <a className="mdc-top-app-bar__action-item mdc-button" href="/code">
               <span className="mdc-button__ripple"></span>
               <span className="mdc-button__label">
-                {environment.github.title}
+                {environment.code.title}
               </span>
             </a>
           )}
-          {environment.youtubePlaylist && (
+          {environment.videos && (
             <a
               className="mdc-top-app-bar__action-item mdc-button"
               href="/videos"
             >
               <span className="mdc-button__ripple"></span>
               <span className="mdc-button__label">
-                {environment.youtubePlaylist.title}
+                {environment.videos.title}
               </span>
             </a>
           )}

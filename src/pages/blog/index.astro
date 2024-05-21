@@ -2,10 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards";
 import Blog from "../../data/blog";
+import { environment } from "../../environment";
 
 const elements = await Blog();
 ---
 
-<BaseLayout>
+<BaseLayout description={environment.blog.description} title={environment.blog.title}>
   <Cards elements={elements} />
 </BaseLayout>

@@ -6,16 +6,16 @@ import type { Props as CardProps } from '../components/Card';
 export default async function Code(): Promise<CardProps[]> {
   const elements: CardProps[] = [];
 
-  if (environment.github) {
+  if (environment.code) {
     let repos: any[] = await EleventyFetch(
-      `https://api.github.com/users/${environment.github.id}/repos?sort=count&per_page=200`,
+      `https://api.github.com/users/${environment.code.githubID}/repos?sort=count&per_page=200`,
       {
         duration: "6h",
         type: "json",
       }
     ).catch(() => {
       throw new Error(
-        `Error fetching JSON for GitHub Repos for user: ${environment.github.id}`
+        `Error fetching JSON for GitHub Repos for user: ${environment.code.githubID}`
       );
     });
 

@@ -1,22 +1,23 @@
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { environment } from "../environment";
 
 export type Props = {
   canonical?: string;
-  description: string;
+  description?: string;
   image?: string;
-  site: URL | undefined;
-  title: string;
+  site?: URL;
+  title?: string;
   url: URL;
 };
 
 export default function SEOTags({
   canonical,
-  description = SITE_DESCRIPTION,
+  description = environment.description,
   image = "/placeholder-social.jpg",
   site,
-  title = SITE_TITLE,
+  title,
   url,
 }: Props) {
+  title = title ? `${title} | ${environment.name}` : environment.name;
   const canonicalURL = canonical || new URL(url.pathname, site).toString();
   const socialImage = new URL(image, url).toString();
   const socialURL = url.toString();

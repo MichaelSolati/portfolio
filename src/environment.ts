@@ -1,20 +1,21 @@
 export const environment = {
   name: "Michael Solati",
   shortName: "Michael",
+  description: "I'm an experienced web developer with 7+ years in front-end development and expertise in leveraging web capabilities to deliver scalable software solutions.",
   blog: {
     description: "Stories, guides, and tutorials for developers by me.",
     title: "Blog",
   },
-  github: {
-    id: "MichaelSolati",
+  code: {
     description: "Some of the best code I've written, available for everyone!",
     title: "Code",
+    githubID: "MichaelSolati",
   },
-  youtubePlaylist: {
-    id: "PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl",
+  videos: {
     description:
       "From major conferences to smaller meetups, I've spoken at a slew of events.",
     title: "Videos",
+    youtubePlaylistID: "PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl",
   },
   theme: {
     light: {
