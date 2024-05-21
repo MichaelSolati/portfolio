@@ -6,7 +6,7 @@ import Footer from "../components/Footer.tsx";
 import Navbar from "../components/Navbar.tsx";
 import Theme from "../components/Theme.tsx";
 
-const { canonical, description, title } = Astro.props;
+const { canonical, description, image, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,6 +20,7 @@ const { canonical, description, title } = Astro.props;
     <SEOTags
       canonical={canonical}
       description={description}
+      image={image}
       site={Astro.site}
       title={title}
       url={Astro.url}

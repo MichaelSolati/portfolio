@@ -12,7 +12,7 @@ export type Props = {
 export default function SEOTags({
   canonical,
   description = environment.description,
-  image = "/placeholder-social.jpg",
+  image = "/placeholder-social.png",
   site,
   title,
   url,

@@ -9,7 +9,7 @@ type Props = CollectionEntry<"blog">["data"];
 const { canonical, description, title, pubDate, hero } = Astro.props;
 ---
 
-<BaseLayout canonical={canonical} description={description} title={title}>
+<BaseLayout canonical={canonical} description={description} title={title} image={hero}>
   <article title={title}>
     <div class="hero-banner">
       {

@@ -7,6 +7,6 @@ import { environment } from "../../environment";
 const elements = await Blog();
 ---
 
-<BaseLayout description={environment.blog.description} title={environment.blog.title}>
+<BaseLayout description={environment.blog.description} title={environment.blog.title} image={'/blog.webp'}>
   <Cards elements={elements} />
 </BaseLayout>

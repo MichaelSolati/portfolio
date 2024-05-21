@@ -7,6 +7,6 @@ import { environment } from "../../environment";
 const elements = await Video();
 ---
 
-<BaseLayout description={environment.videos.description} title={environment.videos.title}>
+<BaseLayout description={environment.videos.description} title={environment.videos.title} image={'/videos.webp'}>
   <Cards elements={elements} />
 </BaseLayout>
