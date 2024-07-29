@@ -18,6 +18,9 @@ export const environment = {
     title: 'Videos',
     youtubePlaylistID: 'PLpvTYOL2L1kRkGfvnMk96sQ-iDKkzxrUl',
   },
+  social: {
+    twitter: 'MichaelSolati',
+  },
   theme: {
     light: {
       background: '#fafafa',
