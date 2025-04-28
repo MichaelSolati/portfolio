@@ -20,7 +20,7 @@ export default function Card({
   url,
 }: Props) {
   return (
-    <div className="col-xs-12 col-sm-6 col-lg-4">
+    <div className="col-12 col-tablet-6 col-desktop-4">
       <div className="mdc-card">
         {hero && (
           <img

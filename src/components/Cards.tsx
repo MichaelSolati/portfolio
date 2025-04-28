@@ -7,7 +7,7 @@ export type Props = {
 
 export default function Cards({elements}: Props) {
   return (
-    <div className="container is-fluid">
+    <div className="grid-container is-fluid">
       <div className="row justify-content-center">
         {elements.map((element, i) => (
           <Card key={i} {...element} />

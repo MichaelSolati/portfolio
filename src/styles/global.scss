@@ -1,15 +1,15 @@
-@import "normalize.css/normalize.css";
-@import "bootstrap/scss/bootstrap-grid.scss";
-@import "./material";
+@import 'normalize.css/normalize.css';
+@import './grid';
+@import './material';
 
-a:not([class^="mdc-"]) {
+a:not([class^='mdc-']) {
   color: var(--link);
   text-decoration: none;
   cursor: pointer;
 
   &:focus {
     outline: none;
-    text-decoration: underline; 
+    text-decoration: underline;
   }
 
   &:hover {
@@ -17,7 +17,7 @@ a:not([class^="mdc-"]) {
   }
 
   &:visited {
-    color: color-mix(in srgb, var(--link), black 20%); 
+    color: color-mix(in srgb, var(--link), black 20%);
   }
 }
 
@@ -41,6 +41,7 @@ img {
   height: auto;
   max-width: 100%;
   margin: 0 auto;
+  width: auto;
 }
 
 #fof {
@@ -52,11 +53,6 @@ img {
   }
 }
 
-.container,
-.container-fluid {
-  width: auto;
-}
-
 .hero-banner {
   margin-bottom: 1rem;
   overflow: hidden;
@@ -65,7 +61,7 @@ img {
 
 .hero-content {
   align-items: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   height: 100%;

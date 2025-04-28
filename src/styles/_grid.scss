@@ -1,0 +1,144 @@
+/* Base Grid System */
+.grid-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.grid-container-fluid {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class^='col-'] {
+  padding: 15px;
+  box-sizing: border-box;
+  flex: 0 0 calc(100% / 12 * var(--col-span, 12));
+  max-width: calc(100% / 12 * var(--col-span, 12));
+}
+
+/* General Column Classes */
+.col-1 {
+  --col-span: 1;
+}
+.col-2 {
+  --col-span: 2;
+}
+.col-3 {
+  --col-span: 3;
+}
+.col-4 {
+  --col-span: 4;
+}
+.col-5 {
+  --col-span: 5;
+}
+.col-6 {
+  --col-span: 6;
+}
+.col-7 {
+  --col-span: 7;
+}
+.col-8 {
+  --col-span: 8;
+}
+.col-9 {
+  --col-span: 9;
+}
+.col-10 {
+  --col-span: 10;
+}
+.col-11 {
+  --col-span: 11;
+}
+.col-12 {
+  --col-span: 12;
+}
+
+/* Tablet Breakpoint (≥768px) */
+@media (min-width: 768px) {
+  .col-tablet-1 {
+    --col-span: 1;
+  }
+  .col-tablet-2 {
+    --col-span: 2;
+  }
+  .col-tablet-3 {
+    --col-span: 3;
+  }
+  .col-tablet-4 {
+    --col-span: 4;
+  }
+  .col-tablet-5 {
+    --col-span: 5;
+  }
+  .col-tablet-6 {
+    --col-span: 6;
+  }
+  .col-tablet-7 {
+    --col-span: 7;
+  }
+  .col-tablet-8 {
+    --col-span: 8;
+  }
+  .col-tablet-9 {
+    --col-span: 9;
+  }
+  .col-tablet-10 {
+    --col-span: 10;
+  }
+  .col-tablet-11 {
+    --col-span: 11;
+  }
+  .col-tablet-12 {
+    --col-span: 12;
+  }
+}
+
+/* Desktop Breakpoint (≥992px) */
+@media (min-width: 992px) {
+  .col-desktop-1 {
+    --col-span: 1;
+  }
+  .col-desktop-2 {
+    --col-span: 2;
+  }
+  .col-desktop-3 {
+    --col-span: 3;
+  }
+  .col-desktop-4 {
+    --col-span: 4;
+  }
+  .col-desktop-5 {
+    --col-span: 5;
+  }
+  .col-desktop-6 {
+    --col-span: 6;
+  }
+  .col-desktop-7 {
+    --col-span: 7;
+  }
+  .col-desktop-8 {
+    --col-span: 8;
+  }
+  .col-desktop-9 {
+    --col-span: 9;
+  }
+  .col-desktop-10 {
+    --col-span: 10;
+  }
+  .col-desktop-11 {
+    --col-span: 11;
+  }
+  .col-desktop-12 {
+    --col-span: 12;
+  }
+}

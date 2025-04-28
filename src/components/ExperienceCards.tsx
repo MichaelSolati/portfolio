@@ -102,7 +102,7 @@ export default function ExperienceCards({elements}: Props) {
           </section>
         </div>
       </section>
-      <div className="container is-fluid">
+      <div className="grid-container is-fluid">
         <div className="row justify-content-center" id="experiences-cards">
           {filteredElements.map((element, i) => (
             <ExpereienceCard key={i} {...element} />

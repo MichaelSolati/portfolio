@@ -11,7 +11,7 @@ export type Props = {
 
 export default function ExpereienceCard({description, subtitle, title}: Props) {
   return (
-    <div className="col-xs-12 col-sm-6 col-lg-4">
+    <div className="col-12 col-tablet-6 col-desktop-4">
       <div className="mdc-card">
         <div className="mdc-card-wrapper__text-section">
           <h2 className="mdc-typography--headline6">{title}</h2>
