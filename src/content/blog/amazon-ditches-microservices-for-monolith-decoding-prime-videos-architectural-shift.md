@@ -2,7 +2,7 @@
 title: "Amazon Ditches Microservices for Monolith: Decoding Prime Video's Architectural Shift"
 description: Uncover Amazon's cost-saving journey from microservices to monolith. Explore the architecture shift, challenges faced, and lessons learned. Discover insights for your projects.
 pubDate: May 17 2023
-hero: https://static-assets.amplication.com/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/hero.png
+hero: /blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/hero.png
 canonical: https://amplication.com/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift
 ---
 
@@ -17,7 +17,7 @@ Amazon's Prime Video serves thousands of live streams to their customers. To ens
 Amazon's tool was broken into three main components: the media converter, defect detectors, and orchestration. The media converter ran as an [AWS Lambda](https://aws.amazon.com/lambda/) function, converted audio and video streams, and stored the data in an [S3](https://aws.amazon.com/s3/) bucket. The defect detectors, also running as an AWS Lambda function, would pull the parsed data from the S3 bucket and analyze the frames and audio for any issues. Finally, the orchestration controlled the system's flow using Amazon's [AWS Step Functions](https://aws.amazon.com/step-functions/).
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/0.webp"
+  <img src="/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/0.webp"
     alt="This diagram shows Amazon's serverless architecture for monitoring their video streams."
     width="2022" height="1606"
     loading="lazy"
@@ -53,7 +53,7 @@ Now that their media converter and defect detector ran on the same server, there
 The only new piece they would need to implement is an orchestration layer for their single application that managed the different components; this removed the costs and limitations of AWS Step Functions.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/1.webp"
+  <img src="/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/1.webp"
     alt="This diagram shows Amazon's new architecture for their monitoring service."
     width="2516" height="1572"
     loading="lazy"

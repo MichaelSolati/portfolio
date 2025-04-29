@@ -2,7 +2,7 @@
 title: Why Netflix Took a Bet on GraphQL
 description: Discover how Netflix migrated to GraphQL, improving their API architecture. Explore the advantages of GraphQL's precise data requests and enhanced performance. Find out why businesses should evaluate the benefits of adopting GraphQL.
 pubDate: June 26 2023
-hero: https://static-assets.amplication.com/blog/why-netflix-took-a-bet-on-graphql/hero.png
+hero: /blog/why-netflix-took-a-bet-on-graphql/hero.png
 canonical: https://amplication.com/blog/why-netflix-took-a-bet-on-graphql
 ---
 
@@ -33,7 +33,7 @@ Now, let's look at how Netflix executed its migration to GraphQL. They approache
 Netflix's first step involved creating a GraphQL shim service on their monolithic Falcor API. This allowed client engineers to swiftly adopt GraphQL and explore client-side concerns without disrupting the server-side infrastructure. To launch this phase safely, Netflix employed AB testing, evaluating the impact of GraphQL versus the legacy Falcor stack.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/why-netflix-took-a-bet-on-graphql/0.webp" alt="Diagram of GraphQL Shim Service in front of Legacy API Monolith." style="margin-left: auto; margin-right: auto;" height="441" width="1100">
+  <img src="/blog/why-netflix-took-a-bet-on-graphql/0.webp" alt="Diagram of GraphQL Shim Service in front of Legacy API Monolith." style="margin-left: auto; margin-right: auto;" height="441" width="1100">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">Diagram of GraphQL Shim Service in front of Legacy API Monolith.</figcaption>
 </figure>
 <br />
@@ -43,7 +43,7 @@ Netflix's first step involved creating a GraphQL shim service on their monolithi
 Then, Netflix deprecated the GraphQL shim service and the legacy Falcor API in favor of federated GraphQL services owned by domain teams. This decentralized approach enabled independent management and ownership of specific sections of the API. To ensure the correctness and functional accuracy of the migration, Netflix employed replay testing, comparing results between the GraphQL Shim and the new Video API service. They also leveraged sticky canaries, infrastructure experiments that assessed performance, and business metrics, to build confidence in the new GraphQL services.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/why-netflix-took-a-bet-on-graphql/1.webp" alt="Diagram of Federated GraphQL Gateway replacing Shim Service." style="margin-left: auto; margin-right: auto;" height="568" width="1100">
+  <img src="/blog/why-netflix-took-a-bet-on-graphql/1.webp" alt="Diagram of Federated GraphQL Gateway replacing Shim Service." style="margin-left: auto; margin-right: auto;" height="568" width="1100">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">Diagram of Federated GraphQL Gateway replacing Shim Service.</figcaption>
 </figure>
 <br />

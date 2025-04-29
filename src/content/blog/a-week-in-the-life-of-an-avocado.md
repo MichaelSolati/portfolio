@@ -2,7 +2,7 @@
 title: A week in the life of an 🥑
 description: ""
 pubDate: Jan 30 2019
-hero: https://cdn-images-1.medium.com/max/1024/1*nkfvr5c5uQhECM2TIzFjUQ.jpeg
+hero: /blog/a-week-in-the-life-of-an-avocado/hero.jpg
 ---
 
 I did my first coding bootcamp in the Summer of 2015, and it wasn’t long after that I landed my first job as a Meteor developer and got to speak at the NYC Meteor Meetup. It was to an audience of well over 80 people, and after that experience, I knew I was hooked.
@@ -26,5 +26,5 @@ It’s exciting, it’s cool, and it’s everything I could have dreamed of. I�
 
 If you want to keep up with everything I’m doing you can follow me on [Twitter](https://twitter.com/MichaelSolati), or if you’re thinking _“Show me the code!”_, You can find me on [GitHub](https://github.com/MichaelSolati) as well.
 
-[![Typeform Developer Screenshot](https://cdn-images-1.medium.com/max/1024/1*VORUPyV2ZAEqqjnBuz6skg.png)](https://developer.typeform.com/community/?utm_source=engineering-blog&utm_medium=homepage-banner&utm_campaign=engineering-blog-links)
+[![Typeform Developer Screenshot](/blog/a-week-in-the-life-of-an-avocado/1.png)](https://developer.typeform.com/community/?utm_source=engineering-blog&utm_medium=homepage-banner&utm_campaign=engineering-blog-links)
 <figcaption>🎵 Sweet dreams are made by geeks, who are we to ditch a PR? We travel to events and assorted meetups. Everybody is looking for swag. 🤘</figcaption>

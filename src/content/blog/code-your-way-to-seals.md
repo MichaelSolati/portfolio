@@ -2,7 +2,7 @@
 title: Code Your Way to Seals
 description: Build your Seal of the Day website with machine-generated code! Utilize Amplication and Copilot to create a stunning seal showcase. Amplication generates the backend server with NestJS, while Copilot writes code to fetch seal pictures.
 pubDate: May 23 2023
-hero: https://static-assets.amplication.com/blog/code-your-way-to-seals/hero.png
+hero: /blog/code-your-way-to-seals/hero.png
 canonical: https://amplication.com/blog/code-your-way-to-seals
 ---
 
@@ -27,7 +27,7 @@ But the server is just the base. I need to get those four finned water dogs, and
 The first thing I need to do is create my backend server. I did that by navigating to [app.amplication.com](https://app.amplication.com/login) and signing in with my GitHub. I then created a new project called "Seal of the Day."
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/0.png"
+  <img src="/blog/code-your-way-to-seals/0.png"
     alt="Creating a new project with Amplication"
     width="2256" height="1503"
     loading="lazy"
@@ -49,7 +49,7 @@ That was it for a large part of the Amplication process. However, the Seal Servi
 To the Seal entity, I added three fields: "Date," "Image," and "Caption." Amplication sets "Date" to be a "Data Time" data type, which is absolutely correct and less work for us to do. "Image" and "Caption" are set to be of the "Single Line Text" data type, which is also correct.
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/1.png"
+  <img src="/blog/code-your-way-to-seals/1.png"
     alt="Adding the Seal entity to my service"
     width="2256" height="1503"
     loading="lazy"
@@ -66,7 +66,7 @@ If you think building that backend with Amplication was super easy, that's becau
 If you like our work, you can help us by [giving us a 🌟on Github](https://github.com/amplication/amplication)! We're close to 10,000 stars (9.9k as of posting this) and need your help. I promise it'll be better than having a sea dog barking at you...
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/bark.gif"
+  <img src="/blog/code-your-way-to-seals/bark.gif"
     alt="Sea dog barking"
     width="275" height="329"
     loading="lazy"
@@ -87,7 +87,7 @@ From now on, all of my work will occur in the `server` directory of the repo I c
 ```
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/2.png"
+  <img src="/blog/code-your-way-to-seals/2.png"
     alt="Copilot's suggestions for the page"
     width="2256" height="1503"
     loading="lazy"
@@ -117,7 +117,7 @@ Now for the NestJS controller that will serve the page. I added the file `home.c
 ```
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/3.png"
+  <img src="/blog/code-your-way-to-seals/3.png"
     alt="Copilot's suggestions for the controller"
     width="2256" height="1503"
     loading="lazy"
@@ -147,7 +147,7 @@ export class HomeController {
 To get this to work, I now had to hook up the controller to my main application. I did this by adding the `HomeController` to the `controllers` array of the `AppModules`'s class decorator. The `AppModule` is found in `src/app.module.ts`. So, while that sounds fancy, it looks like this.
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/4.png"
+  <img src="/blog/code-your-way-to-seals/4.png"
     alt="Adding the HomeController to the AppModule"
     width="1205" height="376"
     loading="lazy"
@@ -205,7 +205,7 @@ Amplication also generates self-documenting APIs using tools like Swagger. Unfor
 Running the server, I got the following when navigating to localhost:3000.
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/5.png"
+  <img src="/blog/code-your-way-to-seals/5.png"
     alt="A seals for everyday!"
     width="2256" height="1503"
     loading="lazy"
@@ -226,7 +226,7 @@ I'll use the `SealService` in `src/seal/seal.service.ts` to get my web page the 
 ```
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/6.png"
+  <img src="/blog/code-your-way-to-seals/6.png"
     alt="Copilot writing code to get a seal picture from Flickr"
     width="2256" height="1503"
     loading="lazy"
@@ -286,7 +286,7 @@ export class HomeController {
 Running the server, I got the following when navigating to localhost:3000.
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/7.png"
+  <img src="/blog/code-your-way-to-seals/7.png"
     alt="Dynamic seals from Flickr"
     width="2256" height="1503"
     loading="lazy"
@@ -311,7 +311,7 @@ I will need to update the `getSeal` method to fetch the seal of the day from my 
 ```
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/code-your-way-to-seals/8.png"
+  <img src="/blog/code-your-way-to-seals/8.png"
     alt="Copilot date generation functions"
     width="2256" height="1503"
     loading="lazy"

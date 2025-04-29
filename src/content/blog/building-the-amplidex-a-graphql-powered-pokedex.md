@@ -2,7 +2,7 @@
 title: Building the Amplidex; A GraphQL Powered Pokedex
 description: Celebrate Pokemon Day by Building Your Own GraphQL Pokedex!
 pubDate: Feb 16 2023
-hero: https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/hero.png
+hero: /blog/building-the-amplidex-a-graphql-powered-pokedex/hero.png
 canonical: https://amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex
 ---
 
@@ -24,7 +24,7 @@ Before we can even begin to log all 1008 Pokemon, we first need to have someplac
 
 Add a new project to your workspace; I'm calling mine Amplidex. Once the project is created, add a service resource and use the default settings.
 
-![Adding a service resource to a project in Amplication](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/new-service.png)
+![Adding a service resource to a project in Amplication](/blog/building-the-amplidex-a-graphql-powered-pokedex/new-service.png)
 
 This service will be the backbone of our Pokedex, as it'll be serving all of the data on the different monsters, typings, and generations; it's not a complex Pokedex, but it's more than enough to showcase what's possible. With that in mind, we'll create three entities in this service:
 
@@ -64,15 +64,15 @@ This is all helpful information for a Pokedex. Look through the different config
 
 In the last two fields, we'll add our Generation and Typing. Starting with Generation, Amplication looks through your entities and sees that you have an entity called Generation. Amplication will suggest that a Monster's Generation field should be related to the Generation entity, which is precisely what we want. One monster can only be related to one generation, so select that option when creating the relationship. Also, remember to set the field to be required and searchable.
 
-![Building a relation between the Monster entity and the Generation entity](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/generation-relation.png)
+![Building a relation between the Monster entity and the Generation entity](/blog/building-the-amplidex-a-graphql-powered-pokedex/generation-relation.png)
 
 Now create your Typing field, and like with the Generation field above, Amplication will attempt to build a relation between the field and the entity. In this case, though, a Pokemon can have multiple typings, so be sure to select one monster can be related to many typings. Again remember to set the field to be required and searchable.
 
-![Building a relation between the Monster entity and the Typing entity](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/typing-relation.png)
+![Building a relation between the Monster entity and the Typing entity](/blog/building-the-amplidex-a-graphql-powered-pokedex/typing-relation.png)
 
 For this Pokedex to work for everyone to use, we will need to make one change to our Amplication service, which is to make some of the entities' actions public. By default, all requests, mutations, and queries to an Amplication-generated backend require a user to be authenticated. For this backend, we want to allow any developer to be able to search it. Therefore, we want to set the View and Search actions to Public for our newly created entities, Monster, Generation, and Typing. Click into an entity and select Permissions on the left-hand side; you'll be greeted with a robust UI for protecting your entities. Make sure to set the View and Search actions to Public here. For a deeper dive into how to use entity permissions, check out [this article on the Amplication docs](https://docs.amplication.com/how-to/how%20to/set-access-permissions/#set-entity-permissions) site.
 
-![Setting the permissions of the Monster entity so that it is searchable by the public](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/permissions.png)
+![Setting the permissions of the Monster entity so that it is searchable by the public](/blog/building-the-amplidex-a-graphql-powered-pokedex/permissions.png)
 
 With the Pokedex backend created, you'll want to run the code locally to continue this guide. This requires syncing code to GitHub and then cloning it locally. Assuming you're comfortable with git commands, such as git clone, check out [this article on the Amplication docs site](https://docs.amplication.com/sync-with-github/) to learn how to sync your code to GitHub.
 
@@ -104,7 +104,7 @@ import { URL } from "node:url";
 
 Take a look at the `stop` variable. You should see that it's a URL; if you click on it, you'll be sent to the Bulbasaur entry in Bulbapedia. Bulbasaur is the first Pokemon in the National Pokedex, so it'll be the first Pokemon we scrape. It'll also be how we know when we get to the end of the National Dex. The way our scraper will work is as we scrape a Pokemon, we'll also scrape the URL of the next Pokemon in the Dex and then scrape that one. When we get to the last Pokemon, rather than having no next Pokemon, Bulbapedia loops back to the first Pokemon. This is how we know we've reached the end.
 
-![A screenshot of Bulbasaur from the Bulbapedia](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/bulbasaur.png)
+![A screenshot of Bulbasaur from the Bulbapedia](/blog/building-the-amplidex-a-graphql-powered-pokedex/bulbasaur.png)
 
 So the `url` variable will keep updating as we scrape Bulbapedia in a [do...while loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while), and once the value of `url` becomes the `stop` value again, we stop the loop.
 
@@ -414,7 +414,7 @@ query monsters($where: MonsterWhereInput) {
 {"where": {"name": {"contains": "Mew"}}}
 ```
 
-![Executing a GraphQL query searching for Pokemon whose name contains "Mew"](https://static-assets.amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex/graphql.png)
+![Executing a GraphQL query searching for Pokemon whose name contains "Mew"](/blog/building-the-amplidex-a-graphql-powered-pokedex/graphql.png)
 
 ## Wrapping Up
 

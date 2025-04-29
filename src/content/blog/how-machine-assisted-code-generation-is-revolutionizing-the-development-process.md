@@ -2,14 +2,14 @@
 title: How Machine-Assisted Code Generation is Revolutionizing the Development Process
 description: Reduce your coding workload and increase productivity with machine-powered developer tools like GitHub Copilot and Amplication. Learn how these technologies are changing the game in software development.
 pubDate: May 8 2023
-hero: https://static-assets.amplication.com/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/hero.png
+hero: /blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/hero.png
 canonical: https://amplication.com/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process
 ---
 
 One thing is sure: machine and AI-powered developer tools are taking over the world of software development. Technologies like Chat GPT, GitHub Copilot, Google's Bard, and what we're building here at Amplication are all designed to empower developers by helping them expedite their coding tasks and creating compelling solutions for developers. [I, for one, welcome our new machine overlords.](https://www.youtube.com/watch?v=8lcUHQYhPTE&t=35s)
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/1.png"
+  <img src="/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/1.png"
     alt="Kent Brockman from The Simpsons"
     width="577" height="433"
     loading="lazy"
@@ -42,7 +42,7 @@ At the end of March 2023, GitHub announced the next evolution of their Copilot s
 GitHub Copilot X is the next generation of GitHub Copilot, powered by OpenAI's GPT-4 model. It provides an even more complete developer experience beyond code completion. It looks to revolutionize the development process by helping developers with various tasks.
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/2.png"
+  <img src="/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/2.png"
     alt="GitHub Copilot X Logo"
     width="1600" height="850"
     loading="lazy"

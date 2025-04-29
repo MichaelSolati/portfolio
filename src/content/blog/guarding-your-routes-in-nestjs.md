@@ -2,7 +2,7 @@
 title: Guarding Your Routes in NestJS
 description: ""
 pubDate: Mar 3 2023
-hero: https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/hero.png
+hero: /blog/guarding-your-routes-in-nestjs/hero.png
 canonical: https://amplication.com/blog/guarding-your-routes-in-nestjs
 ---
 
@@ -67,13 +67,13 @@ Now's the time to write a NestJS Guard, and we'll create one that we can quickly
 Sign in to your [Amplication account](https://bit.ly/nestjs-guards-amplication) and create a new project. Then add a new resource to the project, and we'll create a service. For this service, we'll only use the Admin UI to demo our custom guard, which depends on GraphQL, so feel free to turn off the REST API & Swagger UI generation. Finally, so we have a more realistic project, we'll use the "Order Management" sample so that this project will be fully fleshed out.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/add-resource.png" alt="Add a resource to a project">
+  <img src="/blog/guarding-your-routes-in-nestjs/add-resource.png" alt="Add a resource to a project">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">Add a resource to a project</figcaption>
 </figure>
 <br />
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/create-service.png" alt="Create a service">
+  <img src="/blog/guarding-your-routes-in-nestjs/create-service.png" alt="Create a service">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">Create a service</figcaption>
 </figure>
 <br />
@@ -175,7 +175,7 @@ npm run start
 Now in your browser, navigate to [localhost:3001](http://localhost:3001/) to access the Admin UI, and sign in with the username and password of admin.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/admin-ui.png" alt="The Admin UI">
+  <img src="/blog/guarding-your-routes-in-nestjs/admin-ui.png" alt="The Admin UI">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">The Admin UI</figcaption>
 </figure>
 <br />
@@ -183,13 +183,13 @@ Now in your browser, navigate to [localhost:3001](http://localhost:3001/) to acc
 On the left-hand panel, navigate to the User view, which will work, and create a new user. The user's details do not matter; just be sure to include a username and a password and assign them the "User" role.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/users-as-admin.png" alt="The User view as admin">
+  <img src="/blog/guarding-your-routes-in-nestjs/users-as-admin.png" alt="The User view as admin">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">The User view as admin</figcaption>
 </figure>
 <br />
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/create-new-user.png" alt="Creating a new user">
+  <img src="/blog/guarding-your-routes-in-nestjs/create-new-user.png" alt="Creating a new user">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">Creating a new user</figcaption>
 </figure>
 <br />
@@ -197,7 +197,7 @@ On the left-hand panel, navigate to the User view, which will work, and create a
 Now go ahead, sign out of the admin account, and sign back in with your newly created user. If you try to access the User view, you'll be greeted with an error saying "Forbidden Resource." However, you will be able to access anything and everything else.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/guarding-your-routes-in-nestjs/users-as-new-user.png" alt="The User view as a new user">
+  <img src="/blog/guarding-your-routes-in-nestjs/users-as-new-user.png" alt="The User view as a new user">
   <figcaption style="margin-left: auto; margin-right: auto; width: fit-content;">The User view as a new user</figcaption>
 </figure>
 <br />

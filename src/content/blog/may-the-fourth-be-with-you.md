@@ -2,12 +2,12 @@
 title: May the Fourth Be With You
 description: Learn how to recreate the Star Wars API GraphQL wrapper using Amplication, ChatGPT, and SWAPI. Follow this step-by-step guide to learn how to create your own GraphQL server, seed your database, and get informtaion from ChatGPT. May the 4th be with you!
 pubDate: May 4 2023
-hero: https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/hero.png
+hero: /blog/may-the-fourth-be-with-you/hero.png
 canonical: https://amplication.com/blog/may-the-fourth-be-with-you
 ---
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/0.webp"
+  <img src="/blog/may-the-fourth-be-with-you/0.webp"
     alt="General Kenobi greeting a general of the Separatist Droid Army."
     width="265" height="144"
     loading="lazy"
@@ -30,7 +30,7 @@ We'll be using Amplication to build the GraphQL server for our backend.
 When you realize you love using Amplication, remember to [star our repository on GitHub](https://github.com/amplication/amplication).
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/10.webp"
+  <img src="/blog/may-the-fourth-be-with-you/10.webp"
     alt="Din Djarin saying 'This is the way.'"
     width="480" height="270"
     loading="lazy"
@@ -45,7 +45,7 @@ To recreate the GraphQL API, it would be good to understand the original schema 
 Visit [app.amplication.com](app.amplication.com) and sign in to Amplication with your GitHub account; if you haven't used Amplication before, that's ok... when you try to sign in, a new account will be created.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/1.png"
+  <img src="/blog/may-the-fourth-be-with-you/1.png"
     alt="Amplication's welcome screen."
     width="2256" height="1503"
     loading="lazy"
@@ -63,7 +63,7 @@ Now let's create a new Project for our Star Wars and add a Service, which will b
 Feel free to name your Service whatever you want, though I'll call mine [Holocron](https://starwars.fandom.com/wiki/Holocron).
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/2.png"
+  <img src="/blog/may-the-fourth-be-with-you/2.png"
     alt="Naming a new Service."
     width="2256" height="1503"
     loading="lazy"
@@ -75,7 +75,7 @@ Feel free to name your Service whatever you want, though I'll call mine [Holocro
 The next step in the process is to configure the Service with a Git repository. As this is a new service, you may need to click "Go to project settings" to connect to GitHub, though if you have already, you should see a screen like the one below. Then, just click "Continue."
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/3.png"
+  <img src="/blog/may-the-fourth-be-with-you/3.png"
     alt="Connecting a Service to GithHub."
     width="2256" height="1503"
     loading="lazy"
@@ -87,7 +87,7 @@ The next step in the process is to configure the Service with a Git repository. 
 The main focus of this project is to build a GraphQL version of the Star Wars API, not a REST version. However, Amplication makes generating both REST and GraphQL API endpoints easy. So the work we do now will apply to both GraphQL and REST.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/4.png"
+  <img src="/blog/may-the-fourth-be-with-you/4.png"
     alt="Choosing what type of APIs to generate."
     width="2256" height="1503"
     loading="lazy"
@@ -99,7 +99,7 @@ The main focus of this project is to build a GraphQL version of the Star Wars AP
 Amplication has made great strides in supporting mono and polyrepo projects for developers working with microservice architecture. However, this project will be in a unique state where we will not be developing a microservice project and will be syncing all of our project's code into one repository. As a result, selecting polyrepo will make sense for our usage as our one and only Service will be generated into the root of our repository.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/5.png"
+  <img src="/blog/may-the-fourth-be-with-you/5.png"
     alt="Selecting how we want to sync our code to GitHub."
     width="2256" height="1503"
     loading="lazy"
@@ -111,7 +111,7 @@ Amplication has made great strides in supporting mono and polyrepo projects for 
 When it comes to what database you want to use, you have options. You can use PostgreSQL, MongoDB, or MySQL for your backend. The choice is yours based on what you're comfortable with, but I'll use Postgres.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/6.png"
+  <img src="/blog/may-the-fourth-be-with-you/6.png"
     alt="Selecting what database to use."
     width="2256" height="1503"
     loading="lazy"
@@ -123,7 +123,7 @@ When it comes to what database you want to use, you have options. You can use Po
 Select "Empty" so we have a blank workspace to work from when creating our Entities.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/7.png"
+  <img src="/blog/may-the-fourth-be-with-you/7.png"
     alt="Selecting if you want to work from a template or not."
     width="2256" height="1503"
     loading="lazy"
@@ -135,7 +135,7 @@ Select "Empty" so we have a blank workspace to work from when creating our Entit
 Our API will not require users to be authenticated to access data, so select "Skip Authentication."
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/8.png"
+  <img src="/blog/may-the-fourth-be-with-you/8.png"
     alt="Selecting if authentication should be baked into the app or not."
     width="2256" height="1503"
     loading="lazy"
@@ -147,7 +147,7 @@ Our API will not require users to be authenticated to access data, so select "Sk
 Now we've set the base of our Service, and we can get into defining the data our backend will serve to users.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/9.png"
+  <img src="/blog/may-the-fourth-be-with-you/9.png"
     alt="The Service Wizard completion screen."
     width="2256" height="1503"
     loading="lazy"
@@ -179,7 +179,7 @@ We'll call our first entity "Person" and add the following Fields. Each field sh
 | Description | Multi Line Text  |
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/11.png"
+  <img src="/blog/may-the-fourth-be-with-you/11.png"
     alt="Creating the 'Person' Entity."
     width="2256" height="1503"
     loading="lazy"
@@ -191,7 +191,7 @@ We'll call our first entity "Person" and add the following Fields. Each field sh
 With the fields added to the Entity, we'll then want to set permissions for the Entity. Amplication, by default, requires all requests, mutations, and queries from an authenticated user. For this backend, we want to allow anyone to search it. Therefore, we want to set the View and Search actions to Public for the People entity and all other Entities we will create. Select Permissions on the left-hand side; you'll be greeted with a robust UI for protecting your entities. Set the View and Search actions to Public here, and disable all other options.
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/12.png"
+  <img src="/blog/may-the-fourth-be-with-you/12.png"
     alt="Configuring Permissions for an Entity."
     width="2256" height="1503"
     loading="lazy"
@@ -294,11 +294,11 @@ If it wasn't obvious, People could be associated with various Starships, they ma
 
 #### Person Entity Relations
 
-Return to the Person entity and add a new field called "Planet." Amplication will understand that this field is likely a relation to the Planet entity and will automatically make the connection assuming that one 
+Return to the Person entity and add a new field called "Planet." Amplication will understand that this field is likely a relation to the Planet entity and will automatically make the connection assuming that one
 "Person" can be related to one "Planet."
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/13.png"
+  <img src="/blog/may-the-fourth-be-with-you/13.png"
     alt="Creating a relation between a Person and a Planet."
     width="2256" height="1503"
     loading="lazy"
@@ -334,7 +334,7 @@ With the Holocron service created, you'll want to run the code locally to contin
 ## Completing the Archives
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/14.webp"
+  <img src="/blog/may-the-fourth-be-with-you/14.webp"
     alt="Impossible. Perhaps the archives are incomplete."
     width="2256" height="1503"
     loading="lazy"
@@ -670,7 +670,6 @@ Run this command to initialize the database by creating the necessary schemas an
 npm run db:init
 ```
 
-
 ## Querying the Holocron
 
 Now is the time to see the fruits of your labor. First, let's run the server with the following command.
@@ -703,7 +702,7 @@ query people($take: Float) {
 ```
 
 <figure>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/15.png"
+  <img src="/blog/may-the-fourth-be-with-you/15.png"
     alt="Executing a GraphQL query."
     width="2256" height="1503"
     loading="lazy"
@@ -719,7 +718,7 @@ With everything we've done up until now, we've recreated the SWAPI GraphQL Serve
 Remember to [join our developer community on Discord](https://amplication.com/discord); if you like the project and what we're doing, [give us a 🌟 on GitHub](https://github.com/amplication/amplication)!
 
 <div>
-  <img src="https://static-assets.amplication.com/blog/may-the-fourth-be-with-you/16.jpg"
+  <img src="/blog/may-the-fourth-be-with-you/16.jpg"
     alt="The Amplication Discord. You will never find a more wretched hive of scum an villainy. We must be cautious."
     width="623" height="401"
     loading="lazy"
