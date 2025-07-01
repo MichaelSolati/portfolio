@@ -1,5 +1,7 @@
 {
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
-    }
+    },
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }
