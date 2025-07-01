@@ -7,7 +7,6 @@ import {Analytics} from '@/components/layout/analytics';
 import {Navbar} from '@/components/layout/navbar';
 import {ThemeProvider} from '@/components/layout/theme-provider';
 import {GlassLayer} from '@/components/ui/glass-layer';
-import {SummarizerWidget} from '@/components/ui/summarizer-widget';
 import {generatePageMetadata} from '@/lib/metadata';
 import {cn} from '@/lib/utils';
 
@@ -46,7 +45,6 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
           </ThemeProvider>
-          <SummarizerWidget />
           <Analytics />
         </body>
       </html>

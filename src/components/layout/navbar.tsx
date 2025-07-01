@@ -2,8 +2,9 @@
 
 import * as LucideIcons from 'lucide-react';
 import {usePathname} from 'next/navigation';
-import {useCallback, useEffect, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
+import {SummarizerWidget} from '@/components/ui/summarizer-widget';
 import {
   Tooltip,
   TooltipContent,
@@ -30,7 +31,7 @@ export function Navbar() {
   const [highlightStyle, setHighlightStyle] = useState({});
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const navItems = Object.entries(siteConfig.nav);
+  const navItems = useMemo(() => Object.entries(siteConfig.nav), []);
 
   const isActive = useCallback(
     (href: string) => {
@@ -48,17 +49,19 @@ export function Navbar() {
   // Update active index when path changes
   useEffect(() => {
     const newActiveIndex = navItems.findIndex(([href]) => isActive(href));
-
-    if (newActiveIndex !== currentActiveIndex) {
-      setCurrentActiveIndex(newActiveIndex);
-
-      if (currentActiveIndex !== null && newActiveIndex !== -1) {
+    setCurrentActiveIndex(current => {
+      if (
+        current !== null &&
+        newActiveIndex !== -1 &&
+        current !== newActiveIndex
+      ) {
         setIsAnimating(true);
         // Reset animation state after animation completes
         setTimeout(() => setIsAnimating(false), 300);
       }
-    }
-  }, [currentPath, currentActiveIndex, navItems, isActive]);
+      return newActiveIndex;
+    });
+  }, [currentPath, navItems, isActive]);
 
   // Helper to recalculate highlight
   const recalculateHighlight = useCallback(() => {
@@ -105,6 +108,7 @@ export function Navbar() {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    recalculateHighlight();
     const observer = new window.ResizeObserver(() => {
       recalculateHighlight();
     });
@@ -115,80 +119,83 @@ export function Navbar() {
   }, [recalculateHighlight, isMobile]);
 
   return (
-    <nav
-      className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999]"
-      style={{viewTransitionName: 'navbar'}}
-    >
-      <TooltipProvider>
-        <div
-          ref={containerRef}
-          className="flex items-center gap-2 rounded-full bg-card/80 p-2 border border-border/50 backdrop-blur-md shadow-lg relative"
-        >
-          {/* Sliding highlight */}
-          {currentActiveIndex !== null && (
-            <div
-              className="bg-primary pointer-events-none"
-              style={{...highlightStyle, zIndex: 1}}
-            />
-          )}
+    <>
+      <nav
+        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999]"
+        style={{viewTransitionName: 'navbar'}}
+      >
+        <TooltipProvider>
+          <div
+            ref={containerRef}
+            className="flex items-center gap-2 rounded-full bg-card/80 p-2 border border-border/50 backdrop-blur-md shadow-lg relative"
+          >
+            {/* Sliding highlight */}
+            {currentActiveIndex !== null && (
+              <div
+                className="bg-primary pointer-events-none"
+                style={{...highlightStyle, zIndex: 1}}
+              />
+            )}
 
-          {navItems.map(([href, item]) => {
-            const active = isActive(href);
-            const animation = getAnimation();
-            const isIconOnlyButton = href === '/';
-            const showTooltip = isIconOnlyButton || (mounted && isMobile);
-            const IconComponent = (
-              LucideIcons as unknown as Record<
-                string,
-                React.ComponentType<React.SVGProps<SVGSVGElement>>
-              >
-            )[item.icon as keyof typeof LucideIcons];
+            {navItems.map(([href, item]) => {
+              const active = isActive(href);
+              const animation = getAnimation();
+              const isIconOnlyButton = href === '/';
+              const showTooltip = isIconOnlyButton || (mounted && isMobile);
+              const IconComponent = (
+                LucideIcons as unknown as Record<
+                  string,
+                  React.ComponentType<React.SVGProps<SVGSVGElement>>
+                >
+              )[item.icon as keyof typeof LucideIcons];
 
-            const linkElement = (
-              <TransitionLink
-                key={href}
-                href={href}
-                animation={animation}
-                aria-label={item.title}
-                className={cn(
-                  'relative rounded-full text-sm font-medium transition-colors flex items-center justify-center z-10',
-                  active
-                    ? 'text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
-                  href === '/' ? 'h-10 w-10' : 'h-10 w-10 md:w-auto md:px-4',
-                )}
-              >
-                {href === '/' ? (
-                  IconComponent ? (
-                    <IconComponent className="w-5 h-5" />
-                  ) : null
-                ) : (
-                  <>
-                    {IconComponent ? (
-                      <IconComponent className="w-5 h-5 md:hidden" />
-                    ) : null}
-                    <span className="hidden md:inline">{item.title}</span>
-                  </>
-                )}
-              </TransitionLink>
-            );
-
-            if (showTooltip) {
-              return (
-                <Tooltip key={href}>
-                  <TooltipTrigger>{linkElement}</TooltipTrigger>
-                  <TooltipContent side="top" sideOffset={8}>
-                    <p>{item.title}</p>
-                  </TooltipContent>
-                </Tooltip>
+              const linkElement = (
+                <TransitionLink
+                  key={href}
+                  href={href}
+                  animation={animation}
+                  aria-label={item.title}
+                  className={cn(
+                    'relative rounded-full text-sm font-medium transition-colors flex items-center justify-center z-10',
+                    active
+                      ? 'text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground',
+                    href === '/' ? 'h-10 w-10' : 'h-10 w-10 md:w-auto md:px-4',
+                  )}
+                >
+                  {href === '/' ? (
+                    IconComponent ? (
+                      <IconComponent className="w-5 h-5" />
+                    ) : null
+                  ) : (
+                    <>
+                      {IconComponent ? (
+                        <IconComponent className="w-5 h-5 md:hidden" />
+                      ) : null}
+                      <span className="hidden md:inline">{item.title}</span>
+                    </>
+                  )}
+                </TransitionLink>
               );
-            }
 
-            return linkElement;
-          })}
-          <ThemeToggle />
-        </div>
-      </TooltipProvider>
-    </nav>
+              if (showTooltip) {
+                return (
+                  <Tooltip key={href}>
+                    <TooltipTrigger>{linkElement}</TooltipTrigger>
+                    <TooltipContent side="top" sideOffset={8}>
+                      <p>{item.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              }
+
+              return linkElement;
+            })}
+            <SummarizerWidget />
+            <ThemeToggle />
+          </div>
+        </TooltipProvider>
+      </nav>
+    </>
   );
 }
