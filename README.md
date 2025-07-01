@@ -1,80 +1,178 @@
-# Portfolio
+# Portfolio Website
 
-A portfolio designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. This portfolio showcases work, blog posts, code projects, and speaking engagements with automatic updates and minimal maintenance.
 
-I speak at events, write blog posts, and maintain some libraries. I wanted to create a website that would showcase all of this, and I created this project to host my blog, display my repos from [GitHub](https://github.com) and show a [YouTube](https://youtube.com) playlist!
+This repo is designed for lazy developers all over the world. With little configuration and maintanince let this application automatically update itself without you having to lift a finger!
 
-- My experience is pulled from [LinkedIn](https://linkedin.com) and is shown on [`/`](https://michaelsolati.com/).
-- Blog posts I've written are hosted here and shown on [`/blog`](https://michaelsolati.com/blog).
-- My most starred and recent GitHub repos are shown on [`/code`](https://michaelsolati.com/code).
-- Recorded talks are fetched from a YouTube playlist and shown on the [`/videos`](https://michaelsolati.com/videos).
+## ✨ Features
 
-Almost all of this is configured from a few JSON files in [`src/_data`](src/_data).
+- **Modern Tech Stack**: Next.js 15, TypeScript, and Tailwind CSS
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Dark/Light Mode**: Built-in theme switching
+- **Blog System**: Markdown-based blog with syntax highlighting
+- **Code Showcase**: Dedicated section for highlighting your best code
+- **Video Section**: Showcase speaking engagements and presentations
+- **SEO Optimized**: Built-in metadata generation
+- **Static Export**: Optimized for deployment to any static hosting service
+- **View Transitions**: Smooth page transitions for enhanced UX
+- **Firebase Integration**: Analytics and hosting ready
+- **AI Summarizer**: Summarize blog posts and code snippets with AI
 
----
+## 🚀 Quick Start
 
-## Getting Setup
+### Prerequisites
 
-We'll keep our first step simple and just run a `npm ci` command. You will also want `firebase-tools` installed as a global dependency on your machine. Just run the command `npm i -g firebase-tools` and be sure to sign into your Google account for the `firebase-tools` with the command `firebase login`.
+- Node.js 22+
+- npm, yarn, or pnpm
 
-### Configuration
+### Installation
 
-Some basic details used for generating pages and fetching content on the site is found in the [`src/environment.ts`](src/environment.ts). Below is an interface explaining the site's data structure. If you don't want one of the optional fields, delete it.
+1. **Clone the repository**
 
-```TypeScript
-interface Environment {
-  name: string; // Your name.
-  shortName: string; // Short name for PWA.
-  description: string; // A short description about yourself.
-  code: {
-    githubID: string; // Your GitHub handle.
-  }
-  videos: {
-    youtubePlaylistID: string; // The YouTube Playlist ID to show.
-  }
-}
+   ```bash
+   git clone https://github.com/MichaelSolati/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:9002](http://localhost:9002)
+
+## 📁 Project Structure
+
+```text
+├── public/                   # Static assets
+└── src/
+    ├── app/                  # Next.js App Router pages
+    │   ├── about/            # About page
+    │   ├── blog/             # Blog listing and posts
+    │   ├── code/             # Code showcase section
+    │   ├── rss.xml/          # RSS feed
+    │   ├── videos/           # Video/speaking section
+    │   ├── layout.tsx        # Root layout
+    │   └── page.tsx          # Homepage
+    ├── components/           # Reusable components
+    │   ├── layout/           # Layout components
+    │   └── ui/               # UI components
+    ├── config/               # Configuration files
+    │   └── site.ts           # Site configuration, handles, nav, etc.
+    ├── content/              # Content files
+    │   └── blog/             # Markdown blog posts
+    ├── data/                 # Data files
+    │   └── bio.json          # Professional & education background
+    ├── hooks/                # Custom React hooks
+    └── lib/                  # Utility functions
 ```
 
-#### Blog
+## ⚙️ Configuration
 
-Blog posts are written in Markdown and stored in [`src/content/blog`](src/content/blog). The metadata is set in the Front Matter at the top of a Markdown file. Below is an example of what fields are supported and what they should look like.
+### Site Configuration
 
-```yaml
----
-title: My Blog Post's Title
-description: A description for this blog post.
-pubDate: May 20 2024
-hero: https://michaelsolati.com/hero.png
----
+Edit `src/config/site.ts` to customize your portfolio:
+
+```typescript
+export const siteConfig = {
+  name: "Your Name",
+  url: "https://yoursite.com",
+  description: "Your professional description",
+  handles: {
+    github: "your-github-username",
+    twitter: "your-twitter-handle",
+    linkedin: "your-linkedin-profile",
+    youtubePlaylistId: "your-youtube-playlist-id",
+  },
+  nav: {
+    // Navigation configuration
+  },
+};
 ```
 
-#### LinkedIn
+## ✍️ Blog Posts
 
-I would like to automate this but LinkedIn makes it near impossible. Using this [Chrome extension](https://chromewebstore.google.com/detail/caobgmmcpklomkcckaenhjlokpmfbdec). Generate a JSON and save the content in [`src/data/linkedin.json`](src/data/linkedin.json).
+Create markdown files in `src/content/blog/` with frontmatter:
 
-#### Firebase
+```markdown
+---
+title: "Your Blog Post Title"
+description: "Brief description"
+pubDate: June 30 2025
+hero: /blog/your-post-slug/hero.jpg
+---
 
-This application takes advantage of Firebase for the use of its [Hosting](https://firebase.google.com/products/hosting). In the [Firebase console](https://console.firebase.google.com/) create a new application, and ensure that these features are enabled. Typically they would be enabled from the get-go, but you may want to check just in case.
-
-Update the `.firebaserc` file in the root directory so that `projects.default` is assigned to your Project ID. The easiest way to do this is just to delete the file and run the command `firbase init` to assign it to your project.
-
-#### YouTube
-
-You will also need to enable the YouTube Data API v3 for your Firebase application, which [you can do here](https://console.developers.google.com/apis/library/youtube.googleapis.com/). Generate an API token for this and use set it as an environment variable called `YOUTUBE`. If you don't want to keep setting it you can set it once in a git ignored `.env` file.
-
-## Let's Wind Up
-
-With everything configured and data generated you can test the site by running:
-
-```bash
-npm run start
+Your content here...
 ```
 
-If everything looks good then we're ready to deploy to Firebase, run:
+## 🚀 Deployment
+
+### Static Export
+
+This project is configured for static export:
 
 ```bash
 npm run build
+```
+
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
+
+### Firebase Hosting
+
+The project includes Firebase configuration for easy deployment. You will need to update the `.firebaserc` file with your own Firebase project configuration. Run the following command to build and deploy to Firebase:
+
+```bash
 firebase deploy
 ```
 
-Enjoy!
+### Environment Variables
+
+Create a `.env` file with. You can copy the `.env.example` file and fill in the values.
+
+```bash
+cp .env.example .env
+```
+
+Then fill in the values.
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+YOUTUBE_API_KEY=your_youtube_api_key_here
+```
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server (port 9002)
+- `npm run build` - Build for production (static export)
+- `npm run lint` - Run linting
+- `npm run fix` - Fix linting issues
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI primitives
+- **Icons**: Lucide React
+- **Content**: Markdown with remark/rehype
+- **Themes**: next-themes
+- **Analytics**: Firebase
+- **Hosting**: Firebase Hosting ready
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE.md).

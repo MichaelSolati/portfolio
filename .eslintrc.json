@@ -1,8 +1,18 @@
 {
-  "extends": "./node_modules/gts/",
+  "extends": [
+    "./node_modules/gts/",
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
   "rules": {
-    "node/no-unpublished-import": ["error", {
-        "allowModules": ["dotenv"]
-    }]
-}
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "ignorePatterns": [
+    "dist/",
+    ".next/"
+  ]
 }
