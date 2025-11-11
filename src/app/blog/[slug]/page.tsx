@@ -78,7 +78,7 @@ export default async function PostPage({
         data-ai-hint="tech abstract"
       />
 
-      <BlogContent html={postData.contentHtml} />
+      <BlogContent content={postData.content} />
     </article>
   );
 }
