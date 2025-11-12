@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw'; // Import rehypeRaw
 import remarkGfm from 'remark-gfm';
 
 import CodeBlock from '@/components/ui/code-block';
@@ -12,6 +13,7 @@ export default function BlogContent({content}: {content: string}) {
     <div className="prose prose-lg dark:prose-invert mx-auto max-w-none prose-headings:font-headline prose-a:text-primary hover:prose-a:underline">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]} // Add rehypeRaw here
         components={{
           pre: ({...props}) => {
             const child = React.Children.toArray(props.children)[0];
