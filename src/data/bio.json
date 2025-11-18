@@ -1,10 +1,17 @@
 {
   "experience": [
     {
+      "company": "Capital One",
+      "title": "Lead Software Engineer",
+      "startDate": "2025-09-02",
+      "endDate": "",
+      "description": []
+    },
+    {
       "company": "LiveKit",
       "title": "Developer Advocate",
       "startDate": "2025-03-15",
-      "endDate": "",
+      "endDate": "2025-06-25",
       "description": [
         "Built and launched partner integrations with STT, LLM, and TTS model providers.",
         "Organized and ran events in the Bay Area."
