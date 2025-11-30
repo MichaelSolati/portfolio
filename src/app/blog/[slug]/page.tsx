@@ -70,7 +70,7 @@ export default async function PostPage({
         {postData.tags && postData.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {postData.tags.map(tag => (
-              <Link key={tag} href={`/blog/tags/${tag}`}>
+              <Link key={tag} href={`/tags/${tag}`}>
                 <Badge>#{tag}</Badge>
               </Link>
             ))}

@@ -70,7 +70,7 @@ export function TagFilter({tags, currentTag}: TagFilterProps) {
             <DropdownMenuItem
               key={tag}
               onSelect={() => {
-                router.push(`/blog/tags/${tag}`);
+                router.push(`/tags/${tag}`);
                 setOpen(false);
               }}
             >
