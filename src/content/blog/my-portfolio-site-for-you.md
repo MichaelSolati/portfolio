@@ -1,6 +1,7 @@
 ---
 title: My Portfolio Site... For You!
 description: ""
+tags: webdev,career,portfolio,automation
 pubDate: May 20 2020
 hero: https://dev-to-uploads.s3.amazonaws.com/i/5aanidovegngwi1hyzd3.gif
 ---

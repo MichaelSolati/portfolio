@@ -1,6 +1,7 @@
 ---
 title: Fighting Framework Jank (What's Not in the Docs)
 description: Is your React app feeling slow? Stop blaming the framework and use your browsers APIs like template and requestIdleCallback to fix that UI jank.
+tags: webdev,performance,react,frontend
 pubDate: Tue Nov 11 2025 21:00:00 GMT-0800 (Pacific Standard Time)
 hero: /blog/fighting-framework-jank-whats-not-in-the-docs/hero.webp
 ---

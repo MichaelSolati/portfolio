@@ -1,6 +1,7 @@
 ---
 title: Guarding Your Routes in NestJS
 description: ""
+tags: tutorial,backend,webdev,node,typescript
 pubDate: Mar 3 2023
 hero: /blog/guarding-your-routes-in-nestjs/hero.png
 canonical: https://amplication.com/blog/guarding-your-routes-in-nestjs

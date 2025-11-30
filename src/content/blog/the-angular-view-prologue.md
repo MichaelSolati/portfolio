@@ -1,6 +1,7 @@
 ---
 title: "The Angular View: Prologue"
 description: A simple explanation to SPA and SSR with Javascript frameworks.
+tags: angular,webdev,javascript
 pubDate: Apr 17 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/ibcwd46gr9dxzn9dvks3.png
 ---

@@ -1,6 +1,7 @@
 ---
 title: The Production Readiness Checklist
 description: The USPS site asked me to 'Install Create React App Sample.' 🤦‍♂️ It's a hilarious reminder that the last 5% of polish is the product. Here's a production readiness checklist to fix this.
+tags: webdev,devops,pwa,frontend
 pubDate: Tue Nov 13 2025 9:30:00 GMT-0800 (Pacific Standard Time)
 hero: /blog/the-production-readiness-checklist/hero.webp
 ---

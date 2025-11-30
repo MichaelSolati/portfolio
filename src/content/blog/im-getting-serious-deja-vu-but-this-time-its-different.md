@@ -1,6 +1,7 @@
 ---
 title: I'm Getting Serious Déjà Vu... But This Time It's Different
 description: The AI "gold rush" feels just like the 2015 bootcamp days, but the data shows a harsher reality. Here's why the market is fundamentally different and what it really takes to be an engineer today.
+tags: ai,programming,career,learning
 pubDate: Tue Nov 18 2025 08:00:00 GMT-0800 (Pacific Standard Time)
 hero: /blog/im-getting-serious-deja-vu-but-this-time-its-different/hero.webp
 ---

@@ -1,6 +1,7 @@
 ---
 title: "PWAs with Angular: Being Fast"
 description: Taking a look at how to make our Angular PWAs load even faster.
+tags: angular,pwa,webdev,javascript
 pubDate: June 14 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/gqv0mbg95o2srvs9qy88.png
 ---

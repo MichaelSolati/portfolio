@@ -1,6 +1,7 @@
 ---
 title: "Custom Elements or: How I Learned to Stop Worrying and Love Web Components"
 description: ""
+tags: webdev,frontend,html,javascript
 pubDate: Feb 21 2019
 hero: https://cdn-images-1.medium.com/max/1024/1*Zb_efv4DwIt7mGH6hMQK0g.png
 ---

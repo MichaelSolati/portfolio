@@ -1,6 +1,7 @@
 ---
 title: "The Angular View: On The Web"
 description: Explaining how the view is generated on the web by Angular.
+tags: angular,webdev,typescript,javascript
 pubDate: May 17 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/bz85ttpacmuwn7fok5b3.png
 ---

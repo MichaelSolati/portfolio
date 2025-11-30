@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin: Precaution vs. Permissionless Innovation"
 description: ""
+tags: blockchain,bitcoin,cryptocurrency
 pubDate: Apr 19 2017
 hero: https://cdn-images-1.medium.com/max/807/1*T7YLg1D5-i62O91vcHwC3A.jpeg
 ---

@@ -1,6 +1,7 @@
 ---
 title: Voice Assistants Evolving? Perplexity on iOS Attempts True Task Integration
 description: Tired of Siri's web links? Perplexity's new iOS agentic AI actually interacts with your apps to book tables, draft emails, and get things done, offering a glimpse of a truly helpful assistant.
+tags: ai,api
 pubDate: April 28 2025
 hero: /blog/voice-assistants-evolving-perplexity-on-ios-attempts-true-task-integration/hero.webp
 ---

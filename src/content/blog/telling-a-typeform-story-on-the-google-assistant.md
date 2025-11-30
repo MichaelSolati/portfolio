@@ -1,6 +1,7 @@
 ---
 title: Telling a Typeform story on the Google Assistant
 description: How I told a spooky story on the Google Assistant using Typeform.
+tags: api,tutorial,google,javascript
 pubDate: Nov 19 2018
 hero: https://thepracticaldev.s3.amazonaws.com/i/rz50ev9lgrgmyko70qg3.png
 ---

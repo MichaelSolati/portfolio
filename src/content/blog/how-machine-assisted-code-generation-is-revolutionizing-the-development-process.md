@@ -1,6 +1,7 @@
 ---
 title: How Machine-Assisted Code Generation is Revolutionizing the Development Process
 description: Reduce your coding workload and increase productivity with machine-powered developer tools like GitHub Copilot and Amplication. Learn how these technologies are changing the game in software development.
+tags: productivity,ai,github,coding
 pubDate: May 8 2023
 hero: /blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process/hero.png
 canonical: https://amplication.com/blog/how-machine-assisted-code-generation-is-revolutionizing-the-development-process

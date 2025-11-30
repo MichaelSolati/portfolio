@@ -1,6 +1,7 @@
 ---
 title: I Made an Automated MaaS Business, and So Can You!
 description: ""
+tags: serverless,automation,api,javascript
 pubDate: Mar 26 2019
 hero: https://thepracticaldev.s3.amazonaws.com/i/ujz5avsrauk1unlrcxjt.gif
 ---

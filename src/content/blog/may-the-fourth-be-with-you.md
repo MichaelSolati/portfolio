@@ -1,6 +1,7 @@
 ---
 title: May the Fourth Be With You
 description: Learn how to recreate the Star Wars API GraphQL wrapper using Amplication, ChatGPT, and SWAPI. Follow this step-by-step guide to learn how to create your own GraphQL server, seed your database, and get informtaion from ChatGPT. May the 4th be with you!
+tags: api,node,tutorial,webdev
 pubDate: May 4 2023
 hero: /blog/may-the-fourth-be-with-you/hero.png
 canonical: https://amplication.com/blog/may-the-fourth-be-with-you

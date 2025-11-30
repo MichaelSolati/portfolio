@@ -1,6 +1,7 @@
 ---
 title: JavaScript Objects
 description: This blog post is your crash course for you to learn about one of the vital topics in JavaScript, i.e., JavaScript Objects.
+tags: javascript,webdev,programming,beginners
 pubDate: Dec 20 2022
 hero: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g2y60a6osx9eagi84cst.png
 ---

@@ -1,6 +1,7 @@
 ---
 title: A week in the life of an 🥑
 description: ""
+tags: javascript,career,community,developer
 pubDate: Jan 30 2019
 hero: /blog/a-week-in-the-life-of-an-avocado/hero.jpg
 ---

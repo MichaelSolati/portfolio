@@ -1,6 +1,7 @@
 ---
 title: "Meta's Llama API: Open Models, Meet Developer Convenience"
 description: Meta is bridging the gap between powerful open models and seamless integration with the new official Llama API. Let's discuss the developer experience, cool features like OpenAI compatibility, and how this API stacks up against others for your AI projects.
+tags: ai,api,llm,python
 pubDate: May 01 2025 11:00:00 GMT-0700
 hero: /blog/metas-llama-api-open-models-meet-developer-convenience/hero.webp
 ---

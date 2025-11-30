@@ -1,6 +1,7 @@
 ---
 title: Building the Amplidex; A GraphQL Powered Pokedex
 description: Celebrate Pokemon Day by Building Your Own GraphQL Pokedex!
+tags: node,tutorial,webdev
 pubDate: Feb 16 2023
 hero: /blog/building-the-amplidex-a-graphql-powered-pokedex/hero.png
 canonical: https://amplication.com/blog/building-the-amplidex-a-graphql-powered-pokedex

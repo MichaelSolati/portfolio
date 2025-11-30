@@ -1,6 +1,7 @@
 ---
 title: Why Netflix Took a Bet on GraphQL
 description: Discover how Netflix migrated to GraphQL, improving their API architecture. Explore the advantages of GraphQL's precise data requests and enhanced performance. Find out why businesses should evaluate the benefits of adopting GraphQL.
+tags: programming,api,architecture,cloud
 pubDate: June 26 2023
 hero: /blog/why-netflix-took-a-bet-on-graphql/hero.png
 canonical: https://amplication.com/blog/why-netflix-took-a-bet-on-graphql

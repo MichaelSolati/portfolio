@@ -4,6 +4,7 @@ import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import {Badge} from '@/components/ui/badge';
 import {getPostData, getSortedPostsData} from '@/lib/blog';
 import {generateBlogPostMetadata} from '@/lib/metadata';
 
@@ -66,6 +67,15 @@ export default async function PostPage({
             </div>
           )}
         </div>
+        {postData.tags && postData.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            {postData.tags.map(tag => (
+              <Link key={tag} href={`/blog/tags/${tag}`}>
+                <Badge>#{tag}</Badge>
+              </Link>
+            ))}
+          </div>
+        )}
       </header>
 
       <Image
@@ -78,7 +88,7 @@ export default async function PostPage({
         data-ai-hint="tech abstract"
       />
 
-      <BlogContent content={postData.content} />
+      <BlogContent content={postData.content || ''} />
     </article>
   );
 }

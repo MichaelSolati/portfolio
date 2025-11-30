@@ -1,6 +1,7 @@
 ---
 title: "PWAs with Angular: Being Reliable"
 description: Let's take a look at how we can build a PWA with Angular!
+tags: angular,pwa,javascript,webdev
 pubDate: June 12 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/85rsuaq2bm70t0sflf5w.png
 ---

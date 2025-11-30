@@ -1,6 +1,7 @@
 ---
 title: And then the interviewer asks, "Can you do this with less code?"
 description: ""
+tags: javascript,beginners,interview,algorithms
 pubDate: May 8 2020
 hero: https://dev-to-uploads.s3.amazonaws.com/i/wdnkqs71f7h3k0zliuuw.png
 ---

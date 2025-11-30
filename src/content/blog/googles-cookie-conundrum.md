@@ -1,6 +1,7 @@
 ---
 title: Google's Cookie Conundrum
 description: "Google backtracks on phasing out third-party cookies, sparking concerns over user privacy and data control. What does this mean for the future of web privacy?"
+tags: webdev,google,privacy,marketing
 pubDate: Jul 30 2024
 hero: /blog/googles-cookie-conundrum/hero.webp
 ---

@@ -1,6 +1,7 @@
 ---
 title: One weird trick! (To encapsulating your CSS)
 description: ""
+tags: webdev,html,css,beginners
 pubDate: Apr 29 2020
 hero: https://dev-to-uploads.s3.amazonaws.com/i/gr3ryjpupymopqjrl0df.png
 ---

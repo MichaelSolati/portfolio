@@ -1,6 +1,7 @@
 ---
 title: Code Your Way to Seals
 description: Build your Seal of the Day website with machine-generated code! Utilize Amplication and Copilot to create a stunning seal showcase. Amplication generates the backend server with NestJS, while Copilot writes code to fetch seal pictures.
+tags: webdev,tutorial,ai,github
 pubDate: May 23 2023
 hero: /blog/code-your-way-to-seals/hero.png
 canonical: https://amplication.com/blog/code-your-way-to-seals

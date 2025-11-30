@@ -1,6 +1,7 @@
 ---
 title: "LeetCode vs. Vibe Coding: The Reality of Interviewing in 2025"
 description: I went back on the job market and found two different realities. There is a widening gap between enterprise and startups as some are ditching whiteboards for AI speedruns! (But at what cost?)
+tags: ai,career,discuss,interview
 pubDate: Thu Nov 20 2025 08:00:00 GMT-0800 (Pacific Standard Time)
 hero: /blog/leetcode-vs-vibe-coding-the-reality-of-interviewing-in-2025/hero.webp
 ---

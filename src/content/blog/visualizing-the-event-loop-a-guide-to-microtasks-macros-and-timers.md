@@ -1,6 +1,7 @@
 ---
 title: "Visualizing the Event Loop: A Guide to Microtasks, Macros, and Timers"
 description: Stop guessing the output of async code. Here is a visual mental model for the JavaScript Event Loop, Microtasks, and Macrotasks.
+tags: webdev,javascript,beginners,node
 pubDate: Wed Nov 25 2025 08:00:00 GMT-0800 (Pacific Standard Time)
 hero: /blog/visualizing-the-event-loop-a-guide-to-microtasks-macros-and-timers/hero.webp
 ---

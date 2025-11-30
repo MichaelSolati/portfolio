@@ -1,6 +1,7 @@
 ---
 title: "PWAs with Angular: Being Engaging"
 description: We've made our Angular app reliable and fast, let's make it engaging and turn it into an awesome PWA!
+tags: angular,pwa,webdev,mobile
 pubDate: June 16 2017
 hero: https://thepracticaldev.s3.amazonaws.com/i/l1vm0ze9607nh0myzbhf.png
 ---

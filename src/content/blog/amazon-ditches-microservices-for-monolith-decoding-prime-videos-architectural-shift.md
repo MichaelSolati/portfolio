@@ -1,6 +1,7 @@
 ---
 title: "Amazon Ditches Microservices for Monolith: Decoding Prime Video's Architectural Shift"
 description: Uncover Amazon's cost-saving journey from microservices to monolith. Explore the architecture shift, challenges faced, and lessons learned. Discover insights for your projects.
+tags: architecture,aws,serverless,cloud
 pubDate: May 17 2023
 hero: /blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift/hero.png
 canonical: https://amplication.com/blog/amazon-ditches-microservices-for-monolith-decoding-prime-videos-architectural-shift

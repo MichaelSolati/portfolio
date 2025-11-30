@@ -1,6 +1,7 @@
 ---
 title: "Something Cool: Popup Callbacks"
 description: I had to get data from a popup window, this is how I did it!
+tags: javascript,webdev,learning,tips
 pubDate: Apr 25 2019
 hero: https://thepracticaldev.s3.amazonaws.com/i/ejdgg8ltgc8gqdiozklg.jpg
 ---
