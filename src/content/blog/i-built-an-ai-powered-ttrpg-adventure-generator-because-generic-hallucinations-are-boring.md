@@ -36,6 +36,15 @@ We are keeping it modern and fast:
   * **Tailwind CSS**: Because I don't want to spend 3 hours centering a div.
   * **D3.js**: For that "exploration board" visualization.
 
+<div>
+  <img src="/blog/i-built-an-ai-powered-ttrpg-adventure-generator-because-generic-hallucinations-are-boring/hero_alt.webp"
+    alt="Fun graphic of technology used"
+    width="3168" height="1344"
+    loading="lazy"
+    style="margin-left: auto; margin-right: auto;">
+</div>
+<br />
+
 ## Step 1: Defining the Adventure Schema
 
 To ensure the AI gives us usable data (and not just a wall of text), we need to define a strict JSON schema. This acts as a contract, telling the AI exactly what fields we need: titles, plot hooks, NPCs, and locations.
@@ -194,6 +203,15 @@ export async function GET(_req: NextRequest, context: any) {
 }
 ```
 
+<div>
+  <img src="/blog/i-built-an-ai-powered-ttrpg-adventure-generator-because-generic-hallucinations-are-boring/sse.gif"
+    alt="Server-Sent Events (SSE) in action"
+    width="800" height="450"
+    loading="lazy"
+    style="margin-left: auto; margin-right: auto;">
+</div>
+<br />
+
 ### Citation Mapping
 
 One of the coolest things about this setup is citation mapping. We can actually track which specific sub-task (like "Search for NPC names") produced which URL results. This lets us tag the generated NPCs with the actual folklore blog post that inspired them.
@@ -226,6 +244,15 @@ export class CitationProcessor {
   }
 }
 ```
+
+<div>
+  <img src="/blog/i-built-an-ai-powered-ttrpg-adventure-generator-because-generic-hallucinations-are-boring/citation.gif"
+    alt="Citation mapping in action via D3.js"
+    width="800" height="450"
+    loading="lazy"
+    style="margin-left: auto; margin-right: auto;">
+</div>
+<br />
 
 ## 🚀 Quickstart: Run It Locally
 
@@ -277,5 +304,14 @@ Navigate to `http://localhost:3000`, enter a prompt like "A cyberpunk scorched e
 At the end of the day, the tools we use are just a means to an end. The real magic here is about shifting how we interact with AI. By moving from simple prompting to a "Research-then-Generate" workflow with Exa, we stop the AI from hallucinating generic tropes and start grounding it in actual creativity. It respects the nuance of capturing a specific "vibe," rather than just matching keywords.
 
 The result is richer, grounded content that feels less like a robot wrote it and more like a curated creative work.
+
+<div>
+  <img src="/blog/i-built-an-ai-powered-ttrpg-adventure-generator-because-generic-hallucinations-are-boring/app.gif"
+    alt="Full Exa research and generation workflow running"
+    width="800" height="450"
+    loading="lazy"
+    style="margin-left: auto; margin-right: auto;">
+</div>
+<br />
 
 If you want to try weaving your own adventures, or if you're thinking, *"Show me the code!"*, you can find the full source code on [GitHub](https://github.com/MichaelSolati/adventure-weaver).
